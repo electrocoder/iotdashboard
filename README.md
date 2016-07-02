@@ -1,6 +1,6 @@
 # iot-dashboard
 # IoT: Platform for Internet of Things
-[![Join the chat at https://iothook.com/tr/](https://badges.gitter.im/Join%20Chat.svg)](https://iothook.com/tr/)
+[![Gitter](https://badges.gitter.im/electrocoder/iot-dashboard.svg)](https://gitter.im/electrocoder/iot-dashboard?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![License](https://img.shields.io/badge/licence-Apache%202.0-brightgreen.svg?style=flat)](LICENSE)
 [![Build Status](https://travis-ci.org/Samsung/iotjs.svg?branch=master)](https://iothook.com/tr/)
 
