@@ -6,6 +6,13 @@
 
 You can find project details on our [project page](https://iothook.com/) and [wiki](https://iothook.com/).
 
+<p align="center">
+<img 
+    src="iotdashboard.png" 
+    width="336" height="75" border="0" alt="IOT HOOK">
+    </p>
+<br>
+
 
 <p align="center">Fast Django server for IOT Devices</a></p>
 
