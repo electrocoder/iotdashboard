@@ -18,4 +18,30 @@ Features
 - Simple interface. 
 - Support for channel api key
 
+Requirements
+------------
+- Django
+
+How to get Django
+----------
+
+```
+https://www.djangoproject.com/download/
+```
+
+Installing
+----------
+
+```
+git clone https://github.com/electrocoder/iotdashboard.git
+```
+
+Run
+---
+
+```
+./manage.py runserver
+or
+./manage.py runserver 0.0.0.0:8000
+```
 
