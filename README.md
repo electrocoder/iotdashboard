@@ -9,5 +9,13 @@ You can find project details on our [project page](https://iothook.com/) and [wi
 
 <p align="center">Fast Django server for IOT Devices</a></p>
 
+Features
+--------
+- Create a Django compatible server for iot devices
+- Create a Device for iot devices
+- Create a Channel for iot devices
+- Create a Element for iot devices
+- Simple interface. 
+- Support for channel api key
 
 
