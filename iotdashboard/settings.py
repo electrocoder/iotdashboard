@@ -84,8 +84,8 @@ if HEROKU:
     DATABASES['default'].update(db_from_env)
     DATABASES['default']['CONN_MAX_AGE'] = 500
 
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'iotdashboard_media/')
-    STATIC_ROOT = os.path.join(BASE_DIR, "iotdashboard_static/")
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'iotdashboard_media')
+    STATIC_ROOT = os.path.join(BASE_DIR, "iotdashboard_static")
 else:
     DATABASES = {
         'default': {
