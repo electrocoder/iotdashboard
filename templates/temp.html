@@ -1,0 +1,39 @@
+{% extends "back/base.html" %}
+
+{% load staticfiles %}
+{% load panels_tags %}
+
+{% block title %}Panel for Iot Device{% endblock %}
+
+{% block content %}
+<div class="row placeholders">
+    <div class="col-xs-6 col-sm-3 placeholder">
+        <a href="{% url 'device_add' %}">
+        <img src="{% static "back/dashboard/img/cloud-256.png" %}" width="200" height="200" class="img-responsive"
+             alt="cloud">
+        <h4>Add Device</h4></a>
+        <span class="text-muted">Iot Device Manager</span>
+    </div>
+    <div class="col-xs-6 col-sm-3 placeholder">
+        <a href="{% url 'panels_index' %}">
+        <img src="{% static "back/dashboard/img/channel-256.png" %}" width="200" height="200" class="img-responsive"
+             alt="channel">
+        <h4>Add Channel</h4></a>
+        <span class="text-muted">Iot Device Manager</span>
+    </div>
+    <div class="col-xs-6 col-sm-3 placeholder">
+        <a href="{% url 'panels_index' %}">
+        <img src="{% static "back/dashboard/img/element-256.png" %}" width="200" height="200" class="img-responsive"
+             alt="element">
+        <h4>Add Element</h4></a>
+        <span class="text-muted">Iot Device Explorer</span>
+    </div>
+    <div class="col-xs-6 col-sm-3 placeholder">
+        <a href="{% url 'panels_index' %}">
+        <img src="{% static "back/dashboard/img/key-256.png" %}" width="200" height="200" class="img-responsive"
+             alt="key">
+        <h4>Key Manager</h4></a>
+        <span class="text-muted">Create A New Key</span>
+    </div>
+</div>
+{% endblock %}

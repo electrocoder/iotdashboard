@@ -1,0 +1,71 @@
+{% load staticfiles %}
+{% load panels_tags %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+
+{% include 'back/head.html' %}
+
+<body>
+
+{% include 'back/navbar.html' %}
+
+<div class="container-fluid">
+    <div class="row">
+
+        {% include 'back/sidebar.html' %}
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">{% website_name %}</h1>
+
+            {% block content %}{% endblock %}
+
+            <h2 class="sub-header">Section title</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Header</th>
+                        <th>Header</th>
+                        <th>Header</th>
+                        <th>Header</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1,001</td>
+                        <td>Lorem</td>
+                        <td>ipsum</td>
+                        <td>dolor</td>
+                        <td>sit</td>
+                    </tr>
+                    <tr>
+                        <td>1,015</td>
+                        <td>sodales</td>
+                        <td>ligula</td>
+                        <td>in</td>
+                        <td>libero</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+    <!-- FOOTER -->
+    <footer>
+        <p class="pull-right"><a href="#">&nbsp;Back to top&nbsp;</a></p>
+        <p class="pull-right"> &copy; 2016 {% website_name %} | <a href="#">Privacy </a> | <a href="#"> Terms </a> | <a href="#"> Ver: {% version %} | </a></p>
+    </footer>
+
+</div>
+
+{% include 'back/js.html' %}
+
+</body>
+</html>
+

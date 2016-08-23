@@ -1,0 +1,24 @@
+{% extends "back/base.html" %}
+
+{% load staticfiles %}
+{% load panels_tags %}
+
+{% block title %}Add{% endblock %}
+
+{% block content %}
+
+{% if form.errors and not form.non_field_errors and not form.this_is_the_login_form.errors %}
+<p class="errornote">
+ooo
+</p>
+{% endif %}
+
+<div class="col-xs-12 col-sm-12 placeholder">
+    <form action="" method="post"> {% csrf_token %}
+        {{ form.as_p }}
+        <div class="box-footer">
+            <button type="submit" class="btn btn-lg btn-primary pull-right">Kaydet</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

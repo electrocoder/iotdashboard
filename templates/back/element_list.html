@@ -1,0 +1,44 @@
+{% extends "back/base.html" %}
+
+{% load staticfiles %}
+{% load panels_tags %}
+
+{% block title %}Device List{% endblock %}
+
+{% block content %}
+<div class="col-xs-12 col-sm-12 placeholder">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Channel</th>
+                <th>Type</th>
+                <th>Name</th>
+                <th>Pub.Date</th>
+                <th>Description</th>
+                <th>Enable</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in list %}
+            <tr>
+                <td>{{ i.id }}</td>
+                <td>{{ i.channel }}</td>
+                <td>{{ i.type }}</td>
+                <td>{{ i.name }}</td>
+                <td>{{ i.pub_date }}</td>
+                <td>{{ i.description }}</td>
+                <td>{{ i.enable }}</td>
+                <td><a class="btn btn-warning" href="#" role="button">Edit »</a></td>
+                <td><a class="btn btn-danger" href="#" role="button">Delete</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}
