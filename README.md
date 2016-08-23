@@ -50,6 +50,13 @@ or
 ./manage.py runserver 0.0.0.0:8000
 ```
 
+Test on HEROKU
+--------------
+
+```
+https://iotdashboard.herokuapp.com/
+```
+
 Contact
 -------
 Şahin MERSİN [@electrocoder](http://twitter.com/electrocoder)
