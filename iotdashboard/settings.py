@@ -75,12 +75,15 @@ HEROKU = True # only heroku server. HEROKU = False for local server
 if HEROKU:
     import dj_database_url
 
+    db_from_env = dj_database_url.config()
+
     DATABASES = {
         'default': {
         }
     }
-    DATABASES['default'] = dj_database_url.config()
+    DATABASES['default'].update(db_from_env)
     DATABASES['default']['CONN_MAX_AGE'] = 500
+
     MEDIA_ROOT = os.path.join(BASE_DIR, 'iotdashboard_media/')
     STATIC_ROOT = os.path.join(BASE_DIR, "iotdashboard_static/")
 else:
@@ -90,6 +93,7 @@ else:
             'NAME': os.path.join(BASE_DIR, 'iotdashboard_db.sqlite3'),
         }
     }
+
     MEDIA_ROOT = os.path.join(BASE_DIR, '../iotdashboard_media/')
     STATIC_ROOT = os.path.join(BASE_DIR, "../iotdashboard_static/")
 
@@ -141,6 +145,8 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 LOGIN_URL          = '/login/'
 LOGIN_REDIRECT_URL = '/'
