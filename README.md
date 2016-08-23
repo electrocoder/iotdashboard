@@ -43,3 +43,11 @@ or
 ./manage.py runserver 0.0.0.0:8000
 ```
 
+Contact
+-------
+Şahin MERSİN [@electrocoder](http://twitter.com/electrocoder)
+
+License
+-------
+Iotdashboard source code is available under the MIT [License](/LICENSE).
+
