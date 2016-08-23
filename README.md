@@ -41,6 +41,15 @@ Installing
 git clone https://github.com/electrocoder/iotdashboard.git
 ```
 
+Installing Pip
+--------------
+
+```
+https://pypi.python.org/pypi/iotdasboard
+or
+pip install iotdasboard
+```
+
 Run
 ---
 
