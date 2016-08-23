@@ -1,0 +1,10 @@
+Django
+gunicorn
+dj-database-url
+whitenoise
+
+[dev]
+check-manifest
+
+[test]
+coverage
