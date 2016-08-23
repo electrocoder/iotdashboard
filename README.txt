@@ -48,6 +48,13 @@ Djangopackages
 https://djangopackages.org/packages/p/iotdashboard/
 ```
 
+GitHub Pages
+--------------
+
+```
+http://electrocoder.github.io/iotdashboard/
+```
+
 Installing Pip
 --------------
 

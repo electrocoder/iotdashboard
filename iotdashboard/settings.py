@@ -70,7 +70,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'iotdashboard.wsgi.application'
 
-HEROKU = True # only heroku server. HEROKU = False for local server
+HEROKU = False # if heroku server HEROKU = True  else HEROKU = False for local server
 
 if HEROKU:
     import dj_database_url
