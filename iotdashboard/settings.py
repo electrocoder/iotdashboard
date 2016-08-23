@@ -76,9 +76,12 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'iotdashboard_db.sqlite3'),
     }
 }
+MEDIA_ROOT = os.path.join(BASE_DIR, 'iotdashboard_media/')
+STATIC_ROOT = os.path.join(BASE_DIR, "iotdashboard_static/")
 
-MEDIA_ROOT = os.path.join(BASE_DIR, '../iotdashboard_media/')
-STATIC_ROOT = os.path.join(BASE_DIR, "../iotdashboard_static/")
+
+# MEDIA_ROOT = os.path.join(BASE_DIR, '../iotdashboard_media/')
+# STATIC_ROOT = os.path.join(BASE_DIR, "../iotdashboard_static/")
 
 AUTH_PASSWORD_VALIDATORS = [
     {
