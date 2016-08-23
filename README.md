@@ -25,9 +25,7 @@ Requirements
 How to get Django
 ----------
 
-```
 [Django](https://www.djangoproject.com/download/)
-```
 
 Installing
 ----------
