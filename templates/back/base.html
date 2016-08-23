@@ -40,6 +40,8 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <link href="{% static "back/dashboard/sticky-footer.css" %}" rel="stylesheet">
+
     <style>
         label.required { color: #dd4b39; }
     </style>
@@ -62,10 +64,11 @@
         </div>
     </div>
 
-    <hr class="featurette-divider">
-    {% include 'back/footer.html' %}
+
 
 </div>
+
+    {% include 'back/footer.html' %}
 
 {% include 'back/js.html' %}
 
