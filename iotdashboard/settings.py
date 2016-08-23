@@ -70,18 +70,28 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'iotdashboard.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'iotdashboard_db.sqlite3'),
+HEROKU = True # only heroku server. HEROKU = False for local server
+
+if HEROKU:
+    import dj_database_url
+
+    DATABASES = {
+        'default': {
+        }
     }
-}
-MEDIA_ROOT = os.path.join(BASE_DIR, 'iotdashboard_media/')
-STATIC_ROOT = os.path.join(BASE_DIR, "iotdashboard_static/")
-
-
-# MEDIA_ROOT = os.path.join(BASE_DIR, '../iotdashboard_media/')
-# STATIC_ROOT = os.path.join(BASE_DIR, "../iotdashboard_static/")
+    DATABASES['default'] = dj_database_url.config()
+    DATABASES['default']['CONN_MAX_AGE'] = 500
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'iotdashboard_media/')
+    STATIC_ROOT = os.path.join(BASE_DIR, "iotdashboard_static/")
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'iotdashboard_db.sqlite3'),
+        }
+    }
+    MEDIA_ROOT = os.path.join(BASE_DIR, '../iotdashboard_media/')
+    STATIC_ROOT = os.path.join(BASE_DIR, "../iotdashboard_static/")
 
 AUTH_PASSWORD_VALIDATORS = [
     {
