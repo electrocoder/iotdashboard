@@ -41,6 +41,13 @@ Installing
 git clone https://github.com/electrocoder/iotdashboard.git
 ```
 
+Djangopackages
+--------------
+
+```
+https://djangopackages.org/packages/p/iotdashboard/
+```
+
 Installing Pip
 --------------
 
