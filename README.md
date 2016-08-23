@@ -26,7 +26,7 @@ How to get Django
 ----------
 
 ```
-https://www.djangoproject.com/download/
+[Django](https://www.djangoproject.com/download/)
 ```
 
 Installing
