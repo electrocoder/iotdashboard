@@ -26,9 +26,6 @@ class Element(models.Model):
     type          = models.CharField(max_length=200, choices=FORM_ELEMENTS, verbose_name="Element tipi")
     name          = models.CharField(max_length=70, verbose_name="Element adi")
     name_id       = models.CharField(max_length=70, null=True, blank=True)
-    default_value = models.CharField(max_length=35, null=True, blank=True)
-    size          = models.CharField(max_length=5, null=True, blank=True)
-    max_length    = models.CharField(max_length=5, null=True, blank=True)
     pub_date      = models.DateTimeField(auto_now=True)
     description   = models.TextField(blank=True)
     enable        = models.BooleanField(default=True)
@@ -37,3 +34,13 @@ class Element(models.Model):
         """
         """
         return unicode(self.name)
+
+
+    def save(self, *args, **kwargs):
+        """
+        """
+        super(Element, self).save(*args, **kwargs)
+        if not self.name_id:
+            name_id = self.name.replace(u'\u0131', 'i')  # turkce karakter 'ı' icin
+            self.name_id = (djslugify(name_id)).replace('-', '_')
+            self.save()

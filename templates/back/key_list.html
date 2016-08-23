@@ -28,11 +28,7 @@
                 <th>Device</th>
                 <th>Name</th>
                 <th>Api Key</th>
-                <th>Pub.Date</th>
-                <th>Description</th>
-                <th>Enable</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>Generate New Write API Key</th>
             </tr>
             </thead>
             <tbody>
@@ -40,13 +36,9 @@
             <tr>
                 <td>{{ i.id }}</td>
                 <td>{{ i.device.name }}</td>
-                <td><a class="tooltip-viewport-bottom" title="{{ i.name }}">{{ i.name | truncatechars:20 }}</a></td>
+                <td><a class="tooltip-viewport-bottom" title="{{ i.name }}">{{ i.name | truncatechars:40 }}</a></td>
                 <td><a class="tooltip-viewport-bottom" title="{{ i.api_key }}">{{ i.api_key }}</a></td>
-                <td>{{ i.pub_date }}</td>
-                <td>{{ i.description | truncatechars:20 }}</td>
-                <td>{{ i.enable }}</td>
-                <td><a class="btn btn-warning" href="{% url 'channel_edit' i.id %}" role="button">Edit »</a></td>
-                <td><a class="btn btn-danger" href="{% url 'device_delete' i.id %}" role="button" onclick="return confirm('Model silinecek. Emin misiniz?');">Delete</a></td>
+                <td><a class="btn btn-danger" href="{% url 'generate_key' i.id %}" role="button" onclick="return confirm('Are you sure you want to generate a new write API key?');">Generate</a></td>
             </tr>
             {% endfor %}
             </tbody>

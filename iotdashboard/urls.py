@@ -27,14 +27,24 @@ urlpatterns = i18n_patterns(
     # add devices
     url(r'^device/add/$', devices.device_add, name='device_add'),
     url(r'^device/list/$', devices.device_list, name='device_list'),
+    url(r'^device/edit/(?P<id>[^/]*)/$', devices.device_edit, name='device_edit'),
+    url(r'^device/delete/(?P<id>[^/]*)/$', devices.device_delete, name='device_delete'),
 
     # add channel
     url(r'^channel/add/$', channels.channel_add, name='channel_add'),
     url(r'^channel/list/$', channels.channel_list, name='channel_list'),
+    url(r'^channel/edit/(?P<id>[^/]*)/$', channels.channel_edit, name='channel_edit'),
+    url(r'^channel/delete/(?P<id>[^/]*)/$', channels.channel_delete, name='channel_delete'),
+
+    # channel api key
+    url(r'^key/list/$', channels.key_list, name='key_list'),
+    url(r'^key/generate/(?P<id>[^/]*)/$', channels.generate_key, name='generate_key'),
 
     # add element
     url(r'^element/add/$', elements.element_add, name='element_add'),
     url(r'^element/list/$', elements.element_list, name='element_list'),
+    url(r'^element/edit/(?P<id>[^/]*)/$', elements.element_edit, name='element_edit'),
+    url(r'^element/delete/(?P<id>[^/]*)/$', elements.element_delete, name='element_delete'),
 
     # django admin page
     url(r'^admin/', admin.site.urls),
