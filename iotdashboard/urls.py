@@ -15,9 +15,12 @@ from django.conf.urls.static import static
 from django.views.static import serve
 from django.views.generic import RedirectView
 from django.contrib.auth.models import User
+from django.views.generic import TemplateView
 
 from rest_framework import routers, serializers, viewsets
 from rest_framework.urlpatterns import format_suffix_patterns
+
+from iotdashboard.settings import IHOOK_WEB_SITE # if ihook.xyz domain IHOOK_WEB_SITE = True, else IHOOK_WEB_SITE = False for local server
 
 from panels import views as panels
 from devices import views as devices
@@ -29,10 +32,21 @@ from datas import views as views_datas
 router = routers.DefaultRouter()
 # router.register(r'v1', datas.DataViewSet)
 
-urlpatterns = i18n_patterns(
-    # backoffice panels index page
-    url(r'^$', panels.index, name='panels_index'),
+if IHOOK_WEB_SITE:
+    urlpatterns = i18n_patterns(
+        # front page index page
+        url(r'^$', TemplateView.as_view(template_name='front/index.html')),
 
+        # backoffice panels index page
+        url(r'^panel/$', panels.index, name='panels_index'),
+    )
+else:
+    urlpatterns = i18n_patterns(
+        # backoffice panels index page
+        url(r'^$', panels.index, name='panels_index'),
+    )
+
+urlpatterns += i18n_patterns(
     # add devices
     url(r'^device/add/$', devices.device_add, name='device_add'),
     url(r'^device/list/$', devices.device_list, name='device_list'),
@@ -73,8 +87,6 @@ urlpatterns += [
     url(r'^api/', include(router.urls)),
     url(r'^api/v1/data/(?P<api_key>[^/]*)/$', views_datas.DataList.as_view()),
     url(r'^api/v1/(?P<pk>[0-9]+)/$',  views_datas.DataDetail.as_view()),
-
-    # url(r'^post/$', datas.DataList.as_view()),
 ]
 
 if settings.DEBUG == True:

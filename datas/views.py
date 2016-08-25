@@ -26,6 +26,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import get_object_or_404
 
 from models import Data
+from elements.models import Element
 from channels.models import Channel
 from permissions import IsOwnerOrReadOnly
 
@@ -61,7 +62,15 @@ class DataList(views.APIView):
         """
         data = JSONParser().parse(request)
         data['owner'] = self.request.user.pk
-        data['channel'] = get_object_or_404(Channel, api_key=api_key).pk
+
+        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+        if x_forwarded_for:
+            ip = x_forwarded_for.split(',')[-1].strip()
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+            data['remote_address'] = ip + "&" + request.META.get('HTTP_USER_AGENT') + "&" + request.META.get('SERVER_PROTOCOL')
+
+        data['channel'] = get_object_or_404(Channel, api_key=api_key, name=get_object_or_404(Element, name_id=data['name_id']).channel).pk
         serializer = DataSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
@@ -130,7 +139,7 @@ class DataQueryList(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(DataQueryList, self).get_context_data(**kwargs)
-        context['datas'] = Data.objects.all()[:50]
+        context['datas'] = Data.objects.all().order_by('-pub_date')
         return context
 
 class JSONResponse(HttpResponse):
