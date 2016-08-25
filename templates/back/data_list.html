@@ -3,9 +3,9 @@
 {% load staticfiles %}
 {% load panels_tags %}
 
-{% block title %}Key List{% endblock %}
+{% block title %}Data List{% endblock %}
 
-{% block website_name %}Key List{% endblock %}
+{% block website_name %}Data List{% endblock %}
 
 {% block content %}
 
@@ -27,19 +27,27 @@
             <thead>
             <tr>
                 <th>Id</th>
-                <th>Device</th>
-                <th>Name</th>
-                <th>Api Key</th>
+                <th>Owner</th>
+                <th>Remote Address</th>
+                <th>Channel</th>
+                <th>Element</th>
+                <th>Name Id</th>
+                <th>Value</th>
+                <th>Publish Date</th>
                 <th>Generate New Write API Key</th>
             </tr>
             </thead>
             <tbody>
-            {% for i in list %}
+            {% for i in datas %}
             <tr>
                 <td>{{ i.id }}</td>
-                <td>{{ i.device.name }}</td>
-                <td><a class="tooltip-viewport-bottom" title="{{ i.name }}">{{ i.name | truncatechars:40 }}</a></td>
-                <td><a class="tooltip-viewport-bottom" title="{{ i.api_key }}">{{ i.api_key }}</a></td>
+                <td>{{ i.owner }}</td>
+                <td>{{ i.remote_address }}</td>
+                <td>{{ i.channel }}</td>
+                <td>{{ i.channel__element }}</td>
+                <td><a class="tooltip-viewport-bottom" title="{{ i.name_id }}">{{ i.name_id }}</a></td>
+                <td><a class="tooltip-viewport-bottom" title="{{ i.value }}">{{ i.value }}</a></td>
+                <td>{{ i.pub_date }}</td>
                 <td><a class="btn btn-danger" href="{% url 'generate_key' i.id %}" role="button" onclick="return confirm('Are you sure you want to generate a new write API key?');">Generate</a></td>
             </tr>
             {% endfor %}

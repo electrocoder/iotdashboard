@@ -27,9 +27,10 @@
             <thead>
             <tr>
                 <th>Id</th>
+                <th>Device</th>
                 <th>Channel</th>
-                <th>Type</th>
                 <th>Name</th>
+                <th>Type</th>
                 <th>Name Id</th>
                 <th>Pub.Date</th>
                 <th>Description</th>
@@ -42,9 +43,10 @@
             {% for i in list %}
             <tr>
                 <td>{{ i.id }}</td>
+                <td>{{ i.channel.device }}</td>
                 <td>{{ i.channel }}</td>
-                <td>{{ i.type }}</td>
                 <td><a class="tooltip-viewport-bottom" title="{{ i.name }}">{{ i.name | truncatechars:10 }}</a></td>
+                <td>{{ i.type }}</td>
                 <td><a class="tooltip-viewport-bottom" title="{{ i.name_id }}">{{ i.name_id | truncatechars:10 }}</a></td>
                 <td>{{ i.pub_date }}</td>
                 <td>{{ i.description | truncatechars:10 }}</td>
