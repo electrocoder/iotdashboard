@@ -5,4 +5,4 @@ whitenoise==3.2.1
 djangorestframework
 markdown
 django-filter
-generic=0.3.1
+generic==0.3.1
