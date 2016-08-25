@@ -24,6 +24,7 @@ Features
 - Create a Element for iot devices
 - Simple interface. 
 - Support for channel api key
+- Django REST Framework
 
 Requirements
 ------------
