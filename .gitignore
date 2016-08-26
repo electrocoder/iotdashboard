@@ -148,5 +148,6 @@ __pycache__
 */migrations/*.py
 locale/
 python27*/
+python27*
 iotdashboard_static/
 iotdasboard.egg-info/
