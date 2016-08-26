@@ -11,7 +11,7 @@ body,html{
 	}
 /*-- banner --*/
 .banner{
-	background:url(../images/banner.jpg) no-repeat 0px 0px;
+	background:url(/static/front/images/banner.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	width:100%;
 	min-height:760px;
@@ -121,7 +121,7 @@ body,html{
 	margin-right: 1em;
 	}
 .banner-icons ul li a.facebook{
-	background:url(../images/facebook.png) no-repeat 0px 0px;
+	background:url(/static/front/images/facebook.png) no-repeat 0px 0px;
 	width:46px;
 	height:46px;
 	display:block;
@@ -132,13 +132,13 @@ body,html{
 	-ms-transition:.5s all;
 	}
 .banner-icons ul li a.facebook:hover{
-	background:url(../images/face.png) no-repeat 0px 0px;
+	background:url(/static/front/images/face.png) no-repeat 0px 0px;
 	width:46px;
 	height:46px;
 	display:block;
 	}
 .banner-icons ul li a.twitter{
-	background:url(../images/twitter.png) no-repeat 0px 0px;
+	background:url(/static/front/images/twitter.png) no-repeat 0px 0px;
 	width:46px;
 	height:46px;
 	display:block;
@@ -149,13 +149,13 @@ body,html{
 	-ms-transition:.5s all;
 	}
 .banner-icons ul li a.twitter:hover{
-	background:url(../images/twi.png) no-repeat 0px 0px;
+	background:url(/static/front/images/twi.png) no-repeat 0px 0px;
 	width:46px;
 	height:46px;
 	display:block;
 	}
 .banner-icons ul li a.in{
-	background:url(../images/in.png) no-repeat 0px 0px;
+	background:url(/static/front/images/in.png) no-repeat 0px 0px;
 	width:46px;
 	height:46px;
 	display:block;
@@ -166,7 +166,7 @@ body,html{
 	-ms-transition:.5s all;
 	}
 .banner-icons ul li a.in:hover{
-	background:url(../images/in1.png) no-repeat 0px 0px;
+	background:url(/static/front/images/in1.png) no-repeat 0px 0px;
 	width:46px;
 	height:46px;
 	display:block;
@@ -177,7 +177,7 @@ body,html{
 	padding:3em 0 2em;
 	}
 .service-top{
-	background: url(../images/line.png) no-repeat 244px 55px;
+	background: url(/static/front/images/line.png) no-repeat 244px 55px;
 	height: 155px;
 	display:block;
 	text-align:center;
@@ -205,19 +205,19 @@ body,html{
 	text-align:center;
 	}
 .fig1 span{
-	background:url(../images/1.png) no-repeat 160px 0px;
+	background:url(/static/front/images/1.png) no-repeat 160px 0px;
 	height:46px;
 	display:block;
 	margin:1.5em 0 1em;
 	}
 .fig2 span{
-	background:url(../images/2.png) no-repeat 180px 0px;
+	background:url(/static/front/images/2.png) no-repeat 180px 0px;
 	height:46px;
 	display:block;
 	margin:1.5em 0 1em;
 	}
 .fig3 span{
-	background:url(../images/3.png) no-repeat 118px 0px;
+	background:url(/static/front/images/3.png) no-repeat 118px 0px;
 	height:46px;
 	display:block;
 	margin:1.5em 0 1em;
@@ -270,7 +270,7 @@ body,html{
 /*-- //service --*/
 /*-- service-bottom --*/
 .service-bottom{
-	background:url(../images/banner-1.jpg) no-repeat 0px 0px;
+	background:url(/static/front/images/banner-1.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	width:100%;
 	min-height:500px;
@@ -319,7 +319,7 @@ body,html{
 	margin-right:1em;
 	}
 .banner1-icons ul li a.facebook1{
-	background:url(../images/facebook1.png) no-repeat 0px 0px;
+	background:url(/static/front/images/facebook1.png) no-repeat 0px 0px;
 	height:36px;
 	width:37px;
 	display:block;
@@ -330,7 +330,7 @@ body,html{
 	-ms-transition:.5s all;
 	}
 .banner1-icons ul li a.twitter1{
-	background:url(../images/twitter1.png) no-repeat 0px 0px;
+	background:url(/static/front/images/twitter1.png) no-repeat 0px 0px;
 	height:36px;
 	display:block;
 	width:37px;
@@ -341,7 +341,7 @@ body,html{
 	-ms-transition:.5s all;
 	}
 .banner1-icons ul li a.in1{
-	background:url(../images/in2.png) no-repeat 0px 0px;
+	background:url(/static/front/images/in2.png) no-repeat 0px 0px;
 	height:36px;
 	display:block;
 	width:37px;
@@ -352,19 +352,19 @@ body,html{
 	-ms-transition:.5s all;
 	}
 .banner1-icons ul li a.facebook1:hover{
-	background:url(../images/face1.png) no-repeat 0px 0px;
+	background:url(/static/front/images/face1.png) no-repeat 0px 0px;
 	height:36px;
 	width:37px;
 	display:block;
 	}
 .banner1-icons ul li a.twitter1:hover{
-	background:url(../images/twi1.png) no-repeat 0px 0px;
+	background:url(/static/front/images/twi1.png) no-repeat 0px 0px;
 	height:36px;
 	display:block;
 	width:37px;
 	}
 .banner1-icons ul li a.in1:hover{
-	background:url(../images/in3.png) no-repeat 0px 0px;
+	background:url(/static/front/images/in3.png) no-repeat 0px 0px;
 	height:36px;
 	display:block;
 	width:37px;
@@ -395,14 +395,14 @@ body,html{
 /*-- //service-bottom --*/
 /*-- development --*/
 .development{
-	background:url(../images/ph.png) no-repeat 0px 0px;
+	background:url(/static/front/images/ph.png) no-repeat 0px 0px;
 	width:100%;
 	height: 391px;
 	margin: 5em 0;
 }
 .development-text {
 	margin-top: 2em;
-	background: url(../images/logo.png) no-repeat 907px 175px;
+	background: url(/static/front/images/logo.png) no-repeat 907px 175px;
 	height: 200px;
 	display:block;
 	}
@@ -702,7 +702,7 @@ ul.b-animate.b-from-left.b-delay03 li span{
 	display:inline-block;
 	}
 ul.b-animate.b-from-left.b-delay03 li {
-	background:url(../images/plus.png) no-repeat 155px 0px;
+	background:url(/static/front/images/plus.png) no-repeat 155px 0px;
 	display:block;
 	height:37px;
 	width:60%;
@@ -722,7 +722,7 @@ ul.b-animate.b-from-left.b-delay03 li
 	}
 ul.b-animate.b-from-left.b-delay03  li span.link
 {
-	background:url(../images/hover.png) no-repeat 0px 0px;
+	background:url(/static/front/images/hover.png) no-repeat 0px 0px;
 	width:40px;
 	height:40px;
 	display:block;
@@ -737,7 +737,7 @@ ul.b-animate.b-from-left.b-delay03  li span.link
 	top: -152px;
 	width: 290px;
 	height: 219px;
-	background: url(../images/zoom.png) center center no-repeat;
+	background: url(/static/front/images/zoom.png) center center no-repeat;
 	cursor: pointer;
 	transition: all .2s ease-in-out;
 	-webkit-transition: all .2s ease-in-out;
@@ -767,45 +767,45 @@ ul.b-animate.b-from-left.b-delay03  li span.link
 	margin:0px;
 	}
 .company-logo-left ul li.a{
-	background:url(../images/micro.png) no-repeat 0px 0px;
+	background:url(/static/front/images/micro.png) no-repeat 0px 0px;
 	display:block;
 	height:43px;
 	margin-top:.5em;
 	}
 .company-logo-left ul li.a:hover{
-	background:url(../images/micro-1.png) no-repeat 0px 0px;
+	background:url(/static/front/images/micro-1.png) no-repeat 0px 0px;
 	display:block;
 	height:43px;
 	}
 .company-logo-left ul li.b{
-	background:url(../images/twitter-1.png) no-repeat 0px 0px;
+	background:url(/static/front/images/twitter-1.png) no-repeat 0px 0px;
 	display:block;
 	height:27px;
 	margin-top: 1em;
 	}
 .company-logo-left ul li.b:hover{
-	background:url(../images/twitter-logo.png) no-repeat 0px 0px;
+	background:url(/static/front/images/twitter-logo.png) no-repeat 0px 0px;
 	display:block;
 	height:27px;
 	}
 .company-logo-left ul li.c{
-	background:url(../images/spoti.png) no-repeat 0px 0px;
+	background:url(/static/front/images/spoti.png) no-repeat 0px 0px;
 	display:block;
 	height:49px;
 	}
 .company-logo-left ul li.c:hover{
-	background:url(../images/spoti-1.png) no-repeat 0px 0px;
+	background:url(/static/front/images/spoti-1.png) no-repeat 0px 0px;
 	display:block;
 	height:49px;
 	}
 .company-logo-left ul li.d{
-	background:url(../images/crunch.png) no-repeat 0px 0px;
+	background:url(/static/front/images/crunch.png) no-repeat 0px 0px;
 	display:block;
 	height:32px;
 	margin-top: 1em;
 	}
 .company-logo-left ul li.d:hover{
-	background:url(../images/crunch-1.png) no-repeat 0px 0px;
+	background:url(/static/front/images/crunch-1.png) no-repeat 0px 0px;
 	display:block;
 	height:32px;
 	}
@@ -833,7 +833,7 @@ ul.b-animate.b-from-left.b-delay03  li span.link
 }
 #loadMore {
     padding:15px 35px;
-	background: url(../images/refresh.png) no-repeat 120px 17px #428bca;
+	background: url(/static/front/images/refresh.png) no-repeat 120px 17px #428bca;
 	width: 14%;
 	margin: 0 auto;
 	color:#fff;
@@ -852,7 +852,7 @@ ul.b-animate.b-from-left.b-delay03  li span.link
 #loadMore:hover {
     color:#428bca;
 	text-decoration:none;
-	background: url(../images/refresh1.png) no-repeat 120px 17px #a2a2a2;
+	background: url(/static/front/images/refresh1.png) no-repeat 120px 17px #a2a2a2;
 }
 .g_r{
 	background:none;
@@ -919,7 +919,7 @@ ul.b-animate.b-from-left.b-delay03  li span.link
 /*-- //blog --*/
 /*-- subscriber --*/
 .subscriber{
-	background:url(../images/banner-2.jpg) no-repeat 0px 0px;
+	background:url(/static/front/images/banner-2.jpg) no-repeat 0px 0px;
 	width:100%;
 	height:320px;
 	background-size:cover;
@@ -1067,7 +1067,7 @@ ul.b-animate.b-from-left.b-delay03  li span.link
 	}
 .pricing-grids ul li{
 	list-style-type:none;
-	background:url(../images/row.png) no-repeat 0px 0px;
+	background:url(/static/front/images/row.png) no-repeat 0px 0px;
 	height:19px;
 	display:block;
 	color:#C2C6CB;
@@ -1081,7 +1081,7 @@ ul.b-animate.b-from-left.b-delay03  li span.link
 	}
 .pricing-grids1 ul li{
 	list-style-type:none;
-	background:url(../images/row.png) no-repeat 0px 0px;
+	background:url(/static/front/images/row.png) no-repeat 0px 0px;
 	height:19px;
 	display:block;
 	color:#C2C6CB;
@@ -1150,7 +1150,7 @@ ul.b-animate.b-from-left.b-delay03  li span.link
 	display:inline-block;
 	}
 .slider-info ul li a.twitter-1{
-	background: url(../images/sp.png) no-repeat 0px 0px;
+	background: url(/static/front/images/sp.png) no-repeat 0px 0px;
 	margin-top: 0.5em;
 	display: block;
 	height: 43px;
@@ -1158,7 +1158,7 @@ ul.b-animate.b-from-left.b-delay03  li span.link
 	margin-right: 14.5em;
 	}
 .slider-info ul li a.twitter-2{
-	background: url(../images/sp.png) no-repeat -45px 0px;
+	background: url(/static/front/images/sp.png) no-repeat -45px 0px;
 	margin-top: .5em;
 	display:block;
 	height:43px;
@@ -1166,7 +1166,7 @@ ul.b-animate.b-from-left.b-delay03  li span.link
 	margin-right: 14.5em;
 	}
 .slider-info ul li a.twitter-3{
-	background: url(../images/sp.png) no-repeat -89px 0px;
+	background: url(/static/front/images/sp.png) no-repeat -89px 0px;
 	margin-top: .5em;
 	display:block;
 	height:43px;
@@ -1271,7 +1271,7 @@ ul.b-animate.b-from-left.b-delay03  li span.link
 	text-decoration: none;
 	height: 50px;
 	width: 31px;
-	background: transparent url("../images/arr.png") no-repeat left top;
+	background: transparent url("/static/front/images/arr.png") no-repeat left top;
 	margin-top: -65px;
 }
 .callbacks_nav:active {
@@ -1363,7 +1363,7 @@ ul.b-animate.b-from-left.b-delay03  li span.link
 ul.social-slide li i{
 	width:70px;
 	height:74px;
-	background:url(../images/backward.png)no-repeat;
+	background:url(/static/front/images/backward.png)no-repeat;
 	display: inline-block;
 	margin:0px 15px;
 }
@@ -1509,7 +1509,7 @@ ul.social-slide li i.mac{
 	display:inline-block;
 	}
 .footer-right ul li a.footer-fb{
-	background:url(../images/img-sprite.png) no-repeat 0px -1px;
+	background:url(/static/front/images/img-sprite.png) no-repeat 0px -1px;
 	width:29px;
 	height:28px;
 	display:block;
@@ -1520,11 +1520,11 @@ ul.social-slide li i.mac{
 	-ms-transition:.5s all;
 	}
 .footer-right ul li a.footer-fb:hover{
-	background:url(../images/img-sprite.png) no-repeat 0px -38px;
+	background:url(/static/front/images/img-sprite.png) no-repeat 0px -38px;
 	display:block;
 	}
 .footer-right ul li a.footer-twitter{
-	background:url(../images/img-sprite.png) no-repeat -36px 0px;
+	background:url(/static/front/images/img-sprite.png) no-repeat -36px 0px;
 	width:26px;
 	height:28px;
 	display:block;
@@ -1535,11 +1535,11 @@ ul.social-slide li i.mac{
 	-ms-transition:.5s all;
 	}
 .footer-right ul li a.footer-twitter:hover{
-	background:url(../images/img-sprite.png) no-repeat -36px -38px;
+	background:url(/static/front/images/img-sprite.png) no-repeat -36px -38px;
 	display:block;
 	}
 .footer-right ul li a.footer-in{
-	background:url(../images/img-sprite.png) no-repeat -69px 0px;
+	background:url(/static/front/images/img-sprite.png) no-repeat -69px 0px;
 	width:28px;
 	height:28px;
 	display:block;
@@ -1550,7 +1550,7 @@ ul.social-slide li i.mac{
 	-ms-transition:.5s all;
 	}
 .footer-right ul li a.footer-in:hover{
-	background:url(../images/img-sprite.png) no-repeat -69px -37px;
+	background:url(/static/front/images/img-sprite.png) no-repeat -69px -37px;
 	display:block;
 	}
 .footer-left img{	
@@ -1570,7 +1570,7 @@ ul.social-slide li i.mac{
 	height: 32px;
 	border: none;
 	text-indent: 100%;
-	background: url("../images/arrow.png") no-repeat 0px 0px;
+	background: url("/static/front/images/arrow.png") no-repeat 0px 0px;
 }
 #toTopHover {
 	width: 32px;
@@ -1599,7 +1599,7 @@ ul.social-slide li i.mac{
 	margin: 0 0 .5em;
 	}
 .development-text {
-	background: url(../images/logo.png) no-repeat 71em 175px;
+	background: url(/static/front/images/logo.png) no-repeat 71em 175px;
 	}
 }
 @media (max-width: 1366px)
@@ -1617,7 +1617,7 @@ ul.social-slide li i.mac{
 	margin: 1em 0;
 	}
 .development-text {
-	background: url(../images/logo.png) no-repeat 73em 175px;
+	background: url(/static/front/images/logo.png) no-repeat 73em 175px;
 	}
 }
 @media (max-width: 1280px)
@@ -1636,16 +1636,16 @@ ul.social-slide li i.mac{
 	margin: 1em 0 .5em;
 	}
 .development {
-	background: url(../images/ph.png) no-repeat -175px 0px;
+	background: url(/static/front/images/ph.png) no-repeat -175px 0px;
 	}
 .development-text {
-	background: url(../images/logo.png) no-repeat 64em 175px;
+	background: url(/static/front/images/logo.png) no-repeat 64em 175px;
 	}
 .service-bottom {
 	min-height: 405px;
 	}
 ul.b-animate.b-from-left.b-delay03 li {
-	background: url(../images/plus.png) no-repeat 150px 0px;
+	background: url(/static/front/images/plus.png) no-repeat 150px 0px;
 	}
 }
 @media (max-width: 1024px)
@@ -1657,16 +1657,16 @@ ul.b-animate.b-from-left.b-delay03 li {
 	min-height: 598px;
 	}
 .service-top {
-	background: url(../images/line.png) no-repeat 141px 55px;
+	background: url(/static/front/images/line.png) no-repeat 141px 55px;
 	}
 .fig1 span {
-	background: url(../images/1.png) no-repeat 126px 0px;
+	background: url(/static/front/images/1.png) no-repeat 126px 0px;
 	}
 .fig2 span {
-	background: url(../images/2.png) no-repeat 128px 0px;
+	background: url(/static/front/images/2.png) no-repeat 128px 0px;
 	}
 .fig3 span {
-	background: url(../images/3.png) no-repeat 133px 0px;
+	background: url(/static/front/images/3.png) no-repeat 133px 0px;
 	}
 .service-grid1 {
 	width: 35%;
@@ -1713,10 +1713,10 @@ ul.b-animate.b-from-left.b-delay03 li {
 	min-height: 324px;
 	}
 .development {
-	background: url(../images/ph.png) no-repeat -390px 0px;
+	background: url(/static/front/images/ph.png) no-repeat -390px 0px;
 	}
 .development-text {
-	background: url(../images/logo.png) no-repeat 50em 175px;
+	background: url(/static/front/images/logo.png) no-repeat 50em 175px;
 	}
 .development-text h2 {
 	font-size: 30px;
@@ -1823,10 +1823,10 @@ ul.b-animate.b-from-left.b-delay03 li {
 	width: 100%;
 	}
 .fig1 span {
-	background: url(../images/1.png) no-repeat 84px 0px;
+	background: url(/static/front/images/1.png) no-repeat 84px 0px;
 	}
 .fig2 span {
-	background: url(../images/2.png) no-repeat 105px 0px;
+	background: url(/static/front/images/2.png) no-repeat 105px 0px;
 	}
 .service-grid2 {
 	width: 31%;
@@ -1839,7 +1839,7 @@ ul.b-animate.b-from-left.b-delay03 li {
 	margin-right: 2em;
 	}
 .fig3 span {
-	background: url(../images/3.png) no-repeat 87px 0px;
+	background: url(/static/front/images/3.png) no-repeat 87px 0px;
 	}
 .service-bottom-left {
 	display: none;
@@ -1857,10 +1857,10 @@ ul.b-animate.b-from-left.b-delay03 li {
 	min-height: 239px;
 	}
 .development {
-	background: url(../images/ph.png) no-repeat -529px 0px;
+	background: url(/static/front/images/ph.png) no-repeat -529px 0px;
 	}
 .development-text {
-	background: url(../images/logo.png) no-repeat 42em 175px;
+	background: url(/static/front/images/logo.png) no-repeat 42em 175px;
 	}
 .development-text h2 {
 	font-size: 25px;
@@ -1876,7 +1876,7 @@ ul.b-animate.b-from-left.b-delay03 li span {
 	}
 ul.b-animate.b-from-left.b-delay03 li {
 	width: 95%;
-	background: url(../images/plus.png) no-repeat 130px 0px;
+	background: url(/static/front/images/plus.png) no-repeat 130px 0px;
 	}
 #filters li {
 	margin: 0 5px;
@@ -2034,13 +2034,13 @@ span.menu{
 	margin: 1em 0 .5em 0em;
 	}
 .fig1 span {
-	background: url(../images/1.png) no-repeat 60px 0px;
+	background: url(/static/front/images/1.png) no-repeat 60px 0px;
 	}
 .fig2 span {
-	background: url(../images/2.png) no-repeat 78px 0px;
+	background: url(/static/front/images/2.png) no-repeat 78px 0px;
 	}
 .fig3 span {
-	background: url(../images/3.png) no-repeat 74px 0px;
+	background: url(/static/front/images/3.png) no-repeat 74px 0px;
 	}
 .service-grid1 p {
 	width: 93%;
@@ -2077,7 +2077,7 @@ span.menu{
 	}
 ul.b-animate.b-from-left.b-delay03 li {
 	width: 100%;
-	background: url(../images/plus.png) no-repeat 116px 0px;
+	background: url(/static/front/images/plus.png) no-repeat 116px 0px;
 	}
 ul.b-animate.b-from-left.b-delay03 li span {
 	font-size: 16px;
@@ -2145,7 +2145,7 @@ ul.b-animate.b-from-left.b-delay03 li span {
 	height: 50px;
 	}
 .banner {
-	background: url(../images/banner.jpg) no-repeat -458px 0px;
+	background: url(/static/front/images/banner.jpg) no-repeat -458px 0px;
 	}
 .banner-info input[type="text"] {
 	font-size: 14px;
@@ -2161,7 +2161,7 @@ ul.b-animate.b-from-left.b-delay03 li span {
 	width: 45%;
 	}
 .fig1 span {
-	background: url(../images/1.png) no-repeat 66px 0px;
+	background: url(/static/front/images/1.png) no-repeat 66px 0px;
 	}
 .service-grid{
 	width: 45%;
@@ -2310,10 +2310,10 @@ ul#myList {
 	height: 72px;
 	}
 .fig1 span {
-	background: url(../images/1.png) no-repeat 44px 0px;
+	background: url(/static/front/images/1.png) no-repeat 44px 0px;
 	}
 .fig2 span {
-	background: url(../images/2.png) no-repeat 44px 0px;
+	background: url(/static/front/images/2.png) no-repeat 44px 0px;
 	}
 .service-grid h3 {
 	font-size: 13px;
@@ -2354,14 +2354,14 @@ ul#myList {
 	width: 50%;
 	}
 ul.b-animate.b-from-left.b-delay03 li {
-	background: url(../images/plus.png) no-repeat 110px 0px;
+	background: url(/static/front/images/plus.png) no-repeat 110px 0px;
 	width: 97%;
 	}
 .company-logo-left ul li.a {
-	background: url(../images/micro.png) no-repeat 34px 0px;
+	background: url(/static/front/images/micro.png) no-repeat 34px 0px;
 	}
 .company-logo-left ul li.a:hover {
-	background: url(../images/micro-1.png) no-repeat 34px 0px;
+	background: url(/static/front/images/micro-1.png) no-repeat 34px 0px;
 	}
 .company-logo-left {
 	width: 100%;
@@ -2512,10 +2512,10 @@ ul.b-animate.b-from-left.b-delay03 li {
 	padding: 10px 25px;
 	}
 #loadMore:hover {
-	background: url(../images/refresh1.png) no-repeat 95px 14px #a2a2a2;
+	background: url(/static/front/images/refresh1.png) no-repeat 95px 14px #a2a2a2;
 	}
 #loadMore {
-	background: url(../images/refresh.png) no-repeat 95px 14px #a2a2a2;
+	background: url(/static/front/images/refresh.png) no-repeat 95px 14px #a2a2a2;
 	width: 46%;
 	padding: 10px 12px;
 	}

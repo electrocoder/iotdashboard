@@ -18,8 +18,6 @@ ADMINS = (
 
 SECRET_KEY = '9#rxdk3_%-sufmh$#!b+iqpm0!ztfv+)08g-%g@#)flx*p$o(('
 
-DEBUG = True
-
 WEBSITE_NAME = "Iotdashboard"
 
 ALLOWED_HOSTS = ['localhost',]
@@ -74,6 +72,8 @@ WSGI_APPLICATION = 'iotdashboard.wsgi.application'
 
 HEROKU = False # if heroku server HEROKU = True,  else HEROKU = False for local server
 IHOOK_WEB_SITE = True # if ihook.xyz domain IHOOK_WEB_SITE = True, else IHOOK_WEB_SITE = False for local server
+
+DEBUG = True
 
 if HEROKU:
     import dj_database_url
