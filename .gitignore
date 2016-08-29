@@ -146,7 +146,7 @@ ENV/
 __pycache__
 0*_*
 */migrations/*.py
-locale/
+# locale/
 python27*/
 python27*
 iotdashboard_static/

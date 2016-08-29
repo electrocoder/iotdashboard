@@ -1,0 +1,485 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-30 01:10+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: channels/models.py:22 devices/models.py:20 elements/models.py:27
+msgid "isim"
+msgstr "name"
+
+#: channels/models.py:22
+msgid "Kanal adını giriniz"
+msgstr "Channel name"
+
+#: channels/models.py:23 templates/back/index.html:37
+msgid "api key"
+msgstr "api key"
+
+#: channels/models.py:24 datas/models.py:26
+msgid "yayin tarihi"
+msgstr "publish date"
+
+#: channels/models.py:25 devices/models.py:24 elements/models.py:30
+msgid "açıklama"
+msgstr "description"
+
+#: channels/models.py:26 devices/models.py:25 elements/models.py:31
+msgid "aktif et"
+msgstr "enable"
+
+#: channels/views.py:30
+msgid "Kanal ekleme başarılı"
+msgstr "Add channel successful"
+
+#: channels/views.py:32 channels/views.py:60 devices/views.py:32
+#: devices/views.py:60 elements/views.py:32 elements/views.py:60
+msgid "Dikkat! Lütfen hataları düzeltiniz!"
+msgstr "Warning! Please correct the mistake!"
+
+#: channels/views.py:57
+msgid "Kanal güncelleme başarılı"
+msgstr "Channel update successful"
+
+#: channels/views.py:72
+#, fuzzy
+#| msgid "Kanal Ekle"
+msgid "Kanal silindi"
+msgstr "Add Channel"
+
+#: channels/views.py:96
+#, fuzzy
+#| msgid "Key Yönetici"
+msgid "Key üretildi"
+msgstr "Key Manager"
+
+#: datas/models.py:22
+msgid "ip adres"
+msgstr "remote address"
+
+#: datas/models.py:24 elements/models.py:28
+msgid "isim id"
+msgstr "name id"
+
+#: datas/models.py:25
+msgid "deger"
+msgstr "value"
+
+#: devices/models.py:22
+msgid "resim"
+msgstr "image"
+
+#: devices/models.py:23 elements/models.py:29
+msgid "yayın tarihi"
+msgstr "publish date"
+
+#: devices/views.py:30
+msgid "Aygıt ekleme başarılı"
+msgstr "Add device successful"
+
+#: devices/views.py:57
+msgid "Aygıt güncelleme başarılı"
+msgstr "Device update successful"
+
+#: devices/views.py:72
+#, fuzzy
+#| msgid "Aygıt Ekle"
+msgid "Aygıt silindi"
+msgstr "Add Device"
+
+#: elements/models.py:26
+msgid "tip"
+msgstr "type"
+
+#: elements/views.py:30
+msgid "Element ekleme başarılı"
+msgstr "Add element successful"
+
+#: elements/views.py:57
+msgid "Element güncelleme başarılı"
+msgstr "Element update successful"
+
+#: elements/views.py:72
+#, fuzzy
+#| msgid "Element Ekle"
+msgid "Element silindi"
+msgstr "Add Element"
+
+#: iotdashboard/settings.py:130
+msgid "Turkish"
+msgstr "Türkçe"
+
+#: iotdashboard/settings.py:131
+msgid "English"
+msgstr "İngilizce"
+
+#: templates/admin/base_site.html:4
+msgid "Iot site admin"
+msgstr ""
+
+#: templates/admin/base_site.html:7
+msgid "Iot dashboard administration"
+msgstr ""
+
+#: templates/back/add.html:7 templates/back/add.html:9
+msgid "Ekle"
+msgstr "Add"
+
+#: templates/back/add.html:29
+msgid "Kaydet"
+msgstr "Save"
+
+#: templates/back/base.html:18
+msgid "Dashboard for Iot Device"
+msgstr ""
+
+#: templates/back/channel_list.html:9
+msgid "Kanal Listesi"
+msgstr "Channel List"
+
+#: templates/back/channel_list.html:30 templates/back/data_list.html:30
+#: templates/back/device_list.html:30 templates/back/element_list.html:30
+#: templates/back/key_list.html:30
+msgid "Id"
+msgstr ""
+
+#: templates/back/channel_list.html:31 templates/back/element_list.html:31
+#: templates/back/key_list.html:31
+msgid "Aygıt"
+msgstr "Device"
+
+#: templates/back/channel_list.html:32 templates/back/device_list.html:31
+#: templates/back/element_list.html:33 templates/back/key_list.html:32
+msgid "İsim"
+msgstr "Name"
+
+#: templates/back/channel_list.html:33 templates/back/key_list.html:33
+msgid "Api Key"
+msgstr ""
+
+#: templates/back/channel_list.html:34 templates/back/data_list.html:36
+#: templates/back/device_list.html:32 templates/back/element_list.html:36
+msgid "Yayın Tarihi"
+msgstr "Publish Date"
+
+#: templates/back/channel_list.html:35 templates/back/device_list.html:33
+#: templates/back/element_list.html:37
+msgid "Açıklama"
+msgstr "Description"
+
+#: templates/back/channel_list.html:36 templates/back/device_list.html:34
+#: templates/back/element_list.html:38
+msgid "Aktif Et"
+msgstr "Enable"
+
+#: templates/back/channel_list.html:37 templates/back/channel_list.html:51
+#: templates/back/device_list.html:35 templates/back/device_list.html:47
+#: templates/back/element_list.html:39 templates/back/element_list.html:55
+msgid "Güncelle"
+msgstr "Edit"
+
+#: templates/back/channel_list.html:38 templates/back/channel_list.html:52
+#: templates/back/device_list.html:36 templates/back/device_list.html:48
+#: templates/back/element_list.html:40 templates/back/element_list.html:56
+msgid "Sil"
+msgstr "Delete"
+
+#: templates/back/channel_list.html:52 templates/back/device_list.html:48
+#: templates/back/element_list.html:56
+msgid "Model silinecek. Emin misiniz?"
+msgstr ""
+
+#: templates/back/data_list.html:31
+msgid "Sahip"
+msgstr "Owner"
+
+#: templates/back/data_list.html:32
+msgid "Ip Adresi"
+msgstr "Remote Address"
+
+#: templates/back/data_list.html:33 templates/back/element_list.html:32
+msgid "Kanal"
+msgstr "Channel"
+
+#: templates/back/data_list.html:34 templates/back/element_list.html:35
+msgid "İsim Id"
+msgstr "Name Id"
+
+#: templates/back/data_list.html:35
+msgid "Değer"
+msgstr "Value"
+
+#: templates/back/data_list.html:37
+msgid "Dataları Göster"
+msgstr "Show Datas"
+
+#: templates/back/data_list.html:50
+msgid "Göster"
+msgstr "View"
+
+#: templates/back/element_list.html:34
+msgid "Tip"
+msgstr "Type"
+
+#: templates/back/footer.html:7
+msgid "Yukarı çık"
+msgstr "Back to top "
+
+#: templates/back/footer.html:8
+msgid "Gizlilik"
+msgstr "Privacy"
+
+#: templates/back/footer.html:8
+msgid "Kullanım Şartları"
+msgstr "Terms"
+
+#: templates/back/index.html:7
+msgid "Iot Aygıtlar için Free Dashboard"
+msgstr "Free Dashboard for Iot Devices"
+
+#: templates/back/index.html:16
+msgid "iot aygıt ekle"
+msgstr "Add Iot Device"
+
+#: templates/back/index.html:17 templates/back/navbar.html:20
+#: templates/back/sidebar.html:6
+msgid "Aygıt Ekle"
+msgstr "Add Device"
+
+#: templates/back/index.html:18
+msgid "Iot Aygıt Yöneticisi"
+msgstr "Iot Device Manager"
+
+#: templates/back/index.html:23
+msgid "iot kanal ekle"
+msgstr "Add Channel"
+
+#: templates/back/index.html:24 templates/back/navbar.html:21
+#: templates/back/sidebar.html:7
+msgid "Kanal Ekle"
+msgstr "Add Channel"
+
+#: templates/back/index.html:25
+msgid "Iot Kanal Yöneticisi"
+msgstr "Iot Channel Manager"
+
+#: templates/back/index.html:30
+msgid "iot element ekle"
+msgstr "Add Element"
+
+#: templates/back/index.html:31 templates/back/navbar.html:22
+#: templates/back/sidebar.html:8
+msgid "Element Ekle"
+msgstr "Add Element"
+
+#: templates/back/index.html:32
+msgid "Iot Element Gözetleyici"
+msgstr "Iot Element Explorer"
+
+#: templates/back/index.html:38
+msgid "Key Yönetici"
+msgstr "Key Manager"
+
+#: templates/back/index.html:39
+msgid "Yeni Key Üret"
+msgstr "Create New Key"
+
+#: templates/back/key_list.html:34
+msgid "API Key Üret"
+msgstr "Create New API Key"
+
+#: templates/back/key_list.html:44
+msgid "Are you sure you want to generate a new write API key?"
+msgstr "Yeni API key üretmek istiyor musun?"
+
+#: templates/back/key_list.html:44
+msgid "Üret"
+msgstr "Generate"
+
+#: templates/back/navbar.html:18
+msgid "Yönet"
+msgstr "Manage"
+
+#: templates/back/navbar.html:24 templates/back/sidebar.html:11
+msgid "Aygıtlar"
+msgstr "Devices"
+
+#: templates/back/navbar.html:25 templates/back/sidebar.html:12
+msgid "Kanallar"
+msgstr "Channels"
+
+#: templates/back/navbar.html:26 templates/back/sidebar.html:13
+msgid "Elementler"
+msgstr "Elements"
+
+#: templates/back/navbar.html:28 templates/back/sidebar.html:16
+msgid "API"
+msgstr ""
+
+#: templates/back/navbar.html:29 templates/back/sidebar.html:17
+msgid "Datalar"
+msgstr "Datas"
+
+#: templates/back/navbar.html:32
+msgid "Ayarlar"
+msgstr "Settings"
+
+#: templates/back/navbar.html:33
+msgid "Yardım"
+msgstr "Help"
+
+#: templates/front/index.html:8
+msgid "iHook, iot dashboard, iot server"
+msgstr ""
+
+#: templates/front/index.html:46
+msgid "ANA SAYFA"
+msgstr "MAIN PAGE"
+
+#: templates/front/index.html:47
+msgid "IOT DASHBOARD DEMO"
+msgstr ""
+
+#: templates/front/index.html:48
+msgid "IOT GITHUB"
+msgstr ""
+
+#: templates/front/index.html:49
+msgid "İLETİŞİM"
+msgstr "CONTACT"
+
+#: templates/front/index.html:50
+msgid "DOCS"
+msgstr ""
+
+#: templates/front/index.html:58
+msgid ""
+"Iot dashboard açık kaynaklı olarak, Python programlama dili ve Django "
+"framework ile geliştirilen internete bağlı nesneleri kolay bir şekilde "
+"yönetmek için geliştirilmiştir. <span>Api, web servis, veritabanı, ne "
+"gerekiyorsa bir kaç tıklama ile\n"
+"\t\t\t\tkolayca...</span> <span>Android, iOS, Windows Phone ve diğer akıllı "
+"</span>cihazları web ile birbirine bağlayabilirsiniz."
+msgstr ""
+
+#: templates/front/index.html:62
+msgid "HEMEN DENE TEST ET"
+msgstr ""
+
+#: templates/front/index.html:94
+msgid "Mobil"
+msgstr "Mobile"
+
+#: templates/front/index.html:95
+msgid ""
+"Mobil cihazınız için uygulamanızı geliştirin ve ihook veritabanına bağlayın. "
+msgstr ""
+
+#: templates/front/index.html:95
+msgid "Web servis ile datalarınızı güncelleyin."
+msgstr ""
+
+#: templates/front/index.html:102
+msgid "iOT uyumlu tüm cihazlarınızı iHook ile yönetebilirsiniz."
+msgstr ""
+
+#: templates/front/index.html:102
+msgid "Veri alma, durum güncelleme, data aktarımı..."
+msgstr ""
+
+#: templates/front/index.html:102
+msgid "Akıllı cihaz yönetimi..."
+msgstr ""
+
+#: templates/front/index.html:108
+msgid "Web Servis"
+msgstr "Web Service"
+
+#: templates/front/index.html:109
+msgid "Veritabanına mı ihtiyacınız var?"
+msgstr ""
+
+#: templates/front/index.html:109
+msgid "Akıllı form' lar mı yapmak istiyorsunuz?"
+msgstr ""
+
+#: templates/front/index.html:109
+msgid "Static sitenizi bağlayın"
+msgstr ""
+
+#: templates/front/index.html:125
+msgid "Nesnelerin interneti"
+msgstr "Internet of Things"
+
+#: templates/front/index.html:126
+msgid ""
+"İnternete bağlı şeyleri bir merkezden kontrol edebilirsin. <span>iHook web "
+"servisi ile mobil </span>\n"
+"                    cihazlarınızı ve iOT cihazlarınızı birbirine "
+"bağlayabilirsiniz.<span>Evinizde bulunan internete </span>\n"
+"                    bağlı cihazınızı yine internet üzerinden kontrol "
+"edebilirsiniz. "
+msgstr ""
+
+#: templates/front/index.html:157
+msgid "UYGULAMA GELİŞTİRME"
+msgstr "DEVELOPERS"
+
+#: templates/front/index.html:158
+msgid ""
+"MySQL, PostgreSQL ve SQLite <span>veritabanınızı bir kaç tıklama ile "
+"oluşturun. </span>\n"
+"                Android, iOS, Windows Phone ve diğer akıllı <span>\n"
+"                    cihazlarınız ile kolay bir şekilde bağlantı kurun. </"
+"span>\n"
+"                E-mail ve web servis ile verilerinize her yerden ulaşın."
+msgstr ""
+
+#: templates/front/index.html:162
+msgid "DAHA FAZLA"
+msgstr "READ"
+
+#: templates/front/index.html:199
+msgid "iOT cihazınız için bulut depolama alanı,"
+msgstr "Cloud data management,"
+
+#: templates/front/index.html:200
+msgid "iHook ile iOT cihazınıza ulaşın."
+msgstr "Connect iOT device for iHook."
+
+#: templates/front/index.html:201
+msgid "-Bulut, iOT, WWW,"
+msgstr "-Cloud, iOT, WWW,"
+
+#: templates/front/index.html:209
+msgid "Web siteniz için veritabanı,"
+msgstr ""
+
+#: templates/front/index.html:210
+msgid "harici veritabanı bağlantısı."
+msgstr ""
+
+#: templates/front/index.html:211
+msgid "-Web servis, Api,"
+msgstr "-Web service, Api,"
+
+#: templates/front/index.html:219
+msgid "Mobil uygulamanız için veritabanı,"
+msgstr ""
+
+#: templates/front/index.html:220
+msgid "verileriniz için güvenli bir depolama alanı."
+msgstr ""
