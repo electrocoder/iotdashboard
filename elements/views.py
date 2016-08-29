@@ -10,6 +10,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext_lazy as _
 
 from forms import *
 
@@ -26,11 +27,9 @@ def element_add(request):
         form = ElementForm(request.POST)
         if form.is_valid():
             form.save()
-            msg_ok = u"element_add"
-            print msg_ok
+            msg_ok = _(u'Element ekleme başarılı')
         else:
-            msg_err = u"Dikkat! Lütfen hataları düzeltiniz!"
-            print msg_err
+            msg_err = _(u'Dikkat! Lütfen hataları düzeltiniz!')
 
     form = ElementForm()
     return render(request, "back/add.html", locals())
@@ -55,10 +54,10 @@ def element_edit(request, id):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            msg_ok = u"element_edit"
+            msg_ok = _(u'Element güncelleme başarılı')
             return HttpResponseRedirect(reverse('element_list'))
         else:
-            msg_err = u"Dikkat! Lütfen hataları düzeltiniz!"
+            msg_err = _(u'Dikkat! Lütfen hataları düzeltiniz!')
 
     return render(request, "back/add.html", locals())
 
@@ -70,6 +69,6 @@ def element_delete(request, id=None):
     """
     val = get_object_or_404(Element, id=id)
     val.delete()
-    msg_ok = u"element_delete"
+    msg_ok = _(u'Element silindi')
 
     return HttpResponseRedirect(reverse('element_list'), locals())

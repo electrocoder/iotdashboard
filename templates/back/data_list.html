@@ -2,6 +2,7 @@
 
 {% load staticfiles %}
 {% load panels_tags %}
+{% load i18n %}
 
 {% block title %}Data List{% endblock %}
 
@@ -26,14 +27,14 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>Id</th>
-                <th>Owner</th>
-                <th>Remote Address</th>
-                <th>Channel</th>
-                <th>Name Id</th>
-                <th>Value</th>
-                <th>Publish Date</th>
-                <th>Display Data</th>
+                <th>{% trans 'Id' %}</th>
+                <th>{% trans 'Sahip' %}</th>
+                <th>{% trans 'Ip Adresi' %}</th>
+                <th>{% trans 'Kanal' %}</th>
+                <th>{% trans 'İsim Id' %}</th>
+                <th>{% trans 'Değer' %}</th>
+                <th>{% trans 'Yayın Tarihi' %}</th>
+                <th>{% trans 'Dataları Göster' %}</th>
             </tr>
             </thead>
             <tbody>
@@ -46,7 +47,7 @@
                 <td><a class="tooltip-viewport-bottom" title="{{ i.name_id }}">{{ i.name_id }}</a></td>
                 <td><a class="tooltip-viewport-bottom" title="{{ i.value }}">{{ i.value }}</a></td>
                 <td>{{ i.pub_date }}</td>
-                <td><a class="btn btn-info" href="{% url 'generate_key' i.id %}" role="button">Show</a></td>
+                <td><a class="btn btn-info" href="{% url 'generate_key' i.id %}" role="button">{% trans 'Göster' %}</a></td>
             </tr>
             {% endfor %}
             </tbody>

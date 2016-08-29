@@ -1,17 +1,19 @@
+{% load i18n %}
+
 <div class="col-sm-3 col-md-2 sidebar">
     <ul class="nav nav-sidebar">
         <li class="active"><a href="{% url 'panels_index' %}">Panel <span class="sr-only">(current)</span></a></li>
-        <li><a href="{% url 'device_add' %}">Add Device</a></li>
-        <li><a href="{% url 'channel_add' %}">Add Channel</a></li>
-        <li><a href="{% url 'element_add' %}">Add Element</a></li>
+        <li><a href="{% url 'device_add' %}">{% trans 'Aygıt Ekle' %}</a></li>
+        <li><a href="{% url 'channel_add' %}">{% trans 'Kanal Ekle' %}</a></li>
+        <li><a href="{% url 'element_add' %}">{% trans 'Element Ekle' %}</a></li>
     </ul>
     <ul class="nav nav-sidebar">
-        <li><a href="{% url 'device_list' %}">Devices</a></li>
-        <li><a href="{% url 'channel_list' %}">Channels</a></li>
-        <li><a href="{% url 'element_list' %}">Elements</a></li>
+        <li><a href="{% url 'device_list' %}">{% trans 'Aygıtlar' %}</a></li>
+        <li><a href="{% url 'channel_list' %}">{% trans 'Kanallar' %}</a></li>
+        <li><a href="{% url 'element_list' %}">{% trans 'Elementler' %}</a></li>
     </ul>
     <ul class="nav nav-sidebar">
-        <li><a href="/api/">API</a></li>
-        <li><a href="{% url 'datas' %}">Datas</a></li>
+        <li><a href="/api/">{% trans 'API' %}</a></li>
+        <li><a href="{% url 'datas' %}">{% trans 'Datalar' %}</a></li>
     </ul>
 </div>

@@ -2,6 +2,7 @@
 
 {% load staticfiles %}
 {% load panels_tags %}
+{% load i18n %}
 
 {% block title %}Device List{% endblock %}
 
@@ -26,13 +27,13 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Pub.Date</th>
-                <th>Description</th>
-                <th>Enable</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>{% trans 'Id' %}</th>
+                <th>{% trans 'İsim' %}</th>
+                <th>{% trans 'Yayın Tarihi' %}</th>
+                <th>{% trans 'Açıklama' %}</th>
+                <th>{% trans 'Aktif Et' %}</th>
+                <th>{% trans 'Güncelle' %}</th>
+                <th>{% trans 'Sil' %}</th>
             </tr>
             </thead>
             <tbody>
@@ -43,8 +44,8 @@
                 <td>{{ i.pub_date }}</td>
                 <td>{{ i.description | truncatechars:20 }}</td>
                 <td>{{ i.enable }}</td>
-                <td><a class="btn btn-warning" href="{% url 'device_edit' i.id %}" role="button">Edit »</a></td>
-                <td><a class="btn btn-danger" href="{% url 'device_delete' i.id %}" role="button" onclick="return confirm('Model silinecek. Emin misiniz?');">Delete</a></td>
+                <td><a class="btn btn-warning" href="{% url 'device_edit' i.id %}" role="button">{% trans 'Güncelle' %} »</a></td>
+                <td><a class="btn btn-danger" href="{% url 'device_delete' i.id %}" role="button" onclick="return confirm('{% trans "Model silinecek. Emin misiniz?" %}');">{% trans 'Sil' %}</a></td>
             </tr>
             {% endfor %}
             </tbody>

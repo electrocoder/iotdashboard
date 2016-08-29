@@ -1,0 +1,3 @@
+django-admin.py makemessages -l tr
+django-admin.py makemessages -l en
+django-admin.py compilemessages

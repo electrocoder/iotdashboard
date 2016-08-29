@@ -10,6 +10,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext_lazy as _
 
 from forms import *
 
@@ -26,11 +27,9 @@ def channel_add(request):
         form = ChannelForm(request.POST)
         if form.is_valid():
             form.save()
-            msg_ok = u"channel_add"
-            print msg_ok
+            msg_ok = _(u'Kanal ekleme başarılı')
         else:
-            msg_err = u"Dikkat! Lütfen hataları düzeltiniz!"
-            print msg_err
+            msg_err = _(u'Dikkat! Lütfen hataları düzeltiniz!')
 
     form = ChannelForm()
     return render(request, "back/add.html", locals())
@@ -55,10 +54,10 @@ def channel_edit(request, id):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            msg_ok = u"element_edit"
+            msg_ok = _(u'Kanal güncelleme başarılı')
             return HttpResponseRedirect(reverse('channel_list'))
         else:
-            msg_err = u"Dikkat! Lütfen hataları düzeltiniz!"
+            msg_err = _(u'Dikkat! Lütfen hataları düzeltiniz!')
 
     return render(request, "back/add.html", locals())
 
@@ -70,7 +69,7 @@ def channel_delete(request, id=None):
     """
     val = get_object_or_404(Channel, id=id)
     val.delete()
-    msg_ok = u"channel_delete"
+    msg_ok = _(u'Kanal silindi')
 
     return HttpResponseRedirect(reverse('channel_list'), locals())
 
@@ -91,9 +90,9 @@ def generate_key(request, id=None):
     :return:
     """
     val = get_object_or_404(Channel, id=id)
-    val.api_key = (hashlib.sha1(str(val.pub_date)).hexdigest())[:5] + "-" + (hashlib.sha1(str(random.random())).hexdigest())[:5]
+    val.api_key = (hashlib.sha1(str(val.pub_date)).hexdigest())[:7] + "-" + (hashlib.sha1(str(random.random())).hexdigest())[:7]
     val.save()
     list = Channel.objects.filter(enable=True)
-    msg_ok = u"generate_key"
+    msg_ok = _(u'Key üretildi')
 
     return render(request, "back/key_list.html", locals())

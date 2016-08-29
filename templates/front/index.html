@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="iot dashboard, iot, hook, internet, nesnelerin interneti, iot web servis, android web servis, ios web servis, api, ihook," />
-        <meta name="description" content="Iot Dashboard, Cloud data platform and API for the Internet of Things.">
+        <meta name="description" content="Open source, Iot Dashboard, Cloud data platform and API for the Internet of Things.">
         <meta name="author" content="ihook.xyz">
 
         <link rel="icon" href="{% static "favicon.ico" %}">
@@ -43,11 +43,11 @@
 		<div class="top-nav">
 			<span class="menu"><img src="{% static 'front/images/menu.png' %}" alt="iot dashboard" /></span>
 				<ul class="nav1">
-					<li><a href="/" class="scroll">ANA SAYFA</a></li>
-					<li><a href="{% url 'panels_index' %}" target="_blank">IOT DASHBOARD DEMO</a></li>
-					<li><a href="http://electrocoder.github.io/iotdashboard/" target="_blank">IOT GITHUB</a></li>
-					<li><a href="https://github.com/electrocoder/iotdashboard/issues" class="scroll">İLETİŞİM</a></li>
-					<li><a href="http://iotdashboard.readthedocs.io/en/latest/" class="scroll">DOCS</a></li>
+					<li><a href="/" class="scroll">{% trans 'ANA SAYFA' %}</a></li>
+					<li><a href="{% url 'panels_index' %}" target="_blank">{% trans 'IOT DASHBOARD DEMO' %}</a></li>
+					<li><a href="http://electrocoder.github.io/iotdashboard/" target="_blank">{% trans 'IOT GITHUB' %}</a></li>
+					<li><a href="https://github.com/electrocoder/iotdashboard/issues" target="_blank">{% trans 'İLETİŞİM' %}</a></li>
+					<li><a href="http://iotdashboard.readthedocs.io/en/latest/" target="_blank">{% trans 'DOCS' %}</a></li>
 					<div class="clearfix"> </div>
 				</ul>
 		</div>
@@ -55,8 +55,8 @@
 		<div class="clearfix"> </div>
 		<div class="banner-info">
 			<h2>iHOOK</h2>
-			<p>Iot dashboard açık kaynaklı olarak, Python programlama dili ve Django framework ile geliştirilen internete bağlı nesneleri kolay bir şekilde yönetmek için geliştirilmiştir. <span>Api, web servis, veritabanı, ne gerekiyorsa bir kaç tıklama ile
-				kolayca...</span> <span>Android, iOS, Windows Phone ve diğer akıllı </span>cihazları web ile birbirine bağlayabilirsiniz.
+			<p>{% blocktrans %}Iot dashboard açık kaynaklı olarak, Python programlama dili ve Django framework ile geliştirilen internete bağlı nesneleri kolay bir şekilde yönetmek için geliştirilmiştir. <span>Api, web servis, veritabanı, ne gerekiyorsa bir kaç tıklama ile
+				kolayca...</span> <span>Android, iOS, Windows Phone ve diğer akıllı </span>cihazları web ile birbirine bağlayabilirsiniz.{% endblocktrans %}
             </p>
             <div class="development-text">
 			    <a href="{% url 'panels_index' %}">{% trans 'HEMEN DENE TEST ET' %}</a>
@@ -91,22 +91,22 @@
 				<div class="fig1">
 					<span> </span>
 				</div>
-				<h3>Mobil</h3>
-				<p>Mobil cihazınız için uygulamanızı geliştirin ve ihook veritabanına bağlayın. <span>Web servis ile datalarınızı güncelleyin.</span></p>
+				<h3>{% trans 'Mobil' %}</h3>
+				<p>{% trans 'Mobil cihazınız için uygulamanızı geliştirin ve ihook veritabanına bağlayın. ' %}<span>{% trans 'Web servis ile datalarınızı güncelleyin.' %}</span></p>
 			</div>
 			<div class="service-grid">
 				<div class="fig2">
 					<span> </span>
 				</div>
 				<h3>iOT</h3>
-				<p>iOT uyumlu tüm cihazlarınızı iHook ile yönetebilirsiniz. <span>Veri alma, durum güncelleme, data aktarımı...</span>Akıllı cihaz yönetimi...</p>
+				<p>{% trans 'iOT uyumlu tüm cihazlarınızı iHook ile yönetebilirsiniz.' %} <span>{% trans 'Veri alma, durum güncelleme, data aktarımı...' %}</span>{% trans 'Akıllı cihaz yönetimi...' %}</p>
 			</div>
 			<div class="service-grid2">
 				<div class="fig3">
 					<span> </span>
 				</div>
-				<h3>Web Servis</h3>
-				<p>Veritabanına mı ihtiyacınız var? <span>Akıllı form' lar mı yapmak istiyorsunuz?</span>Static sitenizi bağlayın</p>
+				<h3>{% trans 'Web Servis' %}</h3>
+				<p>{% trans 'Veritabanına mı ihtiyacınız var?' %} <span>{% trans "Akıllı form' lar mı yapmak istiyorsunuz?" %}</span>{% trans 'Static sitenizi bağlayın' %}</p>
 			</div>
 			<div class="clearfix"> </div>
 		</div>
@@ -122,10 +122,10 @@
 			</div>
 			<div class="service-bottom-right">
 				<h2>iOT</h2>
-				<h3>Nesnelerin interneti</h3>
-				<p>İnternete bağlı şeyleri bir merkezden kontrol edebilirsin. <span>iHook web servisi ile mobil </span>
+				<h3>{% trans 'Nesnelerin interneti' %}</h3>
+				<p>{% blocktrans %}İnternete bağlı şeyleri bir merkezden kontrol edebilirsin. <span>iHook web servisi ile mobil </span>
                     cihazlarınızı ve iOT cihazlarınızı birbirine bağlayabilirsiniz.<span>Evinizde bulunan internete </span>
-                    bağlı cihazınızı yine internet üzerinden kontrol edebilirsiniz. </p>
+                    bağlı cihazınızı yine internet üzerinden kontrol edebilirsiniz. {% endblocktrans %}</p>
 				<div class="banner1-icons">
 					<ul>
 						<li><a href="#" class="facebook1"> </a></li>
@@ -154,12 +154,12 @@
 	<div class="development">
 	<div class="container">
 		<div class="development-text">
-			<h2>UYGULAMA GELİŞTİRME</h2>
-			<p>MySQL, PostgreSQL ve SQLite <span>veritabanınızı bir kaç tıklama ile oluşturun. </span>
+			<h2>{% trans 'UYGULAMA GELİŞTİRME' %}</h2>
+			<p>{% blocktrans %}MySQL, PostgreSQL ve SQLite <span>veritabanınızı bir kaç tıklama ile oluşturun. </span>
                 Android, iOS, Windows Phone ve diğer akıllı <span>
                     cihazlarınız ile kolay bir şekilde bağlantı kurun. </span>
-                E-mail ve web servis ile verilerinize her yerden ulaşın.</p>
-			<a href="http://iotdashboard.readthedocs.io/en/latest/" target="_blank">DAHA FAZLA</a>
+                E-mail ve web servis ile verilerinize her yerden ulaşın.{% endblocktrans %}</p>
+			<a href="http://iotdashboard.readthedocs.io/en/latest/" target="_blank">{% trans 'DAHA FAZLA' %}</a>
 		</div>
 	</div>
 	</div>
@@ -196,9 +196,9 @@
 				<ul class="rslides" id="slider3">
                     <li>
 						<div class="slider-info">
-							<h2>iOT cihazınız için bulut depolama alanı,
-								<span>iHook ile iOT cihazınıza ulaşın.</span></h2>
-							<p><a href="#">@iothook</a>-Bulut, iOT, WWW,</p>
+							<h2>{% trans 'iOT cihazınız için bulut depolama alanı,' %}
+								<span>{% trans 'iHook ile iOT cihazınıza ulaşın.' %}</span></h2>
+							<p><a href="#">@iothook</a>{% trans '-Bulut, iOT, WWW,' %}</p>
 							<ul>
 								<li><a href="https://twitter.com/iothook" class="twitter-3"> </a></li>
 							</ul>
@@ -206,9 +206,9 @@
 					</li>
 					<li>
 						<div class="slider-info">
-							<h2>Web siteniz için veritabanı,
-								<span>harici veritabanı bağlantısı.</span></h2>
-							<p><a href="#">@iothook</a>-Web servis, Api,</p>
+							<h2>{% trans 'Web siteniz için veritabanı,' %}
+								<span>{% trans 'harici veritabanı bağlantısı.' %}</span></h2>
+							<p><a href="#">@iothook</a>{% trans '-Web servis, Api,' %}</p>
 							<ul>
 								<li><a href="https://twitter.com/iothook" class="twitter-1"> </a></li>
 							</ul>
@@ -216,8 +216,8 @@
 					</li>
 					<li>
 						<div class="slider-info">
-							<h2>Mobil uygulamanız için veritabanı,
-								<span>verileriniz için güvenli bir depolama alanı.</span></h2>
+							<h2>{% trans 'Mobil uygulamanız için veritabanı,' %}
+								<span>{% trans 'verileriniz için güvenli bir depolama alanı.' %}</span></h2>
 							<p><a href="#">@iothook</a>-SQL, MySQL, SQLite,</p>
 							<ul>
 								<li><a href="https://twitter.com/iothook" class="twitter-2"> </a></li>

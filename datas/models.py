@@ -19,11 +19,11 @@ class Data(models.Model):
     Requests for iot device
     """
     owner          = models.ForeignKey('auth.User', related_name='datas')
-    remote_address = models.CharField(max_length=255)
+    remote_address = models.CharField(_('ip adres'), max_length=255)
     channel        = models.ForeignKey(Channel)
-    name_id        = models.CharField(max_length=70, null=False, blank=False)
-    value          = models.CharField(max_length=10, null=False, blank=False)
-    pub_date       = models.DateTimeField(auto_now=True)
+    name_id        = models.CharField(_('isim id'), max_length=70, null=False, blank=False)
+    value          = models.CharField(_('deger'), max_length=10, null=False, blank=False)
+    pub_date       = models.DateTimeField(_('yayin tarihi'), auto_now=True)
 
     def __unicode__(self):
         return unicode(self.channel)

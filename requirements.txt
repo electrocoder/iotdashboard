@@ -6,4 +6,4 @@ djangorestframework
 markdown
 django-filter
 generic==0.3.1
-Pillow
+Pillow==2.9.0

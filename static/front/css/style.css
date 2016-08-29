@@ -11,7 +11,7 @@ body,html{
 	}
 /*-- banner --*/
 .banner{
-	background:url(/static/front/images/banner.jpg) no-repeat 0px 0px;
+	background:url(/static/front/images/iothook-bg2.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	width:100%;
 	min-height:760px;
@@ -2145,7 +2145,7 @@ ul.b-animate.b-from-left.b-delay03 li span {
 	height: 50px;
 	}
 .banner {
-	background: url(/static/front/images/banner.jpg) no-repeat -458px 0px;
+	background: url(/static/front/images/iothook-bg1.jpg) no-repeat -458px 0px;
 	}
 .banner-info input[type="text"] {
 	font-size: 14px;

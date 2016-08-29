@@ -15,7 +15,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{% static "favicon.ico" %}">
 
-    <title>{% block title %}Dashboard for Iot Device{% endblock %}</title>
+    <title>{% block title %}{% trans 'Dashboard for Iot Device' %}{% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static "back/dist/css/bootstrap.min.css" %}" rel="stylesheet">
@@ -63,9 +63,6 @@
 
         </div>
     </div>
-
-
-
 </div>
 
     {% include 'back/footer.html' %}

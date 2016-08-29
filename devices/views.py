@@ -10,6 +10,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext_lazy as _
 
 from forms import *
 
@@ -26,9 +27,9 @@ def device_add(request):
         form = DeviceForm(request.POST)
         if form.is_valid():
             form.save()
-            msg_ok = u"device_add"
+            msg_ok = _(u'Aygıt ekleme başarılı')
         else:
-            msg_err = u"Dikkat! Lütfen hataları düzeltiniz!"
+            msg_err = _(u'Dikkat! Lütfen hataları düzeltiniz!')
 
     form = DeviceForm()
     return render(request, "back/add.html", locals())
@@ -53,10 +54,10 @@ def device_edit(request, id):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            msg_ok = u"device_edit"
+            msg_ok = _(u'Aygıt güncelleme başarılı')
             return HttpResponseRedirect(reverse('device_list'))
         else:
-            msg_err = u"Dikkat! Lütfen hataları düzeltiniz!"
+            msg_err = _(u'Dikkat! Lütfen hataları düzeltiniz!')
 
     return render(request, "back/add.html", locals())
 
@@ -68,6 +69,6 @@ def device_delete(request, id=None):
     """
     val = get_object_or_404(Device, id=id)
     val.delete()
-    msg_ok = u"device_delete"
+    msg_ok = _(u'Aygıt silindi')
 
     return HttpResponseRedirect(reverse('device_list'), locals())

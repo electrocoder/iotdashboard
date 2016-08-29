@@ -2,6 +2,7 @@
 
 {% load staticfiles %}
 {% load panels_tags %}
+{% load i18n %}
 
 {% block title %}Key List{% endblock %}
 
@@ -26,11 +27,11 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>Id</th>
-                <th>Device</th>
-                <th>Name</th>
-                <th>Api Key</th>
-                <th>Generate New Write API Key</th>
+                <th>{% trans 'Id' %}</th>
+                <th>{% trans 'Aygıt' %}</th>
+                <th>{% trans 'İsim' %}</th>
+                <th>{% trans 'Api Key' %}</th>
+                <th>{% trans 'API Key Üret' %}</th>
             </tr>
             </thead>
             <tbody>
@@ -40,7 +41,7 @@
                 <td>{{ i.device.name }}</td>
                 <td><a class="tooltip-viewport-bottom" title="{{ i.name }}">{{ i.name | truncatechars:40 }}</a></td>
                 <td><a class="tooltip-viewport-bottom" title="{{ i.api_key }}">{{ i.api_key }}</a></td>
-                <td><a class="btn btn-danger" href="{% url 'generate_key' i.id %}" role="button" onclick="return confirm('Are you sure you want to generate a new write API key?');">Generate</a></td>
+                <td><a class="btn btn-danger" href="{% url 'generate_key' i.id %}" role="button" onclick="return confirm('{% trans "Are you sure you want to generate a new write API key?" %}');">{% trans 'Üret' %}</a></td>
             </tr>
             {% endfor %}
             </tbody>
