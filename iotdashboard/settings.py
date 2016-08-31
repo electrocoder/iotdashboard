@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'iotdashboard.wsgi.application'
 HEROKU = False # if heroku server HEROKU = True,  else HEROKU = False for local server
 IHOOK_WEB_SITE = True # if ihook.xyz domain IHOOK_WEB_SITE = True, else IHOOK_WEB_SITE = False for local server
 
-DEBUG = False
+DEBUG = True
 
 if HEROKU:
     import dj_database_url
