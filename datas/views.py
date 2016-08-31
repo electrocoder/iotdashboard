@@ -164,7 +164,7 @@ def chart_view(request):
                'source': Data.objects.all()},
               'terms': [
                 'id',
-                'value'
+                'id'
               ]}
              ])
 
@@ -177,7 +177,7 @@ def chart_view(request):
                   'stacking': False},
                 'terms':{
                   'id': [
-                    'value'
+                    'id'
                   ]
                   }}],
             chart_options =
