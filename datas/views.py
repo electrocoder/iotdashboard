@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 Datas REST Framework
 
@@ -164,7 +164,7 @@ def chart_view(request):
                'source': Data.objects.all()},
               'terms': [
                 'id',
-                'id'
+                'value'
               ]}
              ])
 
@@ -182,10 +182,10 @@ def chart_view(request):
                   }}],
             chart_options =
               {'title': {
-                   'text': 'Weather Data of Boston and Houston'},
+                   'text': 'Datas'},
                'xAxis': {
                     'title': {
-                       'text': 'Month number'}}})
+                       'text': 'Data number'}}})
 
     #Step 3: Send the chart object to the template.
     # return render_to_response({'weatherchart': cht})

@@ -49,7 +49,7 @@
                 <td><a class="tooltip-viewport-bottom" title="{{ i.name_id }}">{{ i.name_id }}</a></td>
                 <td><a class="tooltip-viewport-bottom" title="{{ i.value }}">{{ i.value }}</a></td>
                 <td>{{ i.pub_date }}</td>
-                <td><a class="btn btn-info" href="{% url 'generate_key' i.id %}" role="button">{% trans 'Göster' %}</a></td>
+                <td><a class="btn btn-info" href="{% url 'chart_view' %}" role="button">{% trans 'Göster' %}</a></td>
             </tr>
             {% endfor %}
             </tbody>

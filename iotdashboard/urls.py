@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 URLs for iotdashboard project.
 Django 1.9.7.
