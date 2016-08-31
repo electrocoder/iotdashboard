@@ -26,5 +26,5 @@ class Data(models.Model):
     pub_date       = models.DateTimeField(_('yayin tarihi'), auto_now=True)
 
     def __unicode__(self):
-        return unicode(self.channel)
+        return unicode(self.channel.name)
 

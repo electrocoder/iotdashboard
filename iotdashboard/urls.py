@@ -47,6 +47,9 @@ else:
     )
 
 urlpatterns += i18n_patterns(
+    # chart
+    url(r'^chart-view/$', views_datas.chart_view, name='chart_view'),
+
     # add devices
     url(r'^device/add/$', devices.device_add, name='device_add'),
     url(r'^device/list/$', devices.device_list, name='device_list'),

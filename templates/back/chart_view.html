@@ -1,0 +1,16 @@
+
+{% load staticfiles %}
+{% load panels_tags %}
+{% load i18n %}
+{% load chartit %}
+
+
+<div class="col-xs-12 col-sm-12 placeholder">
+    <div class="table-responsive">
+
+        {{ cht|load_charts:"container" }}
+        <div id='container'> Chart will be rendered here </div>
+
+    </div>
+
+</div>

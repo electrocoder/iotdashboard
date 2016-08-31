@@ -24,6 +24,10 @@ from rest_framework import permissions
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import get_object_or_404
+from django.shortcuts import render_to_response
+from django.shortcuts import render
+
+from chartit import DataPool, Chart
 
 from models import Data
 from elements.models import Element
@@ -150,4 +154,40 @@ class JSONResponse(HttpResponse):
         content = JSONRenderer().render(data)
         kwargs['content_type'] = 'application/json'
         super(JSONResponse, self).__init__(content, **kwargs)
+
+def chart_view(request):
+    #Step 1: Create a DataPool with the data we want to retrieve.
+    weatherdata = \
+        DataPool(
+           series=
+            [{'options': {
+               'source': Data.objects.all()},
+              'terms': [
+                'id',
+                'value'
+              ]}
+             ])
+
+    #Step 2: Create the Chart object
+    cht = Chart(
+            datasource = weatherdata,
+            series_options =
+              [{'options':{
+                  'type': 'line',
+                  'stacking': False},
+                'terms':{
+                  'id': [
+                    'value'
+                  ]
+                  }}],
+            chart_options =
+              {'title': {
+                   'text': 'Weather Data of Boston and Houston'},
+               'xAxis': {
+                    'title': {
+                       'text': 'Month number'}}})
+
+    #Step 3: Send the chart object to the template.
+    # return render_to_response({'weatherchart': cht})
+    return render(request, "back/chart_view.html", locals())
 

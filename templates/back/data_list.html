@@ -30,6 +30,7 @@
                 <th>{% trans 'Id' %}</th>
                 <th>{% trans 'Sahip' %}</th>
                 <th>{% trans 'Ip Adresi' %}</th>
+                <th>{% trans 'Aygıt' %}</th>
                 <th>{% trans 'Kanal' %}</th>
                 <th>{% trans 'İsim Id' %}</th>
                 <th>{% trans 'Değer' %}</th>
@@ -43,6 +44,7 @@
                 <td>{{ i.id }}</td>
                 <td>{{ i.owner }}</td>
                 <td>{{ i.remote_address }}</td>
+                <td>{{ i.channel.device }}</td>
                 <td>{{ i.channel }}</td>
                 <td><a class="tooltip-viewport-bottom" title="{{ i.name_id }}">{{ i.name_id }}</a></td>
                 <td><a class="tooltip-viewport-bottom" title="{{ i.value }}">{{ i.value }}</a></td>
