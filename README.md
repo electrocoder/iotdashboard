@@ -1,8 +1,9 @@
 # iot-dashboard
 # IoT: Platform for Internet of Things
 [![Gitter](https://badges.gitter.im/electrocoder/iot-dashboard.svg)](https://gitter.im/electrocoder/iot-dashboard?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-[![License](https://img.shields.io/badge/licence-Apache%202.0-brightgreen.svg?style=flat)](LICENSE)
-[![Build Status](https://travis-ci.org/Samsung/iotjs.svg?branch=master)](https://iothook.com/tr/)
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
+[![Build Status](https://travis-ci.org/Samsung/iotjs.svg?branch=master)](https://iothook.com/)
+[![Django](https://img.shields.io/pypi/pyversions/Django.svg)](https://iothook.com/)
 
 You can find project details on our [project page](https://iothook.com/) and [wiki](https://iothook.com/).
 
@@ -13,8 +14,7 @@ You can find project details on our [project page](https://iothook.com/) and [wi
     </p>
 <br>
 
-
-<p align="center">Fast Django server for IOT Devices</a></p>
+<p align="center"><h2>Fast Django server for IOT Devices</h2></p>
 
 Features
 --------
@@ -84,6 +84,7 @@ https://iotdashboard.herokuapp.com/
 Contact
 -------
 Şahin MERSİN [@electrocoder](http://twitter.com/electrocoder)
+iothook [@iothook](https://twitter.com/iothook)
 
 License
 -------
