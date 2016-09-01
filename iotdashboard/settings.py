@@ -20,7 +20,7 @@ SECRET_KEY = '9#rxdk3_%-sufmh$#!b+iqpm0!ztfv+)08g-%g@#)flx*p$o(('
 
 WEBSITE_NAME = "Iotdashboard"
 
-ALLOWED_HOSTS = ['localhost',]
+ALLOWED_HOSTS = ['localhost', '.ihook.xyz', '.ihook.xyz.', '128.199.42.221',]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -74,7 +74,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'iotdashboard.wsgi.application'
 
-HEROKU = True # if heroku server HEROKU = True,  else HEROKU = False for local server
+HEROKU = False # if heroku server HEROKU = True,  else HEROKU = False for local server
 IHOOK_WEB_SITE = True # if ihook.xyz domain IHOOK_WEB_SITE = True, else IHOOK_WEB_SITE = False for local server
 
 DEBUG = False
@@ -118,14 +118,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-# REST_FRAMEWORK = {
-#     # Use Django's standard `django.contrib.auth` permissions,
-#     # or allow read-only access for unauthenticated users.
-#     'DEFAULT_PERMISSION_CLASSES': [
-#         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-#     ]
-# }
 
 _ = lambda s: s
 
