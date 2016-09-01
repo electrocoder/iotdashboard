@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-30 01:10+0300\n"
+"POT-Creation-Date: 2016-09-01 21:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -118,11 +118,11 @@ msgstr "Element update successful"
 msgid "Element silindi"
 msgstr "Add Element"
 
-#: iotdashboard/settings.py:130
+#: iotdashboard/settings.py:133
 msgid "Turkish"
 msgstr "Türkçe"
 
-#: iotdashboard/settings.py:131
+#: iotdashboard/settings.py:134
 msgid "English"
 msgstr "İngilizce"
 
@@ -156,8 +156,8 @@ msgstr "Channel List"
 msgid "Id"
 msgstr ""
 
-#: templates/back/channel_list.html:31 templates/back/element_list.html:31
-#: templates/back/key_list.html:31
+#: templates/back/channel_list.html:31 templates/back/data_list.html:33
+#: templates/back/element_list.html:31 templates/back/key_list.html:31
 msgid "Aygıt"
 msgstr "Device"
 
@@ -170,7 +170,7 @@ msgstr "Name"
 msgid "Api Key"
 msgstr ""
 
-#: templates/back/channel_list.html:34 templates/back/data_list.html:36
+#: templates/back/channel_list.html:34 templates/back/data_list.html:37
 #: templates/back/device_list.html:32 templates/back/element_list.html:36
 msgid "Yayın Tarihi"
 msgstr "Publish Date"
@@ -210,23 +210,23 @@ msgstr "Owner"
 msgid "Ip Adresi"
 msgstr "Remote Address"
 
-#: templates/back/data_list.html:33 templates/back/element_list.html:32
+#: templates/back/data_list.html:34 templates/back/element_list.html:32
 msgid "Kanal"
 msgstr "Channel"
 
-#: templates/back/data_list.html:34 templates/back/element_list.html:35
+#: templates/back/data_list.html:35 templates/back/element_list.html:35
 msgid "İsim Id"
 msgstr "Name Id"
 
-#: templates/back/data_list.html:35
+#: templates/back/data_list.html:36
 msgid "Değer"
 msgstr "Value"
 
-#: templates/back/data_list.html:37
+#: templates/back/data_list.html:38
 msgid "Dataları Göster"
 msgstr "Show Datas"
 
-#: templates/back/data_list.html:50
+#: templates/back/data_list.html:52
 msgid "Göster"
 msgstr "View"
 
@@ -345,86 +345,90 @@ msgstr "Help"
 msgid "iHook, iot dashboard, iot server"
 msgstr ""
 
-#: templates/front/index.html:46
+#: templates/front/index.html:55
 msgid "ANA SAYFA"
 msgstr "MAIN PAGE"
 
-#: templates/front/index.html:47
+#: templates/front/index.html:56
 msgid "IOT DASHBOARD DEMO"
 msgstr ""
 
-#: templates/front/index.html:48
+#: templates/front/index.html:57
 msgid "IOT GITHUB"
 msgstr ""
 
-#: templates/front/index.html:49
+#: templates/front/index.html:58
 msgid "İLETİŞİM"
 msgstr "CONTACT"
 
-#: templates/front/index.html:50
+#: templates/front/index.html:59
 msgid "DOCS"
 msgstr ""
 
-#: templates/front/index.html:58
-msgid ""
-"Iot dashboard açık kaynaklı olarak, Python programlama dili ve Django "
-"framework ile geliştirilen internete bağlı nesneleri kolay bir şekilde "
-"yönetmek için geliştirilmiştir. <span>Api, web servis, veritabanı, ne "
-"gerekiyorsa bir kaç tıklama ile\n"
-"\t\t\t\tkolayca...</span> <span>Android, iOS, Windows Phone ve diğer akıllı "
-"</span>cihazları web ile birbirine bağlayabilirsiniz."
+#: templates/front/index.html:66
+msgid "iOT için Django Server"
 msgstr ""
 
-#: templates/front/index.html:62
+#: templates/front/index.html:67
+msgid ""
+"<span>Iot dashboard açık kaynaklı olarak, Python programlama dili ve Django "
+"framework </span>ile geliştirilen internete bağlı nesneleri kolay bir "
+"şekilde yönetmek için geliştirilmiştir. <span>Api, web servis, veritabanı, "
+"ne gerekiyorsa bir kaç tıklama ile\n"
+"\t\t\t\tkolayca...</span> <span>Arduino, Raspberry Pi, Android, iOS, Windows "
+"Phone ve diğer akıllı </span>cihazları iHOOK ile birbirine bağlayabilirsiniz."
+msgstr ""
+
+#: templates/front/index.html:71
 msgid "HEMEN DENE TEST ET"
 msgstr ""
 
-#: templates/front/index.html:94
+#: templates/front/index.html:103
 msgid "Mobil"
 msgstr "Mobile"
 
-#: templates/front/index.html:95
+#: templates/front/index.html:104
 msgid ""
 "Mobil cihazınız için uygulamanızı geliştirin ve ihook veritabanına bağlayın. "
 msgstr ""
 
-#: templates/front/index.html:95
+#: templates/front/index.html:104
 msgid "Web servis ile datalarınızı güncelleyin."
 msgstr ""
 
-#: templates/front/index.html:102
+#: templates/front/index.html:111
 msgid "iOT uyumlu tüm cihazlarınızı iHook ile yönetebilirsiniz."
 msgstr ""
 
-#: templates/front/index.html:102
+#: templates/front/index.html:111
 msgid "Veri alma, durum güncelleme, data aktarımı..."
 msgstr ""
 
-#: templates/front/index.html:102
+#: templates/front/index.html:111
 msgid "Akıllı cihaz yönetimi..."
 msgstr ""
 
-#: templates/front/index.html:108
+#: templates/front/index.html:117
 msgid "Web Servis"
 msgstr "Web Service"
 
-#: templates/front/index.html:109
+#: templates/front/index.html:118
 msgid "Veritabanına mı ihtiyacınız var?"
 msgstr ""
 
-#: templates/front/index.html:109
+#: templates/front/index.html:118
 msgid "Akıllı form' lar mı yapmak istiyorsunuz?"
 msgstr ""
 
-#: templates/front/index.html:109
+#: templates/front/index.html:118
 msgid "Static sitenizi bağlayın"
 msgstr ""
 
-#: templates/front/index.html:125
+#: templates/front/index.html:134
 msgid "Nesnelerin interneti"
 msgstr "Internet of Things"
 
-#: templates/front/index.html:126
+#: templates/front/index.html:135
 msgid ""
 "İnternete bağlı şeyleri bir merkezden kontrol edebilirsin. <span>iHook web "
 "servisi ile mobil </span>\n"
@@ -434,11 +438,11 @@ msgid ""
 "edebilirsiniz. "
 msgstr ""
 
-#: templates/front/index.html:157
+#: templates/front/index.html:166
 msgid "UYGULAMA GELİŞTİRME"
 msgstr "DEVELOPERS"
 
-#: templates/front/index.html:158
+#: templates/front/index.html:167
 msgid ""
 "MySQL, PostgreSQL ve SQLite <span>veritabanınızı bir kaç tıklama ile "
 "oluşturun. </span>\n"
@@ -448,38 +452,42 @@ msgid ""
 "                E-mail ve web servis ile verilerinize her yerden ulaşın."
 msgstr ""
 
-#: templates/front/index.html:162
+#: templates/front/index.html:171
 msgid "DAHA FAZLA"
 msgstr "READ"
 
-#: templates/front/index.html:199
-msgid "iOT cihazınız için bulut depolama alanı,"
-msgstr "Cloud data management,"
+#: templates/front/index.html:208
+msgid "Raspberry Pi için iOT server"
+msgstr ""
 
-#: templates/front/index.html:200
+#: templates/front/index.html:209
 msgid "iHook ile iOT cihazınıza ulaşın."
 msgstr "Connect iOT device for iHook."
 
-#: templates/front/index.html:201
-msgid "-Bulut, iOT, WWW,"
+#: templates/front/index.html:210
+#, fuzzy
+#| msgid "-Bulut, iOT, WWW,"
+msgid "-Bulut, iOT, WWW, Raspberry Pi,"
 msgstr "-Cloud, iOT, WWW,"
 
-#: templates/front/index.html:209
-msgid "Web siteniz için veritabanı,"
-msgstr ""
+#: templates/front/index.html:218
+#, fuzzy
+#| msgid "iOT cihazınız için bulut depolama alanı,"
+msgid "IOT cihazınız için veritabanı,"
+msgstr "Cloud data management,"
 
-#: templates/front/index.html:210
+#: templates/front/index.html:219
 msgid "harici veritabanı bağlantısı."
 msgstr ""
 
-#: templates/front/index.html:211
+#: templates/front/index.html:220
 msgid "-Web servis, Api,"
 msgstr "-Web service, Api,"
 
-#: templates/front/index.html:219
+#: templates/front/index.html:228
 msgid "Mobil uygulamanız için veritabanı,"
 msgstr ""
 
-#: templates/front/index.html:220
+#: templates/front/index.html:229
 msgid "verileriniz için güvenli bir depolama alanı."
 msgstr ""

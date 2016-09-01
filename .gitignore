@@ -146,8 +146,7 @@ ENV/
 __pycache__
 0*_*
 */migrations/*.py
-# locale/
-python27*/
 python27*
-iotdashboard_static/
 iotdasboard.egg-info/
+/iotdashboard_static/
+/dist/
