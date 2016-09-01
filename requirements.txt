@@ -8,5 +8,4 @@ django-filter
 generic==0.3.1
 Pillow==2.9.0
 django_chartit
-markup_deprecated
 django-markup-deprecated

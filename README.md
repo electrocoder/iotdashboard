@@ -14,7 +14,7 @@ You can find project details on our [project page](https://iothook.com/) and [wi
     </p>
 <br>
 
-<p align="center"><h2>Fast Django server for IOT Devices</h2></p>
+<p align="center"><h1>Fast Django server for IOT Devices</h1></p>
 
 Features
 --------
