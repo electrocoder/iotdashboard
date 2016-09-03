@@ -6,6 +6,12 @@
 IOT Dashboard
 ===================================
 
+Nasıl Test ederim?
+==================
+
+Bu döküman içeriğindeki tüm bilgiler http://ihook.xyz/ adresinden online olarak test edilebilmektedir.
+
+
 Iot Dashboard Nedir?
 
 Banana Pi, NanoPC, Intel Edison, Parallella, Raspberry Pi gibi tek kart bilgisayarlarda çalışan Python/Django REST framework ile
