@@ -9,3 +9,4 @@ generic==0.3.1
 Pillow==2.9.0
 django_chartit
 django-markup-deprecated
+psycopg2==2.5.4

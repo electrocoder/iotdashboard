@@ -20,7 +20,7 @@ SECRET_KEY = '9#rxdk3_%-sufmh$#!b+iqpm0!ztfv+)08g-%g@#)flx*p$o(('
 
 WEBSITE_NAME = "Iotdashboard"
 
-ALLOWED_HOSTS = ['localhost', '.ihook.xyz', '.ihook.xyz.', '128.199.42.221',]
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -82,14 +82,12 @@ DEBUG = False
 if HEROKU:
     import dj_database_url
 
-    db_from_env = dj_database_url.config()
-
     DATABASES = {
-        'default': {
-        }
+        "default": dj_database_url.config(),
     }
-    DATABASES['default'].update(db_from_env)
     DATABASES['default']['CONN_MAX_AGE'] = 500
+
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     MEDIA_ROOT = os.path.join(BASE_DIR, 'iotdashboard_media')
     STATIC_ROOT = os.path.join(BASE_DIR, "iotdashboard_static")
