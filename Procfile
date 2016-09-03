@@ -1,1 +1,1 @@
-web: gunicorn iotdashboard.wsgi --log-file -
+web: gunicorn iotdashboard.wsgi --preload --log-file -
