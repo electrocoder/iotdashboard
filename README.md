@@ -56,6 +56,13 @@ GitHub Pages
 http://electrocoder.github.io/iotdashboard/
 ```
 
+Readthedocs
+-----------
+
+```
+http://iotdashboard.readthedocs.io/tr/latest/
+```
+
 Installing Pip
 --------------
 
@@ -72,6 +79,13 @@ Run
 ./manage.py runserver
 or
 ./manage.py runserver 0.0.0.0:8000
+```
+
+Test on IHOOK
+-------------
+
+```
+http://ihook.xyz
 ```
 
 Test on HEROKU
