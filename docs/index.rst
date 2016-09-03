@@ -1,73 +1,22 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Iotdashboard by electrocoder</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+.. iotdashboard documentation master file, created by
+   sphinx-quickstart on Sun Sep  4 01:01:10 2016.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
 
-</head>
-<body>
+Welcome to iotdashboard's documentation!
+========================================
 
-<header>
-    <h1><a href="http://electrocoder.github.io/iotdashboard/">Iotdashboard</a></h1>
-    <p>Fast Django server for IOT Devices</p>
-</header>
+Contents:
 
-<div id="banner">
-    <span id="logo"></span>
+.. toctree::
+   :maxdepth: 2
 
-    <a href="https://github.com/electrocoder/iotdashboard" class="button fork"><strong>View On GitHub</strong></a>
-    <div class="downloads">
-        <span>Downloads:</span>
-        <ul>
-            <li><a href="http://ihook.xyz" class="button">GOTO IHOOK DEMO</a></li>
-            <li><a href="https://github.com/electrocoder/iotdashboard/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/electrocoder/iotdashboard/tarball/master" class="button">TAR</a></li>
-        </ul>
-    </div>
-</div><!-- end banner -->
 
-<div class="wrapper">
-    <nav>
-        <ul></ul>
-    </nav>
-    <section>
-        <h3>
-            <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true"
-                                                                                                                    class="octicon octicon-link"></span></a>Iot Dashboard
-            Nedir?</h3>
 
-        <p>Banana Pi, NanoPC, Intel Edison, Parallella, Raspberry Pi gibi tek kart bilgisayarlarda çalışan Python/Django REST framework ile geliştirilmiş Web Api
-            servisidir.
-            IOT cihazlar ile iletişime geçerek Web Api sayesinde GET, POST, PUT ve DELETE işlemlerini kolayca yapabilmek için tasarlanmıştır.
-            IoT: Platform for Internet of Things <a href="https://iothook.com/">iothook.com</a></p>
+Indices and tables
+==================
 
-        <h3>
-            <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Destek
-            ve İletişim</h3>
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
 
-        <p>electrocoder <a href="https://twitter.com/electrocoder">electrocoder</a></p>
-        <p>iothook <a href="https://twitter.com/iothook">iothook</a></p>
-
-    </section>
-    <footer>
-        <p>Project maintained by <a href="https://github.com/electrocoder">electrocoder</a></p>
-        <p><a href="http://electrocoder.github.io/iotdashboard/privacy.html">Privacy</a> | <a href="http://electrocoder.github.io/iotdashboard/terms.html">Terms</a></p>
-        <p>
-            <small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small>
-        </p>
-    </footer>
-</div>
-<!--[if !IE]>
-<script>fixScale(document);</script><![endif]-->
-
-</body>
-</html>
