@@ -10,3 +10,4 @@ Pillow==2.9.0
 django_chartit
 django-markup-deprecated
 psycopg2==2.5.4
+dj-static

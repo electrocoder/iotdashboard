@@ -74,17 +74,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'iotdashboard.wsgi.application'
 
-HEROKU = True # if heroku server HEROKU = True,  else HEROKU = False for local server
+HEROKU = False # if heroku server HEROKU = True,  else HEROKU = False for local server
 IHOOK_WEB_SITE = True # if ihook.xyz domain IHOOK_WEB_SITE = True, else IHOOK_WEB_SITE = False for local server
 
-DEBUG = True
+DEBUG = False
 
 if HEROKU:
     import dj_database_url
 
-    DATABASES = {
-        "default": dj_database_url.config(),
-    }
+    DATABASES = {}
+    DATABASES['default'] = dj_database_url.config()
     DATABASES['default']['CONN_MAX_AGE'] = 500
 
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
