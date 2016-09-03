@@ -89,7 +89,7 @@ urlpatterns += [
     # REST framework
     url(r'^api/', include(router.urls)),
     url(r'^api/v1/data/(?P<api_key>[^/]*)/$', views_datas.DataList.as_view()),
-    url(r'^api/v1/(?P<pk>[0-9]+)/$',  views_datas.DataDetail.as_view()),
+    url(r'^api/v1/(?P<pk>[0-9]+)/?$',  views_datas.DataDetail.as_view()),
 ]
 
 if settings.DEBUG == True:
