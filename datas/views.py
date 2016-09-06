@@ -156,7 +156,11 @@ class JSONResponse(HttpResponse):
         super(JSONResponse, self).__init__(content, **kwargs)
 
 def chart_view(request):
-    #Step 1: Create a DataPool with the data we want to retrieve.
+    """
+    :param request:
+    :return:
+    """
+
     weatherdata = \
         DataPool(
            series=
@@ -164,11 +168,10 @@ def chart_view(request):
                'source': Data.objects.all()},
               'terms': [
                 'id',
-                'value'
+                'pub_date'
               ]}
              ])
 
-    #Step 2: Create the Chart object
     cht = Chart(
             datasource = weatherdata,
             series_options =
@@ -177,7 +180,7 @@ def chart_view(request):
                   'stacking': False},
                 'terms':{
                   'id': [
-                    'id'
+                    'pub_date'
                   ]
                   }}],
             chart_options =
@@ -187,7 +190,17 @@ def chart_view(request):
                     'title': {
                        'text': 'Data number'}}})
 
-    #Step 3: Send the chart object to the template.
-    # return render_to_response({'weatherchart': cht})
-    return render(request, "back/chart_view.html", locals())
+    from multiprocessing import Process, Queue
+    from sockedserve import run
+
+    run()
+
+    # i1 = Queue()
+    # ip1 = Process(target=run, args=("hhhh"))
+    # ip1.start()
+    #
+    # ip1.join()
+
+    return render(request, "back/graph/graph.html", locals())
+    # return render(request, "back/chart_view.html", locals())
 

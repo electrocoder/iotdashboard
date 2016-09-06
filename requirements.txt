@@ -12,3 +12,6 @@ django-markup-deprecated
 psycopg2==2.5.4
 dj-static
 Sphinx
+gevent-websocket
+gevent-socketio
+gevent==1.1b4

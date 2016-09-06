@@ -11,6 +11,9 @@ from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.decorators import login_required
+
+from iotdashboard.settings import LOGIN_URL
 
 from forms import *
 
@@ -61,6 +64,7 @@ def element_edit(request, id):
 
     return render(request, "back/add.html", locals())
 
+@login_required(login_url=LOGIN_URL)
 def element_delete(request, id=None):
     """
     :param request:
