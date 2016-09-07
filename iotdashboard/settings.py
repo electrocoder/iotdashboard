@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'channels',
     'elements',
     'datas',
+    'drawcharts',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -77,7 +78,7 @@ WSGI_APPLICATION = 'iotdashboard.wsgi.application'
 HEROKU = False # if heroku server HEROKU = True,  else HEROKU = False for local server
 IHOOK_WEB_SITE = True # if ihook.xyz domain IHOOK_WEB_SITE = True, else IHOOK_WEB_SITE = False for local server
 
-DEBUG = False
+DEBUG = True
 
 if HEROKU:
     import dj_database_url
@@ -155,3 +156,9 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 LOGIN_URL          = '/admin/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGIN_ERROR_URL    = '/'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    }
+}

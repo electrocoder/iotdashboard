@@ -1,39 +1,113 @@
-{% extends "back/base.html" %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title> Django Chartit Demo - {{title}} </title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css"
+        href="{% static "back/chart/styles/nature.css" %}">
+        <link rel="stylesheet" type="text/css"
+        href="{% static "back/chart/styles/pygments.css" %}">
+        <script src="/static/back/graph/jquery-1.6.1.min.js" type="text/javascript"></script>
+        <script src="{% static "back/chart/js/highcharts/highcharts.js" %}"
+        type="text/javascript"></script>
+        <script src="{% static "back/chart/js/highcharts/themes/default.js" %}"
+        type="text/javascript"></script>
 
-{% load staticfiles %}
-{% load panels_tags %}
+        {% load chartit %}
+		{{ cht|load_charts:"c1" }}
 
-{% block title %}Panel for Iot Device{% endblock %}
+        <script type="text/javascript">
+            var DOCUMENTATION_OPTIONS = {
+                URL_ROOT : '',
+                VERSION : '0.1',
+                COLLAPSE_INDEX : false,
+                FILE_SUFFIX : '.html',
+                HAS_SOURCE : true
+            };
 
-{% block content %}
-<div class="row placeholders">
-    <div class="col-xs-6 col-sm-3 placeholder">
-        <a href="{% url 'device_add' %}">
-        <img src="{% static "back/dashboard/img/cloud-256.png" %}" width="200" height="200" class="img-responsive"
-             alt="cloud">
-        <h4>Add Device</h4></a>
-        <span class="text-muted">Iot Device Manager</span>
-    </div>
-    <div class="col-xs-6 col-sm-3 placeholder">
-        <a href="{% url 'panels_index' %}">
-        <img src="{% static "back/dashboard/img/channel-256.png" %}" width="200" height="200" class="img-responsive"
-             alt="channel">
-        <h4>Add Channel</h4></a>
-        <span class="text-muted">Iot Device Manager</span>
-    </div>
-    <div class="col-xs-6 col-sm-3 placeholder">
-        <a href="{% url 'panels_index' %}">
-        <img src="{% static "back/dashboard/img/element-256.png" %}" width="200" height="200" class="img-responsive"
-             alt="element">
-        <h4>Add Element</h4></a>
-        <span class="text-muted">Iot Device Explorer</span>
-    </div>
-    <div class="col-xs-6 col-sm-3 placeholder">
-        <a href="{% url 'panels_index' %}">
-        <img src="{% static "back/dashboard/img/key-256.png" %}" width="200" height="200" class="img-responsive"
-             alt="key">
-        <h4>Key Manager</h4></a>
-        <span class="text-muted">Create A New Key</span>
-    </div>
-</div>
-{% endblock %}
+        </script>
+        <script src="{% static "back/chart/js/demo/underscore.js" %}"
+        type="text/javascript"></script>
+        <script src="{% static "back/chart/js/demo/doctools.js" %}"
+        type="text/javascript"></script>
+
+
+    </head>
+    <body>
+        <div class="related">
+            <h3>Navigation</h3>
+            <ul>
+                <li class="right" style="margin-right: 10px" >
+                    <a href="/#feedback" title = "Feedback">Feedback</a>
+                </li>
+                <li class="right" style="margin-right: 10px" >
+                    <a href="http://github.com/chartit/django-chartit/" title = "Code">Code</a> |
+                    </li>
+                    <li class="right" style="margin-right: 10px" >
+                    <a href="http://django-chartit.readthedocs.io/en/latest/" title = "Docs">Docs</a> |
+                    </li>
+                    <li class="right" style="margin-right: 10px" >
+                    <a href="/demo" title = "Demo">Demo</a> |
+                    </li>
+                    <li class="right" style="margin-right: 10px" >
+                    <a href="/" title = "Home"> Home</a> |
+                    </li>
+                    <li>
+                    <a href="/demo">Django-Chartit Demo </a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="document">
+                    <div class="documentwrapper">
+                    <div class="bodywrapper">
+                    <div class="body">
+                    {% block welcome %} {% endblock %}
+
+
+                        <div class="source">
+							{% load markup %}
+							<div class="section">
+								<h1> {{ title }}</h1>
+								<div id="c1"></div>
+								{% load markup %}
+								{{ doc|restructuredtext }}
+								{% if code %}
+								<h3> code </h3>
+								<div>
+
+								</div>
+								{% endif %}
+							</div>
+						</div>
+
+
+                    </div>
+                    </div>
+                    </div>
+                    <div class="sphinxsidebar">
+                    <div class="sphinxsidebarwrapper">
+
+                    {% for section in sidebar_items|dictsort:'sort_order' %}
+                    <h3> {{ section.section }}</h3>
+                    <ul>
+                    <ul>
+                    {% for title, url_name in section.links %}
+                    <li><a class="reference internal"
+                    href="{% url url_name %}">{{ title }}</a></li>
+                    {% endfor %}
+                    </ul>
+                    </ul>
+                    {% endfor %}
+                    </div>
+                    </div>
+                    <div class="clearer"></div>
+                    </div>
+                    <div class="related">
+                    </div>
+                    <div class="footer">
+                    © Copyright 2011, Praveen Gollakota.
+                    </div>
+                    </body>
+                    </html>

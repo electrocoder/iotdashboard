@@ -26,6 +26,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render_to_response
 from django.shortcuts import render
+from django.utils.translation import ugettext_lazy as _
 
 from chartit import DataPool, Chart
 
@@ -33,6 +34,7 @@ from models import Data
 from elements.models import Element
 from channels.models import Channel
 from permissions import IsOwnerOrReadOnly
+from drawcharts.models import DrawChart
 
 class DataList(views.APIView):
     """
@@ -155,52 +157,70 @@ class JSONResponse(HttpResponse):
         kwargs['content_type'] = 'application/json'
         super(JSONResponse, self).__init__(content, **kwargs)
 
-def chart_view(request):
+def chart_view(request, id):
     """
     :param request:
     :return:
     """
+    datas = Data.objects.filter(channel=id)
 
-    weatherdata = \
-        DataPool(
+    for i in datas:
+        # problem ?
+        DrawChart(channel=i.channel, value_char=str(i.value), value_decimal=float(i.value), pub_date=i.pub_date).save()
+
+    datas = DrawChart.objects.all()
+
+    ds = DataPool(
            series=
-            [{'options': {
-               'source': Data.objects.all()},
+            [
+                {
+                'options': {
+               'source': datas
+            },
               'terms': [
                 'id',
-                'pub_date'
-              ]}
-             ])
+                'pub_date',
+                  'value_decimal',
+              ]
+            }
+             ]
+    )
 
     cht = Chart(
-            datasource = weatherdata,
+            datasource = ds,
             series_options =
-              [{'options':{
+              [
+                  {'options':{
                   'type': 'line',
                   'stacking': False},
                 'terms':{
-                  'id': [
-                    'pub_date'
+                  'pub_date': [
+                    'value_decimal',
                   ]
-                  }}],
-            chart_options =
-              {'title': {
-                   'text': 'Datas'},
-               'xAxis': {
-                    'title': {
-                       'text': 'Data number'}}})
+                  }
+                  }
+              ],
 
-    from multiprocessing import Process, Queue
-    from sockedserve import run
+        chart_options={
+            'title': {
+                'text': _('Kanal: ') + str(datas[0].channel)
+            },
+            'xAxis': {
+                'title': {
+                    'text': 'Publish Date'}
+            },
+            'yAxis': {
+                'title': {
+                    'text': 'Value'}
+            },
+            'legend': {
+                'enabled': False},
+            'credits': {
+                'enabled': False}
+        },
 
-    run()
+    )
 
-    # i1 = Queue()
-    # ip1 = Process(target=run, args=("hhhh"))
-    # ip1.start()
-    #
-    # ip1.join()
+    val = DrawChart.objects.filter(channel=str(datas[0].channel)).delete()
 
-    return render(request, "back/graph/graph.html", locals())
-    # return render(request, "back/chart_view.html", locals())
-
+    return render(request, "back/chart_view.html", locals())
