@@ -78,6 +78,9 @@ urlpatterns += i18n_patterns(
     # chart
     url(r'^chart-view/(?P<id>[^/]*)/$', views_datas.chart_view, name='chart_view'),
 
+    # realtime chart
+    url(r'^chart-view/realtime/(?P<id>[^/]*)/$', views_datas.chart_view_realtime, name='chart_view_realtime'),
+
     # django admin page
     url(r'^admin/', admin.site.urls),
 )
@@ -88,8 +91,8 @@ urlpatterns += [
 
     # REST framework
     url(r'^api/', include(router.urls)),
-    url(r'^api/v1/data/(?P<api_key>[^/]*)/?$', views_datas.DataList.as_view()),
-    url(r'^api/v1/(?P<pk>[0-9]+)/?$',  views_datas.DataDetail.as_view()),
+    url(r'^api/v1/datas/(?P<api_key>[^/]*)/?$', views_datas.DataList.as_view()),
+    url(r'^api/v1/datas/(?P<pk>[0-9]+)/(?P<api_key>[^/]*)/?$',  views_datas.DataDetail.as_view()),
 ]
 
 if settings.DEBUG == True:

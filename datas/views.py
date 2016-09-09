@@ -33,8 +33,9 @@ from chartit import DataPool, Chart
 from models import Data
 from elements.models import Element
 from channels.models import Channel
-from permissions import IsOwnerOrReadOnly
 from drawcharts.models import DrawChart
+
+from datas.permissions import IsOwnerOrReadOnly
 
 class DataList(views.APIView):
     """
@@ -53,7 +54,7 @@ class DataList(views.APIView):
         :return:
         """
         try:
-            datas = Data.objects.filter(channel=Channel.objects.get(api_key=api_key))
+            datas = Data.objects.filter(owner=request.user, channel=Channel.objects.get(api_key=api_key))
             serializer = DataSerializer(datas, many=True)
             return JSONResponse(serializer.data)
         except:
@@ -92,24 +93,24 @@ class DataDetail(views.APIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
-    def get_object(self, pk):
+    def get_object(self, request, pk, api_key):
         """
         :param pk:
         :return:
         """
         try:
-            return Data.objects.get(pk=pk)
+            return Data.objects.get(pk=pk, owner=request.user, channel=Channel.objects.get(api_key=api_key))
         except Data.DoesNotExist:
             raise Http404
 
-    def get(self, request, pk, format=None):
+    def get(self, request, pk, api_key, format=None):
         """
         :param request:
         :param pk:
         :param format:
         :return:
         """
-        datas = self.get_object(pk)
+        datas = self.get_object(request, pk, api_key)
         serializer = DataSerializer(datas)
         return Response(serializer.data)
 
@@ -166,7 +167,10 @@ def chart_view(request, id):
 
     for i in datas:
         # problem ?
-        DrawChart(channel=i.channel, value_char=str(i.value), value_decimal=float(i.value), pub_date=i.pub_date).save()
+        try:
+            DrawChart(channel=i.channel, value_char=str(i.value), value_decimal=float(i.value), pub_date=i.pub_date).save()
+        except:
+            pass
 
     datas = DrawChart.objects.all()
 
@@ -224,3 +228,75 @@ def chart_view(request, id):
     val = DrawChart.objects.filter(channel=str(datas[0].channel)).delete()
 
     return render(request, "back/chart_view.html", locals())
+
+def chart_view_realtime(request, id):
+    """
+    :param request:
+    :return:
+    """
+    datas = Data.objects.filter(channel=id)
+
+    for i in datas:
+        # problem ?
+        try:
+            DrawChart(channel=i.channel, value_char=str(i.value), value_decimal=float(i.value), pub_date=i.pub_date).save()
+        except:
+            pass
+
+    datas = DrawChart.objects.all()
+
+    ds = DataPool(
+           series=
+            [
+                {
+                'options': {
+               'source': datas
+            },
+              'terms': [
+                'id',
+                'pub_date',
+                  'value_decimal',
+              ]
+            }
+             ]
+    )
+
+    cht = Chart(
+            datasource = ds,
+            series_options =
+              [
+                  {'options':{
+                  'type': 'line',
+                  'stacking': False},
+                'terms':{
+                  'pub_date': [
+                    'value_decimal',
+                  ]
+                  }
+                  }
+              ],
+
+        chart_options={
+            'title': {
+                'text': _('Kanal: ') + str(datas[0].channel)
+            },
+            'xAxis': {
+                'title': {
+                    'text': 'Publish Date'}
+            },
+            'yAxis': {
+                'title': {
+                    'text': 'Value'}
+            },
+            'legend': {
+                'enabled': False},
+            'credits': {
+                'enabled': False}
+        },
+
+    )
+
+    val = DrawChart.objects.filter(channel=str(datas[0].channel)).delete()
+
+    return render(request, "back/chart_view_realtime.html", locals())
+
