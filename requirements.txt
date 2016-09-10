@@ -15,3 +15,4 @@ Sphinx
 gevent-websocket
 gevent-socketio
 gevent==1.1b4
+xlwt

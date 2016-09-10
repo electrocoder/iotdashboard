@@ -4,9 +4,12 @@
 {% load panels_tags %}
 {% load i18n %}
 
-{% block title %}Element List{% endblock %}
+{% block title %}{% trans 'Element Listesi' %}{% endblock %}
 
-{% block website_name %}Element List{% endblock %}
+{% block website_name %}{% trans 'Element Listesi' %}
+    <a class="btn btn-primary" href='{% url "export" "element" %}?format=json' role="button">{% trans 'Json aktar' %}</a>
+    <a class="btn btn-success" href='{% url "export" "element" %}?format=xml' role="button">{% trans 'Xml aktar' %}</a>
+{% endblock %}
 
 {% block content %}
 

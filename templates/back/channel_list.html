@@ -4,9 +4,12 @@
 {% load panels_tags %}
 {% load i18n %}
 
-{% block title %}Channel List{% endblock %}
+{% block title %}{% trans 'Kanal Listesi' %}{% endblock %}
 
-{% block website_name %}{% trans 'Kanal Listesi' %}{% endblock %}
+{% block website_name %}{% trans 'Kanal Listesi' %}
+    <a class="btn btn-primary" href='{% url "export" "channel" %}?format=json' role="button">{% trans 'Json aktar' %}</a>
+    <a class="btn btn-success" href='{% url "export" "channel" %}?format=xml' role="button">{% trans 'Xml aktar' %}</a>
+{% endblock %}
 
 {% block content %}
 

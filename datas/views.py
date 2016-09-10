@@ -300,3 +300,18 @@ def chart_view_realtime(request, id):
 
     return render(request, "back/chart_view_realtime.html", locals())
 
+def export(request, model):
+    """
+    :param request:
+    :return:
+    """
+    from django.apps import apps
+    from django.core import serializers
+    from django.http import JsonResponse
+
+    model = apps.get_model(app_label=model + 's', model_name=model)
+
+    data = serializers.serialize(request.GET['format'], model.objects.all())
+
+    return JsonResponse({'response_data':data})
+

@@ -4,9 +4,12 @@
 {% load panels_tags %}
 {% load i18n %}
 
-{% block title %}Device List{% endblock %}
+{% block title %}{% trans 'Aygıt Listesi' %}{% endblock %}
 
-{% block website_name %}Device List{% endblock %}
+{% block website_name %}{% trans 'Aygıt Listesi' %}
+    <a class="btn btn-primary" href='{% url "export" "device" %}?format=json' role="button">{% trans 'Json aktar' %}</a>
+    <a class="btn btn-success" href='{% url "export" "device" %}?format=xml' role="button">{% trans 'Xml aktar' %}</a>
+{% endblock %}
 
 {% block content %}
 

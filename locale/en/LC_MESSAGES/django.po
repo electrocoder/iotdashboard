@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-01 21:19+0300\n"
+"POT-Creation-Date: 2016-09-10 19:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,26 +41,26 @@ msgstr "description"
 msgid "aktif et"
 msgstr "enable"
 
-#: channels/views.py:30
+#: channels/views.py:33
 msgid "Kanal ekleme başarılı"
 msgstr "Add channel successful"
 
-#: channels/views.py:32 channels/views.py:60 devices/views.py:32
-#: devices/views.py:60 elements/views.py:32 elements/views.py:60
+#: channels/views.py:35 channels/views.py:63 devices/views.py:35
+#: devices/views.py:63 elements/views.py:35 elements/views.py:63
 msgid "Dikkat! Lütfen hataları düzeltiniz!"
 msgstr "Warning! Please correct the mistake!"
 
-#: channels/views.py:57
+#: channels/views.py:60
 msgid "Kanal güncelleme başarılı"
 msgstr "Channel update successful"
 
-#: channels/views.py:72
+#: channels/views.py:76
 #, fuzzy
 #| msgid "Kanal Ekle"
 msgid "Kanal silindi"
 msgstr "Add Channel"
 
-#: channels/views.py:96
+#: channels/views.py:100
 #, fuzzy
 #| msgid "Key Yönetici"
 msgid "Key üretildi"
@@ -78,6 +78,12 @@ msgstr "name id"
 msgid "deger"
 msgstr "value"
 
+#: datas/views.py:210 datas/views.py:281
+#, fuzzy
+#| msgid "Kanal"
+msgid "Kanal: "
+msgstr "Channel"
+
 #: devices/models.py:22
 msgid "resim"
 msgstr "image"
@@ -86,15 +92,15 @@ msgstr "image"
 msgid "yayın tarihi"
 msgstr "publish date"
 
-#: devices/views.py:30
+#: devices/views.py:33
 msgid "Aygıt ekleme başarılı"
 msgstr "Add device successful"
 
-#: devices/views.py:57
+#: devices/views.py:60
 msgid "Aygıt güncelleme başarılı"
 msgstr "Device update successful"
 
-#: devices/views.py:72
+#: devices/views.py:76
 #, fuzzy
 #| msgid "Aygıt Ekle"
 msgid "Aygıt silindi"
@@ -104,25 +110,25 @@ msgstr "Add Device"
 msgid "tip"
 msgstr "type"
 
-#: elements/views.py:30
+#: elements/views.py:33
 msgid "Element ekleme başarılı"
 msgstr "Add element successful"
 
-#: elements/views.py:57
+#: elements/views.py:60
 msgid "Element güncelleme başarılı"
 msgstr "Element update successful"
 
-#: elements/views.py:72
+#: elements/views.py:76
 #, fuzzy
 #| msgid "Element Ekle"
 msgid "Element silindi"
 msgstr "Add Element"
 
-#: iotdashboard/settings.py:133
+#: iotdashboard/settings.py:123
 msgid "Turkish"
 msgstr "Türkçe"
 
-#: iotdashboard/settings.py:134
+#: iotdashboard/settings.py:124
 msgid "English"
 msgstr "İngilizce"
 
@@ -151,7 +157,7 @@ msgid "Kanal Listesi"
 msgstr "Channel List"
 
 #: templates/back/channel_list.html:30 templates/back/data_list.html:30
-#: templates/back/device_list.html:30 templates/back/element_list.html:30
+#: templates/back/device_list.html:34 templates/back/element_list.html:30
 #: templates/back/key_list.html:30
 msgid "Id"
 msgstr ""
@@ -161,7 +167,7 @@ msgstr ""
 msgid "Aygıt"
 msgstr "Device"
 
-#: templates/back/channel_list.html:32 templates/back/device_list.html:31
+#: templates/back/channel_list.html:32 templates/back/device_list.html:35
 #: templates/back/element_list.html:33 templates/back/key_list.html:32
 msgid "İsim"
 msgstr "Name"
@@ -171,36 +177,42 @@ msgid "Api Key"
 msgstr ""
 
 #: templates/back/channel_list.html:34 templates/back/data_list.html:37
-#: templates/back/device_list.html:32 templates/back/element_list.html:36
+#: templates/back/device_list.html:36 templates/back/element_list.html:36
 msgid "Yayın Tarihi"
 msgstr "Publish Date"
 
-#: templates/back/channel_list.html:35 templates/back/device_list.html:33
+#: templates/back/channel_list.html:35 templates/back/device_list.html:37
 #: templates/back/element_list.html:37
 msgid "Açıklama"
 msgstr "Description"
 
-#: templates/back/channel_list.html:36 templates/back/device_list.html:34
+#: templates/back/channel_list.html:36 templates/back/device_list.html:38
 #: templates/back/element_list.html:38
 msgid "Aktif Et"
 msgstr "Enable"
 
 #: templates/back/channel_list.html:37 templates/back/channel_list.html:51
-#: templates/back/device_list.html:35 templates/back/device_list.html:47
+#: templates/back/device_list.html:39 templates/back/device_list.html:51
 #: templates/back/element_list.html:39 templates/back/element_list.html:55
 msgid "Güncelle"
 msgstr "Edit"
 
 #: templates/back/channel_list.html:38 templates/back/channel_list.html:52
-#: templates/back/device_list.html:36 templates/back/device_list.html:48
+#: templates/back/device_list.html:40 templates/back/device_list.html:52
 #: templates/back/element_list.html:40 templates/back/element_list.html:56
 msgid "Sil"
 msgstr "Delete"
 
-#: templates/back/channel_list.html:52 templates/back/device_list.html:48
+#: templates/back/channel_list.html:52 templates/back/device_list.html:52
 #: templates/back/element_list.html:56
 msgid "Model silinecek. Emin misiniz?"
 msgstr ""
+
+#: templates/back/chart_view.html:8 templates/back/chart_view.html:10
+#, fuzzy
+#| msgid "Göster"
+msgid "Grafik Gösterim"
+msgstr "View"
 
 #: templates/back/data_list.html:31
 msgid "Sahip"
@@ -230,6 +242,18 @@ msgstr "Show Datas"
 msgid "Göster"
 msgstr "View"
 
+#: templates/back/device_list.html:10
+msgid "Excele aktar"
+msgstr ""
+
+#: templates/back/device_list.html:11
+msgid "Json aktar"
+msgstr ""
+
+#: templates/back/device_list.html:12
+msgid "Xml aktar"
+msgstr ""
+
 #: templates/back/element_list.html:34
 msgid "Tip"
 msgstr "Type"
@@ -254,7 +278,7 @@ msgstr "Free Dashboard for Iot Devices"
 msgid "iot aygıt ekle"
 msgstr "Add Iot Device"
 
-#: templates/back/index.html:17 templates/back/navbar.html:20
+#: templates/back/index.html:17 templates/back/navbar.html:21
 #: templates/back/sidebar.html:6
 msgid "Aygıt Ekle"
 msgstr "Add Device"
@@ -267,7 +291,7 @@ msgstr "Iot Device Manager"
 msgid "iot kanal ekle"
 msgstr "Add Channel"
 
-#: templates/back/index.html:24 templates/back/navbar.html:21
+#: templates/back/index.html:24 templates/back/navbar.html:22
 #: templates/back/sidebar.html:7
 msgid "Kanal Ekle"
 msgstr "Add Channel"
@@ -280,7 +304,7 @@ msgstr "Iot Channel Manager"
 msgid "iot element ekle"
 msgstr "Add Element"
 
-#: templates/back/index.html:31 templates/back/navbar.html:22
+#: templates/back/index.html:31 templates/back/navbar.html:23
 #: templates/back/sidebar.html:8
 msgid "Element Ekle"
 msgstr "Add Element"
@@ -309,37 +333,45 @@ msgstr "Yeni API key üretmek istiyor musun?"
 msgid "Üret"
 msgstr "Generate"
 
-#: templates/back/navbar.html:18
+#: templates/back/navbar.html:19
 msgid "Yönet"
 msgstr "Manage"
 
-#: templates/back/navbar.html:24 templates/back/sidebar.html:11
+#: templates/back/navbar.html:25 templates/back/sidebar.html:11
 msgid "Aygıtlar"
 msgstr "Devices"
 
-#: templates/back/navbar.html:25 templates/back/sidebar.html:12
+#: templates/back/navbar.html:26 templates/back/sidebar.html:12
 msgid "Kanallar"
 msgstr "Channels"
 
-#: templates/back/navbar.html:26 templates/back/sidebar.html:13
+#: templates/back/navbar.html:27 templates/back/sidebar.html:13
 msgid "Elementler"
 msgstr "Elements"
 
-#: templates/back/navbar.html:28 templates/back/sidebar.html:16
+#: templates/back/navbar.html:29 templates/back/sidebar.html:16
 msgid "API"
 msgstr ""
 
-#: templates/back/navbar.html:29 templates/back/sidebar.html:17
+#: templates/back/navbar.html:30 templates/back/sidebar.html:17
 msgid "Datalar"
 msgstr "Datas"
 
-#: templates/back/navbar.html:32
+#: templates/back/navbar.html:33
 msgid "Ayarlar"
 msgstr "Settings"
 
-#: templates/back/navbar.html:33
+#: templates/back/navbar.html:34
 msgid "Yardım"
 msgstr "Help"
+
+#: templates/back/navbar.html:39
+msgid "Çıkış"
+msgstr ""
+
+#: templates/back/navbar.html:46
+msgid "Giriş"
+msgstr ""
 
 #: templates/front/index.html:8
 msgid "iHook, iot dashboard, iot server"

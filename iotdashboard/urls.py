@@ -81,6 +81,9 @@ urlpatterns += i18n_patterns(
     # realtime chart
     url(r'^chart-view/realtime/(?P<id>[^/]*)/$', views_datas.chart_view_realtime, name='chart_view_realtime'),
 
+    # export xls
+    url(r'^export/(?P<model>[\w-]+)/$', views_datas.export, name='export'),
+
     # django admin page
     url(r'^admin/', admin.site.urls),
 )
