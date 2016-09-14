@@ -71,6 +71,7 @@ urlpatterns += i18n_patterns(
 
     # REST framework login to the Browsable API
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^docs/api/', include('rest_framework_docs.urls')),
 
     # data query
     url(r'^datas/$', views_datas.DataQueryList.as_view(), name='datas'),

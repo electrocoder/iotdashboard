@@ -6,6 +6,19 @@
 IOT Dashboard
 ===================================
 
+İçindekiler
+==================
+
+.. toctree::
+   :maxdepth: 2
+
+   api_docs
+   api
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
 Nasıl Test ederim?
 ==================
 
@@ -38,16 +51,4 @@ iletişim protokollerini destekler.
 
 Google developer chart apileri ile entegre olarak verileri gerçek zamanlı izleme olanağı sağlar.
 
-.. toctree::
-   :maxdepth: 2
-
-   api
-
-
-İçindekiler
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 

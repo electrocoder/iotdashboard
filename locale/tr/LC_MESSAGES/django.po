@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-10 19:59+0300\n"
+"POT-Creation-Date: 2016-09-15 00:41+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,7 +75,7 @@ msgstr ""
 msgid "deger"
 msgstr ""
 
-#: datas/views.py:210 datas/views.py:281
+#: datas/views.py:214 datas/views.py:285
 msgid "Kanal: "
 msgstr ""
 
@@ -115,11 +115,11 @@ msgstr ""
 msgid "Element silindi"
 msgstr ""
 
-#: iotdashboard/settings.py:123
+#: iotdashboard/settings.py:124
 msgid "Turkish"
 msgstr ""
 
-#: iotdashboard/settings.py:124
+#: iotdashboard/settings.py:125
 msgid "English"
 msgstr ""
 
@@ -143,59 +143,69 @@ msgstr ""
 msgid "Dashboard for Iot Device"
 msgstr ""
 
-#: templates/back/channel_list.html:9
+#: templates/back/channel_list.html:7 templates/back/channel_list.html:9
 msgid "Kanal Listesi"
 msgstr ""
 
-#: templates/back/channel_list.html:30 templates/back/data_list.html:30
-#: templates/back/device_list.html:34 templates/back/element_list.html:30
+#: templates/back/channel_list.html:10 templates/back/data_list.html:10
+#: templates/back/device_list.html:10 templates/back/element_list.html:10
+msgid "Json aktar"
+msgstr ""
+
+#: templates/back/channel_list.html:11 templates/back/data_list.html:11
+#: templates/back/device_list.html:11 templates/back/element_list.html:11
+msgid "Xml aktar"
+msgstr ""
+
+#: templates/back/channel_list.html:33 templates/back/data_list.html:33
+#: templates/back/device_list.html:33 templates/back/element_list.html:33
 #: templates/back/key_list.html:30
 msgid "Id"
 msgstr ""
 
-#: templates/back/channel_list.html:31 templates/back/data_list.html:33
-#: templates/back/element_list.html:31 templates/back/key_list.html:31
+#: templates/back/channel_list.html:34 templates/back/data_list.html:36
+#: templates/back/element_list.html:34 templates/back/key_list.html:31
 msgid "Aygıt"
 msgstr ""
 
-#: templates/back/channel_list.html:32 templates/back/device_list.html:35
-#: templates/back/element_list.html:33 templates/back/key_list.html:32
+#: templates/back/channel_list.html:35 templates/back/device_list.html:34
+#: templates/back/element_list.html:36 templates/back/key_list.html:32
 msgid "İsim"
 msgstr ""
 
-#: templates/back/channel_list.html:33 templates/back/key_list.html:33
+#: templates/back/channel_list.html:36 templates/back/key_list.html:33
 msgid "Api Key"
 msgstr ""
 
-#: templates/back/channel_list.html:34 templates/back/data_list.html:37
-#: templates/back/device_list.html:36 templates/back/element_list.html:36
+#: templates/back/channel_list.html:37 templates/back/data_list.html:40
+#: templates/back/device_list.html:35 templates/back/element_list.html:39
 msgid "Yayın Tarihi"
 msgstr ""
 
-#: templates/back/channel_list.html:35 templates/back/device_list.html:37
-#: templates/back/element_list.html:37
+#: templates/back/channel_list.html:38 templates/back/device_list.html:36
+#: templates/back/element_list.html:40
 msgid "Açıklama"
 msgstr ""
 
-#: templates/back/channel_list.html:36 templates/back/device_list.html:38
-#: templates/back/element_list.html:38
+#: templates/back/channel_list.html:39 templates/back/device_list.html:37
+#: templates/back/element_list.html:41
 msgid "Aktif Et"
 msgstr ""
 
-#: templates/back/channel_list.html:37 templates/back/channel_list.html:51
-#: templates/back/device_list.html:39 templates/back/device_list.html:51
-#: templates/back/element_list.html:39 templates/back/element_list.html:55
+#: templates/back/channel_list.html:40 templates/back/channel_list.html:54
+#: templates/back/device_list.html:38 templates/back/device_list.html:50
+#: templates/back/element_list.html:42 templates/back/element_list.html:58
 msgid "Güncelle"
 msgstr ""
 
-#: templates/back/channel_list.html:38 templates/back/channel_list.html:52
-#: templates/back/device_list.html:40 templates/back/device_list.html:52
-#: templates/back/element_list.html:40 templates/back/element_list.html:56
+#: templates/back/channel_list.html:41 templates/back/channel_list.html:55
+#: templates/back/device_list.html:39 templates/back/device_list.html:51
+#: templates/back/element_list.html:43 templates/back/element_list.html:59
 msgid "Sil"
 msgstr ""
 
-#: templates/back/channel_list.html:52 templates/back/device_list.html:52
-#: templates/back/element_list.html:56
+#: templates/back/channel_list.html:55 templates/back/device_list.html:51
+#: templates/back/element_list.html:59
 msgid "Model silinecek. Emin misiniz?"
 msgstr ""
 
@@ -203,47 +213,48 @@ msgstr ""
 msgid "Grafik Gösterim"
 msgstr ""
 
-#: templates/back/data_list.html:31
+#: templates/back/data_list.html:7 templates/back/data_list.html:9
+#: templates/back/navbar.html:30 templates/back/sidebar.html:18
+msgid "Datalar"
+msgstr ""
+
+#: templates/back/data_list.html:34
 msgid "Sahip"
 msgstr ""
 
-#: templates/back/data_list.html:32
+#: templates/back/data_list.html:35
 msgid "Ip Adresi"
 msgstr ""
 
-#: templates/back/data_list.html:34 templates/back/element_list.html:32
+#: templates/back/data_list.html:37 templates/back/element_list.html:35
 msgid "Kanal"
 msgstr ""
 
-#: templates/back/data_list.html:35 templates/back/element_list.html:35
+#: templates/back/data_list.html:38 templates/back/element_list.html:38
 msgid "İsim Id"
 msgstr ""
 
-#: templates/back/data_list.html:36
+#: templates/back/data_list.html:39
 msgid "Değer"
 msgstr ""
 
-#: templates/back/data_list.html:38
-msgid "Dataları Göster"
+#: templates/back/data_list.html:41
+msgid "Chart Göster"
 msgstr ""
 
-#: templates/back/data_list.html:52
+#: templates/back/data_list.html:55
 msgid "Göster"
 msgstr ""
 
-#: templates/back/device_list.html:10
-msgid "Excele aktar"
+#: templates/back/device_list.html:7 templates/back/device_list.html:9
+msgid "Aygıt Listesi"
 msgstr ""
 
-#: templates/back/device_list.html:11
-msgid "Json aktar"
+#: templates/back/element_list.html:7 templates/back/element_list.html:9
+msgid "Element Listesi"
 msgstr ""
 
-#: templates/back/device_list.html:12
-msgid "Xml aktar"
-msgstr ""
-
-#: templates/back/element_list.html:34
+#: templates/back/element_list.html:37
 msgid "Tip"
 msgstr ""
 
@@ -342,10 +353,6 @@ msgstr ""
 msgid "API"
 msgstr ""
 
-#: templates/back/navbar.html:30 templates/back/sidebar.html:17
-msgid "Datalar"
-msgstr ""
-
 #: templates/back/navbar.html:33
 msgid "Ayarlar"
 msgstr ""
@@ -360,6 +367,10 @@ msgstr ""
 
 #: templates/back/navbar.html:46
 msgid "Giriş"
+msgstr ""
+
+#: templates/back/sidebar.html:17
+msgid "API Döküman"
 msgstr ""
 
 #: templates/front/index.html:8

@@ -9,14 +9,6 @@ from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
 from models import Data
 
-class UserSerializer(serializers.ModelSerializer):
-    """
-    """
-    datas = serializers.PrimaryKeyRelatedField(many=True, queryset=Data.objects.all())
-    class Meta:
-        model = User
-        fields = ('id', 'username', 'datas')
-
 class DataSerializer(serializers.ModelSerializer):
     """
     """

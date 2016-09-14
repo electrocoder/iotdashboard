@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Iot dashboard POST example
+Iot dashboard GET example
 
 iot-dashboard
 IoT: Platform for Internet of Things
@@ -15,14 +15,10 @@ You can find project details on our project page https://iothook.com and wiki ht
 """
 
 import requests
-import json
 
-API_KEY = "c791e11-d9ab779"
-url = 'http://localhost:8000/api/v1/datas/' + API_KEY
+API_KEY = "0cd76eb-5f3b179"
+url = 'http://localhost:8000/api/v1/datas/7/' + API_KEY
 
-datas = {'name_id':'test','value':'66'}
-
-auth=('iottestuser', 'iot12345**')
-
-response = requests.post(url, data=datas, auth=auth)
-print response
+response = requests.get(url, auth=('admin', 'Aa12345**'))
+data = response.json()
+print data

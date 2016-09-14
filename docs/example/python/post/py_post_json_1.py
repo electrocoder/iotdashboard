@@ -19,6 +19,7 @@ import json
 import urllib
 import urllib2
 import random
+import pprint
 
 API_KEY = "c791e11-d9ab779"
 url = 'http://localhost:8000/api/v1/datas/' + API_KEY
@@ -26,11 +27,9 @@ auth=('iottestuser', 'iot12345**')
 
 data = {"name_id":"test", "value":"45"}
 
-data = urllib.urlencode(data)
+data_json = json.dumps(data)
+headers = {'Content-type': 'application/json'}
 
-req = urllib2.Request(url, data)
-response = urllib2.urlopen(req)
+response = requests.post(url, data=data_json, headers=headers, auth=auth)
+pprint.pprint(response.json())
 
-html = response.read()
-
-print html

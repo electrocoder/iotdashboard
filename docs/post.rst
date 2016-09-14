@@ -23,32 +23,32 @@ Post Yapısı
 
 .. code-block:: bash
 
-   http -a USERNAME:PASSWORD --json POST http://localhost:8000/api/v1/data/APIKEY/ name_id="ELEMENT_ID" value="VALUE"
+   http -a USERNAME:PASSWORD --json POST http://localhost:8000/api/v1/datas/APIKEY/ name_id="ELEMENT_ID" value="VALUE"
 
 Post Api
 ========
 
 .. code-block:: bash
 
-   http -a iottestuser:iot12345** --json POST http://localhost:8000/api/v1/data/0cd76eb-5f3b179/ name_id="test" value="1"
+   http -a iottestuser:iot12345** --json POST http://localhost:8000/api/v1/datas/0cd76eb-5f3b179/ name_id="test" value="1"
 
 veya
 
 .. code-block:: bash
 
-   http -a iottestuser:iot12345** --json POST http://127.0.0.1:8000/api/v1/data/0cd76eb-5f3b179/ name_id="test" value="1"
+   http -a iottestuser:iot12345** --json POST http://127.0.0.1:8000/api/v1/datas/0cd76eb-5f3b179/ name_id="test" value="1"
 
 veya
 
 .. code-block:: bash
 
-   http -a iottestuser:iot12345** --json POST http://ihook.xyz/api/v1/data/0cd76eb-5f3b179/ name_id="test" value="1"
+   http -a iottestuser:iot12345** --json POST http://ihook.xyz/api/v1/datas/0cd76eb-5f3b179/ name_id="test" value="1"
 
 POST işleminin başarılı olduğu JSON olarak döner.
 
 .. code-block:: bash
 
-    $ http -a iottestuser:iot12345** --json POST http://127.0.0.1:8000/api/v1/data/0cd76eb-5f3b179/ name_id="test" value="1"
+    $ http -a iottestuser:iot12345** --json POST http://127.0.0.1:8000/api/v1/datas/0cd76eb-5f3b179/ name_id="test" value="1"
     HTTP/1.0 201 Created
     Allow: GET, POST, HEAD, OPTIONS
     Content-Language: tr
@@ -72,7 +72,7 @@ POST başarısız ise şu mesaj alınır.
 
 .. code-block:: bash
 
-    $ http -a iottestuser:iot12345** --json POST http://127.0.0.1:8000/api/v1/data/0cd76eb-5f3b179/ name_id="aaaaa" value="1"
+    $ http -a iottestuser:iot12345** --json POST http://127.0.0.1:8000/api/v1/datas/0cd76eb-5f3b179/ name_id="aaaaa" value="1"
     HTTP/1.0 404 Not Found
     Allow: GET, POST, HEAD, OPTIONS
     Content-Language: tr
@@ -85,5 +85,51 @@ POST başarısız ise şu mesaj alınır.
     {
         "detail": "Bulunamadı."
     }
+
+Python ile POST örneği.
+Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
+
+.. _Github: https://goo.gl/5WZ91D
+
+.. code-block:: python
+
+    # -*- coding: utf-8 -*-
+    """
+    Iot dashboard POST example
+
+    iot-dashboard
+    IoT: Platform for Internet of Things
+
+    Iotdashboard source code is available under the MIT License
+
+    Online iot dashboard test and demo http://ihook.xyz
+
+    Online iot dashboard https://iothook.com
+
+    You can find project details on our project page https://iothook.com and wiki https://iothook.com
+    """
+
+    import requests
+    import json
+    import urllib
+    import urllib2
+    import random
+    import pprint
+
+    API_KEY = "c791e11-d9ab779"
+    url = 'http://localhost:8000/api/v1/datas/' + API_KEY
+    auth=('iottestuser', 'iot12345**')
+
+    for i in range(30):
+        data = {"name_id":"test", "value":i}
+
+        data_json = json.dumps(data)
+        headers = {'Content-type': 'application/json'}
+
+        response = requests.post(url, data=data_json, headers=headers, auth=auth)
+        pprint.pprint(response.json())
+
+
+
 
 

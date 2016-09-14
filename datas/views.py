@@ -5,12 +5,17 @@ Datas REST Framework
 https://iothook.com/
 """
 
-from serializers import DataSerializer
-
 from django.http import Http404
-
 from django.contrib.auth.models import User
 from django.views.generic.base import TemplateView
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import get_object_or_404
+from django.shortcuts import render_to_response
+from django.shortcuts import render
+from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 from rest_framework import routers, serializers, viewsets
 from rest_framework import views
@@ -21,14 +26,9 @@ from rest_framework.parsers import JSONParser
 from rest_framework.decorators import api_view
 from rest_framework import permissions
 
-from django.http import HttpResponse
-from django.views.decorators.csrf import csrf_exempt
-from django.shortcuts import get_object_or_404
-from django.shortcuts import render_to_response
-from django.shortcuts import render
-from django.utils.translation import ugettext_lazy as _
-
 from chartit import DataPool, Chart
+
+from iotdashboard.settings import LOGIN_URL
 
 from models import Data
 from elements.models import Element
@@ -36,9 +36,20 @@ from channels.models import Channel
 from drawcharts.models import DrawChart
 
 from datas.permissions import IsOwnerOrReadOnly
+from datas.serializers import DataSerializer
+
+class JSONResponse(HttpResponse):
+    """
+    An HttpResponse that renders its content into JSON.
+    """
+    def __init__(self, data, **kwargs):
+        content = JSONRenderer().render(data)
+        kwargs['content_type'] = 'application/json'
+        super(JSONResponse, self).__init__(content, **kwargs)
 
 class DataList(views.APIView):
     """
+    All data list
     """
     permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly,)
 
@@ -54,9 +65,9 @@ class DataList(views.APIView):
         :return:
         """
         try:
-            datas = Data.objects.filter(owner=request.user, channel=Channel.objects.get(api_key=api_key))
+            datas = Data.objects.filter(owner=request.user, channel=Channel.objects.get(api_key=api_key)).order_by('-pub_date')[:100]
             serializer = DataSerializer(datas, many=True)
-            return JSONResponse(serializer.data)
+            return Response(serializer.data)
         except:
             raise Http404
 
@@ -141,29 +152,20 @@ class DataDetail(views.APIView):
 
 class DataQueryList(TemplateView):
     """
+    All data list for template.
     """
     template_name = "back/data_list.html"
 
-    def get_context_data(self, **kwargs):
-        context = super(DataQueryList, self).get_context_data(**kwargs)
-        context['datas'] = Data.objects.all().order_by('-pub_date')
-        return context
-
-class JSONResponse(HttpResponse):
-    """
-    An HttpResponse that renders its content into JSON.
-    """
-    def __init__(self, data, **kwargs):
-        content = JSONRenderer().render(data)
-        kwargs['content_type'] = 'application/json'
-        super(JSONResponse, self).__init__(content, **kwargs)
+    @method_decorator(login_required)
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, {'datas': Data.objects.filter(owner=request.user).order_by('-pub_date')[:100]})
 
 def chart_view(request, id):
     """
     :param request:
     :return:
     """
-    datas = Data.objects.filter(channel=id)
+    datas = Data.objects.filter(owner=request.user, channel=id).order_by('-pub_date')[:100]
 
     for i in datas:
         # problem ?
@@ -184,7 +186,7 @@ def chart_view(request, id):
               'terms': [
                 'id',
                 'pub_date',
-                  'value_decimal',
+                'value_decimal',
               ]
             }
              ]
@@ -194,14 +196,16 @@ def chart_view(request, id):
             datasource = ds,
             series_options =
               [
-                  {'options':{
-                  'type': 'line',
-                  'stacking': False},
-                'terms':{
-                  'pub_date': [
-                    'value_decimal',
-                  ]
-                  }
+                  {
+                      'options':{
+                        'type': 'scatter',
+                        'stacking': False
+                      },
+                    'terms':{
+                      'pub_date': [
+                        'value_decimal',
+                      ]
+                      }
                   }
               ],
 
@@ -234,7 +238,7 @@ def chart_view_realtime(request, id):
     :param request:
     :return:
     """
-    datas = Data.objects.filter(channel=id)
+    datas = Data.objects.filter(owner=request.user, channel=id).order_by('-pub_date')[:100]
 
     for i in datas:
         # problem ?
@@ -307,11 +311,10 @@ def export(request, model):
     """
     from django.apps import apps
     from django.core import serializers
-    from django.http import JsonResponse
 
     model = apps.get_model(app_label=model + 's', model_name=model)
 
-    data = serializers.serialize(request.GET['format'], model.objects.all())
+    data = serializers.serialize(request.GET['format'], model.objects.all().order_by('-pub_date')[:100])
 
-    return JsonResponse({'response_data':data})
+    return JSONResponse({'response_data':data})
 

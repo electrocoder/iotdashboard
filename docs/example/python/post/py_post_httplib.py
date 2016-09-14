@@ -16,17 +16,17 @@ You can find project details on our project page https://iothook.com and wiki ht
 
 import httplib, urllib
 
-# headers = {'content-type': 'application/json'}
-headers = {"Content-type": "application/x-www-form-urlencoded", "Accept": "application/json"}
+headers = {'content-type': 'application/json'}
 
-API_KEY = "0cd76eb-5f3b179"
-url = 'http://localhost:8000/api/v1/data/' + API_KEY
+API_KEY = "c791e11-d9ab779"
+url = 'http://localhost:8000/api/v1/datas/' + API_KEY
 
-datas = urllib.urlencode({"username":"iottestuser", "password":"iot12345**", "name_id":"test", "value":"45", })
-# datas = urllib.urlencode({"iottestuser":"iot12345**", "name_id":"test", "value":"45", })
+auth=('iottestuser', 'iot12345**')
+
+datas = urllib.urlencode({"name_id":"test", "value":"45", })
 
 conn = httplib.HTTPConnection("localhost", 8000)
-conn.request("POST", "/api/v1/data/" + API_KEY, datas, headers)
+conn.request("POST", "/api/v1/datas/" + API_KEY, datas, headers)
 
 response = conn.getresponse()
 
