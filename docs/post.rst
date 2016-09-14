@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 POST Web API
-===================================
+============
 
 Iotdashboard a Raspberry Pi gibi bir cihaz ile veri göndermek için kullanıcı adı ve şifre oluşturulmalıdır.
 
@@ -86,6 +86,9 @@ POST başarısız ise şu mesaj alınır.
         "detail": "Bulunamadı."
     }
 
+Post Api Requests.Post localhost
+================================
+
 Python ile POST örneği.
 Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
 
@@ -129,7 +132,226 @@ Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
         response = requests.post(url, data=data_json, headers=headers, auth=auth)
         pprint.pprint(response.json())
 
+Post Api Requests.Post ihook
+============================
+
+Python ile POST örneği.
+Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
+
+.. _Github: https://goo.gl/5WZ91D
+
+.. code-block:: python
+
+    # -*- coding: utf-8 -*-
+    """
+    Iot dashboard POST example
+
+    iot-dashboard
+    IoT: Platform for Internet of Things
+
+    Iotdashboard source code is available under the MIT License
+
+    Online iot dashboard test and demo http://ihook.xyz
+
+    Online iot dashboard https://iothook.com
+
+    You can find project details on our project page https://iothook.com and wiki https://iothook.com
+    """
+
+    import requests
+    import json
+    import urllib
+    import urllib2
+    import random
+    import pprint
+
+    API_KEY = "b64bc5c-7ec12c7"
+    url = 'http://ihook.xyz/api/v1/datas/' + API_KEY
+    auth=('iottestuser', 'iot12345**')
+
+    for i in range(20):
+        data = {"name_id":"test_element", "value":i}
+
+        data_json = json.dumps(data)
+        headers = {'Content-type': 'application/json'}
+
+        response = requests.post(url, data=data_json, headers=headers, auth=auth)
+        pprint.pprint(response.json())
+
+Post Api Requests.Post localhost
+================================
+
+Python ile POST örneği.
+Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
+
+.. _Github: https://goo.gl/5WZ91D
+
+.. code-block:: python
+
+    # -*- coding: utf-8 -*-
+    """
+    Iot dashboard POST example
+
+    iot-dashboard
+    IoT: Platform for Internet of Things
+
+    Iotdashboard source code is available under the MIT License
+
+    Online iot dashboard test and demo http://ihook.xyz
+
+    Online iot dashboard https://iothook.com
+
+    You can find project details on our project page https://iothook.com and wiki https://iothook.com
+    """
+
+    import requests
+    import json
+
+    API_KEY = "c791e11-d9ab779"
+    url = 'http://localhost:8000/api/v1/datas/' + API_KEY
+
+    datas = {'name_id':'test','value':'66'}
+
+    auth=('iottestuser', 'iot12345**')
+
+    response = requests.post(url, data=datas, auth=auth)
+    print response
+
+Post Api Requests.Post headers
+==============================
+
+Python ile headers POST örneği.
+Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
+
+.. _Github: https://goo.gl/5WZ91D
+
+.. code-block:: python
+
+    # -*- coding: utf-8 -*-
+    """
+    Iot dashboard POST example
+
+    iot-dashboard
+    IoT: Platform for Internet of Things
+
+    Iotdashboard source code is available under the MIT License
+
+    Online iot dashboard test and demo http://ihook.xyz
+
+    Online iot dashboard https://iothook.com
+
+    You can find project details on our project page https://iothook.com and wiki https://iothook.com
+    """
+
+    import requests
+    import json
+    import urllib
+    import urllib2
+    import random
+    import pprint
+
+    API_KEY = "c791e11-d9ab779"
+    url = 'http://localhost:8000/api/v1/datas/' + API_KEY
+    auth=('iottestuser', 'iot12345**')
+
+    data = {"name_id":"test", "value":"45"}
+
+    data_json = json.dumps(data)
+    headers = {'Content-type': 'application/json'}
+
+    response = requests.post(url, data=data_json, headers=headers, auth=auth)
+    pprint.pprint(response.json())
 
 
+Post Api Requests.Post urllib
+=============================
 
+Python ile urllib POST örneği.
+Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
 
+.. _Github: https://goo.gl/5WZ91D
+
+.. code-block:: python
+
+    # -*- coding: utf-8 -*-
+    """
+    Iot dashboard POST example
+
+    iot-dashboard
+    IoT: Platform for Internet of Things
+
+    Iotdashboard source code is available under the MIT License
+
+    Online iot dashboard test and demo http://ihook.xyz
+
+    Online iot dashboard https://iothook.com
+
+    You can find project details on our project page https://iothook.com and wiki https://iothook.com
+    """
+
+    import requests
+    import json
+    import urllib
+    import urllib2
+    import random
+
+    API_KEY = "c791e11-d9ab779"
+    url = 'http://localhost:8000/api/v1/datas/' + API_KEY
+    auth=('iottestuser', 'iot12345**')
+
+    data = {"name_id":"test", "value":"45"}
+
+    data = urllib.urlencode(data)
+
+    req = urllib2.Request(url, data)
+    response = urllib2.urlopen(req)
+
+    html = response.read()
+
+    print html
+
+Post Api Requests.Post httplib
+==============================
+
+Python ile httplib POST örneği.
+Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
+
+.. _Github: https://goo.gl/5WZ91D
+
+.. code-block:: python
+
+    # -*- coding: utf-8 -*-
+    """
+    Iot dashboard POST example
+
+    iot-dashboard
+    IoT: Platform for Internet of Things
+
+    Iotdashboard source code is available under the MIT License
+
+    Online iot dashboard test and demo http://ihook.xyz
+
+    Online iot dashboard https://iothook.com
+
+    You can find project details on our project page https://iothook.com and wiki https://iothook.com
+    """
+
+    import httplib, urllib
+
+    headers = {'content-type': 'application/json'}
+
+    API_KEY = "c791e11-d9ab779"
+    url = 'http://localhost:8000/api/v1/datas/' + API_KEY
+
+    auth=('iottestuser', 'iot12345**')
+
+    datas = urllib.urlencode({"name_id":"test", "value":"45", })
+
+    conn = httplib.HTTPConnection("localhost", 8000)
+    conn.request("POST", "/api/v1/datas/" + API_KEY, datas, headers)
+
+    response = conn.getresponse()
+
+    print response.status, response.reason
+
+    print response.read()

@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-IOT Django REST framework Web API
-===================================
+IOT Django REST framework Web API POST
+======================================
 
 Iotdashboard REST framework Web API ile güçlendirilmiştir.
 
@@ -13,5 +13,4 @@ Iotdashboard REST framework Web API ile güçlendirilmiştir.
    :maxdepth: 2
 
    post
-   get
 

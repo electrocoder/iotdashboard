@@ -4,11 +4,12 @@
    contain the root `toctree` directive.
 
 IOT API DOCS
-===================================
+============
 
 Iotdashboard API dökümanları 'DRF Docs' 'http://drfdocs.com/' ile oluşturulmuştur.
 
 API dökümanlarını incelemek için http://ihook.xyz/docs/api/ adresini ziyaret ediniz.
 
+Online iot dashboard için http://iothook.com adresini ziyaret ediniz.
 
 

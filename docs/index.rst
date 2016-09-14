@@ -4,16 +4,17 @@
    contain the root `toctree` directive.
 
 IOT Dashboard
-===================================
+=============
 
 İçindekiler
-==================
+===========
 
 .. toctree::
    :maxdepth: 2
 
    api_docs
-   api
+   api_post
+   api_get
 
 * :ref:`genindex`
 * :ref:`modindex`
@@ -24,8 +25,10 @@ Nasıl Test ederim?
 
 Bu döküman içeriğindeki tüm bilgiler http://ihook.xyz/ adresinden online olarak test edilebilmektedir.
 
+Online iot dashboard için http://iothook.com adresini ziyaret ediniz.
 
 Iot Dashboard Nedir?
+====================
 
 Banana Pi, NanoPC, Intel Edison, Parallella, Raspberry Pi gibi tek kart bilgisayarlarda çalışan Python/Django REST framework ile
 geliştirilmiş Web Api servisidir. IOT cihazlar ile iletişime geçerek Web Api sayesinde GET, POST, PUT ve DELETE
@@ -37,7 +40,8 @@ Nedir?
 Android, iOS, Windows Phone, Web Site, Banana Pi, Orange Pi, Beaglebone,
 ARM, Pic, Windows, Mac OS X, ve Linux* tabanlı sistemleri birbirine bağlar.
 
-Neden Iotdashboard:
+Neden Iotdashboard?
+===================
 
 * Sınırsız kanal oluşturabilirsin,
 * Sınırsız element ekleyebilirsin,

@@ -13,6 +13,7 @@ def index(request):
     :param request:
     :return:
     """
+    # auto login for test users
     user = authenticate(username='iottestuser', password='iot12345**')
     login(request, user)
     return render(request, "back/index.html", locals())
