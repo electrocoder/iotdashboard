@@ -11,11 +11,18 @@ from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
-from django.contrib.auth.decorators import login_required
-
+from django.contrib.auth.decorators import user_passes_test
 from iotdashboard.settings import LOGIN_URL
 
 from forms import *
+
+def admin_group(user):
+    """
+    Django admin page, groups page, add admin
+    """
+    if user:
+        return bool(user.groups.filter(user = user, name=u'admin')) | user.is_superuser
+    return False
 
 @csrf_exempt
 def device_add(request):
@@ -64,7 +71,7 @@ def device_edit(request, id):
 
     return render(request, "back/add.html", locals())
 
-@login_required(login_url=LOGIN_URL)
+@user_passes_test(admin_group, login_url=LOGIN_URL)
 def device_delete(request, id=None):
     """
     :param request:
