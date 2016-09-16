@@ -36,7 +36,9 @@ def device_add(request):
     if request.method == 'POST':
         form = DeviceForm(request.POST)
         if form.is_valid():
-            form.save()
+            f = form.save(commit=False)
+            f.owner = request.user
+            f.save()
             msg_ok = _(u'Aygıt ekleme başarılı')
         else:
             msg_err = _(u'Dikkat! Lütfen hataları düzeltiniz!')
@@ -49,7 +51,7 @@ def device_list(request):
     :param request:
     :return:
     """
-    list = Device.objects.all()
+    list = Device.objects.filter(owner=request.user)
     return render(request, "back/device_list.html", locals())
 
 def device_edit(request, id):

@@ -22,6 +22,7 @@ class Element(models.Model):
     """
     Element
     """
+    owner         = models.ForeignKey('auth.User', related_name='elements')
     channel       = models.ForeignKey(Channel)
     type          = models.CharField(_('tip'), max_length=200, choices=FORM_ELEMENTS)
     name          = models.CharField(_('isim'), max_length=70)

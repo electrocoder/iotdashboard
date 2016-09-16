@@ -80,7 +80,8 @@ urlpatterns += i18n_patterns(
     url(r'^chart-view/(?P<id>[^/]*)/$', views_datas.chart_view, name='chart_view'),
 
     # realtime chart
-    url(r'^chart-view/realtime/(?P<id>[^/]*)/$', views_datas.chart_view_realtime, name='chart_view_realtime'),
+    url(r'^chart-view/now/realtime/$', views_datas.chart_view_realtime, name='chart_view_realtime'),
+    url(r'^chart-view/now/realtime/now/$', views_datas.chart_view_realtime_now, name='chart_view_realtime_now'),
 
     # export xls
     url(r'^export/(?P<model>[\w-]+)/$', views_datas.export, name='export'),

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-15 00:41+0300\n"
+"POT-Creation-Date: 2016-09-16 15:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,48 +18,48 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: channels/models.py:22 devices/models.py:20 elements/models.py:27
+#: channels/models.py:23 devices/models.py:21 elements/models.py:28
 msgid "isim"
 msgstr ""
 
-#: channels/models.py:22
+#: channels/models.py:23
 msgid "Kanal adını giriniz"
 msgstr ""
 
-#: channels/models.py:23 templates/back/index.html:37
+#: channels/models.py:24 templates/back/index.html:37
 msgid "api key"
 msgstr ""
 
-#: channels/models.py:24 datas/models.py:26
+#: channels/models.py:25 datas/models.py:26
 msgid "yayin tarihi"
 msgstr ""
 
-#: channels/models.py:25 devices/models.py:24 elements/models.py:30
+#: channels/models.py:26 devices/models.py:25 elements/models.py:31
 msgid "açıklama"
 msgstr ""
 
-#: channels/models.py:26 devices/models.py:25 elements/models.py:31
+#: channels/models.py:27 devices/models.py:26 elements/models.py:32
 msgid "aktif et"
 msgstr ""
 
-#: channels/views.py:33
+#: channels/views.py:36
 msgid "Kanal ekleme başarılı"
 msgstr ""
 
-#: channels/views.py:35 channels/views.py:63 devices/views.py:35
-#: devices/views.py:63 elements/views.py:35 elements/views.py:63
+#: channels/views.py:38 channels/views.py:68 devices/views.py:44
+#: devices/views.py:72 elements/views.py:38 elements/views.py:68
 msgid "Dikkat! Lütfen hataları düzeltiniz!"
 msgstr ""
 
-#: channels/views.py:60
+#: channels/views.py:65
 msgid "Kanal güncelleme başarılı"
 msgstr ""
 
-#: channels/views.py:76
+#: channels/views.py:81
 msgid "Kanal silindi"
 msgstr ""
 
-#: channels/views.py:100
+#: channels/views.py:105
 msgid "Key üretildi"
 msgstr ""
 
@@ -67,7 +67,7 @@ msgstr ""
 msgid "ip adres"
 msgstr ""
 
-#: datas/models.py:24 elements/models.py:28
+#: datas/models.py:24 elements/models.py:29
 msgid "isim id"
 msgstr ""
 
@@ -75,43 +75,47 @@ msgstr ""
 msgid "deger"
 msgstr ""
 
-#: datas/views.py:214 datas/views.py:285
+#: datas/views.py:215
 msgid "Kanal: "
 msgstr ""
 
-#: devices/models.py:22
+#: devices/models.py:21
+msgid "Aygit adını giriniz"
+msgstr ""
+
+#: devices/models.py:23
 msgid "resim"
 msgstr ""
 
-#: devices/models.py:23 elements/models.py:29
+#: devices/models.py:24 elements/models.py:30
 msgid "yayın tarihi"
 msgstr ""
 
-#: devices/views.py:33
+#: devices/views.py:42
 msgid "Aygıt ekleme başarılı"
 msgstr ""
 
-#: devices/views.py:60
+#: devices/views.py:69
 msgid "Aygıt güncelleme başarılı"
 msgstr ""
 
-#: devices/views.py:76
+#: devices/views.py:85
 msgid "Aygıt silindi"
 msgstr ""
 
-#: elements/models.py:26
+#: elements/models.py:27
 msgid "tip"
 msgstr ""
 
-#: elements/views.py:33
+#: elements/views.py:36
 msgid "Element ekleme başarılı"
 msgstr ""
 
-#: elements/views.py:60
+#: elements/views.py:65
 msgid "Element güncelleme başarılı"
 msgstr ""
 
-#: elements/views.py:76
+#: elements/views.py:81
 msgid "Element silindi"
 msgstr ""
 

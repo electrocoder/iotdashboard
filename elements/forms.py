@@ -8,6 +8,7 @@ class ElementForm(ModelForm):
     class Meta:
         model = Element
         exclude = [
+            'owner',
             'name_id',
             'api_key',
         ]

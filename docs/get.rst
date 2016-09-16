@@ -65,7 +65,7 @@ GET başarısız ise şu mesaj alınır.
     }
 
 Get Api Requests.Get all data
-==============================
+=============================
 
 Python ile GET örneği.
 Bu örneğe `Github`_ adresinden ulaşabilirsiniz.

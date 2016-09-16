@@ -8,6 +8,7 @@ class ChannelForm(ModelForm):
     class Meta:
         model = Channel
         exclude = [
+            'owner',
             'api_key',
         ]
 

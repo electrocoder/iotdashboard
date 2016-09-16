@@ -8,6 +8,7 @@ class DeviceForm(ModelForm):
     class Meta:
         model = Device
         exclude = [
+            'owner',
             'slug',
         ]
 

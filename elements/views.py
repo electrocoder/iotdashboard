@@ -30,12 +30,16 @@ def element_add(request):
     if request.method == 'POST':
         form = ElementForm(request.POST)
         if form.is_valid():
-            form.save()
+            f = form.save(commit=False)
+            f.owner = request.user
+            f.save()
             msg_ok = _(u'Element ekleme başarılı')
         else:
             msg_err = _(u'Dikkat! Lütfen hataları düzeltiniz!')
 
     form = ElementForm()
+    form.fields['channel'].queryset = Channel.objects.filter(owner=request.user)
+
     return render(request, "back/add.html", locals())
 
 def element_list(request):
@@ -43,7 +47,7 @@ def element_list(request):
     :param request:
     :return:
     """
-    list = Element.objects.all()
+    list = Element.objects.filter(owner=request.user)
     return render(request, "back/element_list.html", locals())
 
 def element_edit(request, id):

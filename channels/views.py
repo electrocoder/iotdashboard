@@ -30,12 +30,16 @@ def channel_add(request):
     if request.method == 'POST':
         form = ChannelForm(request.POST)
         if form.is_valid():
-            form.save()
+            f = form.save(commit=False)
+            f.owner = request.user
+            f.save()
             msg_ok = _(u'Kanal ekleme başarılı')
         else:
             msg_err = _(u'Dikkat! Lütfen hataları düzeltiniz!')
 
     form = ChannelForm()
+    form.fields['device'].queryset = Device.objects.filter(owner=request.user)
+
     return render(request, "back/add.html", locals())
 
 def channel_list(request):
@@ -43,7 +47,7 @@ def channel_list(request):
     :param request:
     :return:
     """
-    list = Channel.objects.all()
+    list = Channel.objects.filter(owner=request.user)
     return render(request, "back/channel_list.html", locals())
 
 def channel_edit(request, id):

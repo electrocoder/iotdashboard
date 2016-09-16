@@ -18,6 +18,7 @@ class Channel(models.Model):
     """
     Channel
     """
+    owner           = models.ForeignKey('auth.User', related_name='channels')
     device          = models.ForeignKey(Device) # Arduino, Rasberry pi ...
     name            = models.CharField(_('isim'), max_length=60, help_text=_('Kanal adını giriniz'))
     api_key         = models.CharField(_('api key'), max_length=200) # bu formun url adresi

@@ -16,6 +16,7 @@ from django.shortcuts import render
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.http import JsonResponse
 
 from rest_framework import routers, serializers, viewsets
 from rest_framework import views
@@ -233,76 +234,53 @@ def chart_view(request, id):
 
     return render(request, "back/chart_view.html", locals())
 
-def chart_view_realtime(request, id):
+def chart_view_realtime(request):
     """
     :param request:
     :return:
     """
-    datas = Data.objects.filter(owner=request.user, channel=id).order_by('-pub_date')[:100]
+    from django.utils.html import mark_safe
 
-    for i in datas:
-        # problem ?
-        try:
-            DrawChart(channel=i.channel, value_char=str(i.value), value_decimal=float(i.value), pub_date=i.pub_date).save()
-        except:
-            pass
+    array = ([
+        ['Id', 'Value'],
+        [5, 6],
+        [33, 44],
+        [66, 77],
+        [88, 565],
+    ])
+    tmp = []
+    tmp.append([125, 255])
+    tmp.append([126, 255])
+    tmp.append([127, 255])
 
-    datas = DrawChart.objects.all()
+    array = mark_safe(array)
+    return render_to_response('back/chart_view_realtime.html', locals())
+    # return render(request, 'back/chart_view_realtime.html')
 
-    ds = DataPool(
-           series=
-            [
-                {
-                'options': {
-               'source': datas
-            },
-              'terms': [
-                'id',
-                'pub_date',
-                  'value_decimal',
-              ]
-            }
-             ]
-    )
+def chart_view_realtime_now(request):
+    import json
+    import random
 
-    cht = Chart(
-            datasource = ds,
-            series_options =
-              [
-                  {'options':{
-                  'type': 'line',
-                  'stacking': False},
-                'terms':{
-                  'pub_date': [
-                    'value_decimal',
-                  ]
-                  }
-                  }
-              ],
+    print "hhhhhhhhhhh"
+    gelen = ""
+    if request.GET.has_key('client_response'):
+        gelen =  request.GET['client_response'] #gelen
+        print "gelen-%s-" % gelen
+        if not gelen == "":
+            u = Data.objects.get(pk=54075)
+            response_dict = {}
+            gelen = random.random() * 100
+            server_response = gelen  # gonderilen
+            response_dict.update({'server_response': server_response})
+            return HttpResponse(json.dumps(response_dict))
+    else:
+        print "hata"
 
-        chart_options={
-            'title': {
-                'text': _('Kanal: ') + str(datas[0].channel)
-            },
-            'xAxis': {
-                'title': {
-                    'text': 'Publish Date'}
-            },
-            'yAxis': {
-                'title': {
-                    'text': 'Value'}
-            },
-            'legend': {
-                'enabled': False},
-            'credits': {
-                'enabled': False}
-        },
-
-    )
-
-    val = DrawChart.objects.filter(channel=str(datas[0].channel)).delete()
-
-    return render(request, "back/chart_view_realtime.html", locals())
+    response_dict = {}
+    gelen = random.random() * 100
+    server_response = gelen  # gonderilen
+    response_dict.update({'server_response': server_response})
+    return HttpResponse(json.dumps(response_dict))
 
 def export(request, model):
     """

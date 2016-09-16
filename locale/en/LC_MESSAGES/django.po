@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-15 00:41+0300\n"
+"POT-Creation-Date: 2016-09-16 15:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,52 +17,48 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: channels/models.py:22 devices/models.py:20 elements/models.py:27
+#: channels/models.py:23 devices/models.py:21 elements/models.py:28
 msgid "isim"
 msgstr "name"
 
-#: channels/models.py:22
+#: channels/models.py:23
 msgid "Kanal adını giriniz"
 msgstr "Channel name"
 
-#: channels/models.py:23 templates/back/index.html:37
+#: channels/models.py:24 templates/back/index.html:37
 msgid "api key"
 msgstr "api key"
 
-#: channels/models.py:24 datas/models.py:26
+#: channels/models.py:25 datas/models.py:26
 msgid "yayin tarihi"
 msgstr "publish date"
 
-#: channels/models.py:25 devices/models.py:24 elements/models.py:30
+#: channels/models.py:26 devices/models.py:25 elements/models.py:31
 msgid "açıklama"
 msgstr "description"
 
-#: channels/models.py:26 devices/models.py:25 elements/models.py:31
+#: channels/models.py:27 devices/models.py:26 elements/models.py:32
 msgid "aktif et"
 msgstr "enable"
 
-#: channels/views.py:33
+#: channels/views.py:36
 msgid "Kanal ekleme başarılı"
 msgstr "Add channel successful"
 
-#: channels/views.py:35 channels/views.py:63 devices/views.py:35
-#: devices/views.py:63 elements/views.py:35 elements/views.py:63
+#: channels/views.py:38 channels/views.py:68 devices/views.py:44
+#: devices/views.py:72 elements/views.py:38 elements/views.py:68
 msgid "Dikkat! Lütfen hataları düzeltiniz!"
 msgstr "Warning! Please correct the mistake!"
 
-#: channels/views.py:60
+#: channels/views.py:65
 msgid "Kanal güncelleme başarılı"
 msgstr "Channel update successful"
 
-#: channels/views.py:76
-#, fuzzy
-#| msgid "Kanal Ekle"
+#: channels/views.py:81
 msgid "Kanal silindi"
 msgstr "Add Channel"
 
-#: channels/views.py:100
-#, fuzzy
-#| msgid "Key Yönetici"
+#: channels/views.py:105
 msgid "Key üretildi"
 msgstr "Key Manager"
 
@@ -70,7 +66,7 @@ msgstr "Key Manager"
 msgid "ip adres"
 msgstr "remote address"
 
-#: datas/models.py:24 elements/models.py:28
+#: datas/models.py:24 elements/models.py:29
 msgid "isim id"
 msgstr "name id"
 
@@ -78,49 +74,48 @@ msgstr "name id"
 msgid "deger"
 msgstr "value"
 
-#: datas/views.py:214 datas/views.py:285
-#, fuzzy
-#| msgid "Kanal"
+#: datas/views.py:215
 msgid "Kanal: "
 msgstr "Channel"
 
-#: devices/models.py:22
+#: devices/models.py:21
+msgid "Aygit adını giriniz"
+msgstr "Device name"
+
+#: devices/models.py:23
 msgid "resim"
 msgstr "image"
 
-#: devices/models.py:23 elements/models.py:29
+#: devices/models.py:24 elements/models.py:30
 msgid "yayın tarihi"
 msgstr "publish date"
 
-#: devices/views.py:33
+#: devices/views.py:42
 msgid "Aygıt ekleme başarılı"
 msgstr "Add device successful"
 
-#: devices/views.py:60
+#: devices/views.py:69
 msgid "Aygıt güncelleme başarılı"
 msgstr "Device update successful"
 
-#: devices/views.py:76
+#: devices/views.py:85
 #, fuzzy
-#| msgid "Aygıt Ekle"
 msgid "Aygıt silindi"
 msgstr "Add Device"
 
-#: elements/models.py:26
+#: elements/models.py:27
 msgid "tip"
 msgstr "type"
 
-#: elements/views.py:33
+#: elements/views.py:36
 msgid "Element ekleme başarılı"
 msgstr "Add element successful"
 
-#: elements/views.py:60
+#: elements/views.py:65
 msgid "Element güncelleme başarılı"
 msgstr "Element update successful"
 
-#: elements/views.py:76
-#, fuzzy
-#| msgid "Element Ekle"
+#: elements/views.py:81
 msgid "Element silindi"
 msgstr "Add Element"
 
@@ -159,12 +154,12 @@ msgstr "Channel List"
 #: templates/back/channel_list.html:10 templates/back/data_list.html:10
 #: templates/back/device_list.html:10 templates/back/element_list.html:10
 msgid "Json aktar"
-msgstr ""
+msgstr "Export Json"
 
 #: templates/back/channel_list.html:11 templates/back/data_list.html:11
 #: templates/back/device_list.html:11 templates/back/element_list.html:11
 msgid "Xml aktar"
-msgstr ""
+msgstr "Export Xml"
 
 #: templates/back/channel_list.html:33 templates/back/data_list.html:33
 #: templates/back/device_list.html:33 templates/back/element_list.html:33
@@ -216,11 +211,9 @@ msgstr "Delete"
 #: templates/back/channel_list.html:55 templates/back/device_list.html:51
 #: templates/back/element_list.html:59
 msgid "Model silinecek. Emin misiniz?"
-msgstr ""
+msgstr "Delete Model. Are you sure?"
 
 #: templates/back/chart_view.html:8 templates/back/chart_view.html:10
-#, fuzzy
-#| msgid "Göster"
 msgid "Grafik Gösterim"
 msgstr "View"
 
@@ -250,8 +243,6 @@ msgid "Değer"
 msgstr "Value"
 
 #: templates/back/data_list.html:41
-#, fuzzy
-#| msgid "Göster"
 msgid "Chart Göster"
 msgstr "View"
 
@@ -260,14 +251,10 @@ msgid "Göster"
 msgstr "View"
 
 #: templates/back/device_list.html:7 templates/back/device_list.html:9
-#, fuzzy
-#| msgid "Aygıt Ekle"
 msgid "Aygıt Listesi"
 msgstr "Add Device"
 
 #: templates/back/element_list.html:7 templates/back/element_list.html:9
-#, fuzzy
-#| msgid "Element Ekle"
 msgid "Element Listesi"
 msgstr "Add Element"
 
@@ -380,15 +367,15 @@ msgstr "Help"
 
 #: templates/back/navbar.html:39
 msgid "Çıkış"
-msgstr ""
+msgstr "Logout"
 
 #: templates/back/navbar.html:46
 msgid "Giriş"
-msgstr ""
+msgstr "Login"
 
 #: templates/back/sidebar.html:17
 msgid "API Döküman"
-msgstr ""
+msgstr "API Docs"
 
 #: templates/front/index.html:8
 msgid "iHook, iot dashboard, iot server"
@@ -416,7 +403,7 @@ msgstr ""
 
 #: templates/front/index.html:66
 msgid "iOT için Django Server"
-msgstr ""
+msgstr "Django Server for IOT"
 
 #: templates/front/index.html:67
 msgid ""
@@ -430,7 +417,7 @@ msgstr ""
 
 #: templates/front/index.html:71
 msgid "HEMEN DENE TEST ET"
-msgstr ""
+msgstr "TEST NOW"
 
 #: templates/front/index.html:103
 msgid "Mobil"
@@ -439,23 +426,23 @@ msgstr "Mobile"
 #: templates/front/index.html:104
 msgid ""
 "Mobil cihazınız için uygulamanızı geliştirin ve ihook veritabanına bağlayın. "
-msgstr ""
+msgstr "Ihook database connect for mobil app."
 
 #: templates/front/index.html:104
 msgid "Web servis ile datalarınızı güncelleyin."
-msgstr ""
+msgstr "Data update and web services"
 
 #: templates/front/index.html:111
 msgid "iOT uyumlu tüm cihazlarınızı iHook ile yönetebilirsiniz."
-msgstr ""
+msgstr "iHook web service administrator for iot devices."
 
 #: templates/front/index.html:111
 msgid "Veri alma, durum güncelleme, data aktarımı..."
-msgstr ""
+msgstr "Get data, data update, data send..."
 
 #: templates/front/index.html:111
 msgid "Akıllı cihaz yönetimi..."
-msgstr ""
+msgstr "Smart devices administrator..."
 
 #: templates/front/index.html:117
 msgid "Web Servis"
@@ -463,15 +450,15 @@ msgstr "Web Service"
 
 #: templates/front/index.html:118
 msgid "Veritabanına mı ihtiyacınız var?"
-msgstr ""
+msgstr "Are you want database"
 
 #: templates/front/index.html:118
 msgid "Akıllı form' lar mı yapmak istiyorsunuz?"
-msgstr ""
+msgstr "Create form your web site"
 
 #: templates/front/index.html:118
 msgid "Static sitenizi bağlayın"
-msgstr ""
+msgstr "Web site hook"
 
 #: templates/front/index.html:134
 msgid "Nesnelerin interneti"
@@ -507,27 +494,23 @@ msgstr "READ"
 
 #: templates/front/index.html:208
 msgid "Raspberry Pi için iOT server"
-msgstr ""
+msgstr "Iot server for Raspberry Pi"
 
 #: templates/front/index.html:209
 msgid "iHook ile iOT cihazınıza ulaşın."
 msgstr "Connect iOT device for iHook."
 
 #: templates/front/index.html:210
-#, fuzzy
-#| msgid "-Bulut, iOT, WWW,"
 msgid "-Bulut, iOT, WWW, Raspberry Pi,"
 msgstr "-Cloud, iOT, WWW,"
 
 #: templates/front/index.html:218
-#, fuzzy
-#| msgid "iOT cihazınız için bulut depolama alanı,"
 msgid "IOT cihazınız için veritabanı,"
 msgstr "Cloud data management,"
 
 #: templates/front/index.html:219
 msgid "harici veritabanı bağlantısı."
-msgstr ""
+msgstr "external database connect."
 
 #: templates/front/index.html:220
 msgid "-Web servis, Api,"
@@ -535,11 +518,8 @@ msgstr "-Web service, Api,"
 
 #: templates/front/index.html:228
 msgid "Mobil uygulamanız için veritabanı,"
-msgstr ""
+msgstr "Database for Mobil app,"
 
 #: templates/front/index.html:229
 msgid "verileriniz için güvenli bir depolama alanı."
-msgstr ""
-
-#~ msgid "Dataları Göster"
-#~ msgstr "Show Datas"
+msgstr "security data."
