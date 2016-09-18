@@ -14,7 +14,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.decorators import user_passes_test
 from iotdashboard.settings import LOGIN_URL
 
-from forms import *
+from .forms import *
 
 def admin_group(user):
     """

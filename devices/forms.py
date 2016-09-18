@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.forms import ModelForm
-from models import *
+from .models import *
 
 class DeviceForm(ModelForm):
     required_css_class = 'required'

@@ -7,7 +7,7 @@ https://iothook.com/
 
 from django.contrib import admin
 
-from models import Channel
+from .models import Channel
 
 class ChannelAdmin(admin.ModelAdmin):
     """

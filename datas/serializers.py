@@ -7,7 +7,7 @@ https://iothook.com/
 
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
-from models import Data
+from .models import Data
 
 class DataSerializer(serializers.ModelSerializer):
     """

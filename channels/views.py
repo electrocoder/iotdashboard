@@ -16,7 +16,7 @@ from django.contrib.auth.decorators import user_passes_test
 from iotdashboard.settings import LOGIN_URL
 from devices.views import admin_group
 
-from forms import *
+from .forms import *
 
 @csrf_exempt
 def channel_add(request):

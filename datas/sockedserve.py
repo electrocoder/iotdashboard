@@ -19,7 +19,7 @@ class CPUNamespace(BaseNamespace, BroadcastMixin):
 
                 if prev:
                     percent = (sum(vals) - sum(prev))
-                    print percent
+                    # print(percent)
                     self.emit('cpu_data', {'point': percent})
                 prev = vals
                 gevent.sleep(0.1)
@@ -32,14 +32,14 @@ class Application(object):
 
     def __call__(self, environ, start_response):
         path = '/home/ele/workspace/Django/iot-dashboard/iotdashboard/templates/back/graph/graph.html'
-        print path
-        print "***"
+        # print(path)
+        # # print "***"
 
         try:
-            print "+++"
+            # # print "+++"
             data = open(path).read()
-            # print data
-            print "+++"
+            # # print data
+            # # print "+++"
         except Exception:
             return not_found(start_response)
 
@@ -67,7 +67,7 @@ def not_found(start_response):
 
 
 def run():
-    print 'Listening on port http://0.0.0.0:8080 and on port 10843 (flash policy server)'
+    # print 'Listening on port http://0.0.0.0:8080 and on port 10843 (flash policy server)'
     SocketIOServer(('0.0.0.0', 8080), Application(),
         resource="socket.io", policy_server=True,
         policy_listener=('0.0.0.0', 10843)).serve_forever()

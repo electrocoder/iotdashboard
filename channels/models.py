@@ -6,6 +6,7 @@ https://iothook.com/
 """
 
 from __future__ import unicode_literals
+from django.utils.encoding import python_2_unicode_compatible
 from django.db import models
 from django.template.defaultfilters import slugify as djslugify
 from django.contrib.auth.models import User
@@ -14,6 +15,7 @@ import hashlib, random
 
 from devices.models import Device
 
+@python_2_unicode_compatible
 class Channel(models.Model):
     """
     Channel
@@ -26,10 +28,10 @@ class Channel(models.Model):
     description     = models.TextField(_('açıklama'), blank=True, max_length=255)
     enable          = models.BooleanField(_('aktif et'), default=True)
 
-    def __unicode__(self):
+    def __str__(self):
         """
         """
-        return unicode(self.name)
+        return self.name
 
 
     def save(self, *args, **kwargs):

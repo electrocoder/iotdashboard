@@ -5,6 +5,7 @@ Datas REST Framework
 https://iothook.com/
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 from django.http import Http404
 from django.contrib.auth.models import User
 from django.views.generic.base import TemplateView
@@ -31,7 +32,7 @@ from chartit import DataPool, Chart
 
 from iotdashboard.settings import LOGIN_URL
 
-from models import Data
+from .models import Data
 from elements.models import Element
 from channels.models import Channel
 from drawcharts.models import DrawChart
@@ -84,12 +85,13 @@ class DataList(views.APIView):
 
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
         if x_forwarded_for:
-            data['remote_address'] = ip = x_forwarded_for.split(',')[-1].strip()
+            data['remote_address'] = x_forwarded_for.split(',')[-1].strip()
         else:
-            ip = request.META.get('REMOTE_ADDR')
-            data['remote_address'] = ip + "&" + request.META.get('HTTP_USER_AGENT') + "&" + request.META.get('SERVER_PROTOCOL')
+            data['remote_address'] = request.META.get('REMOTE_ADDR') + "&" + request.META.get('HTTP_USER_AGENT') + "&" + request.META.get('SERVER_PROTOCOL')
 
-        data['channel'] = get_object_or_404(Channel, api_key=api_key, name=get_object_or_404(Element, name_id=data['name_id']).channel).pk
+        name=get_object_or_404(Element, name_id=data['name_id']).channel
+        data['channel'] = get_object_or_404(Channel, api_key=api_key, name=name).pk
+
         serializer = DataSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
@@ -261,11 +263,10 @@ def chart_view_realtime_now(request):
     import json
     import random
 
-    print "hhhhhhhhhhh"
     gelen = ""
     if request.GET.has_key('client_response'):
         gelen =  request.GET['client_response'] #gelen
-        print "gelen-%s-" % gelen
+        # print "gelen-%s-" % gelen
         if not gelen == "":
             u = Data.objects.get(pk=54075)
             response_dict = {}
@@ -274,7 +275,7 @@ def chart_view_realtime_now(request):
             response_dict.update({'server_response': server_response})
             return HttpResponse(json.dumps(response_dict))
     else:
-        print "hata"
+        print("hata")
 
     response_dict = {}
     gelen = random.random() * 100

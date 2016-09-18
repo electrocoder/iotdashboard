@@ -21,4 +21,4 @@ url = 'http://localhost:8000/api/v1/datas/7/' + API_KEY
 
 response = requests.get(url, auth=('admin', 'Aa12345**'))
 data = response.json()
-print data
+# print data
