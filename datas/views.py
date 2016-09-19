@@ -67,7 +67,7 @@ class DataList(views.APIView):
         :return:
         """
         try:
-            datas = Data.objects.filter(owner=request.user, channel=Channel.objects.get(api_key=api_key)).order_by('-pub_date')[:100]
+            datas = Data.objects.filter(owner=request.user, channel=Channel.objects.get(api_key=api_key)).order_by('-pk')[:100]
             serializer = DataSerializer(datas, many=True)
             return Response(serializer.data)
         except:

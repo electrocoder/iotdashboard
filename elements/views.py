@@ -47,7 +47,7 @@ def element_list(request):
     :param request:
     :return:
     """
-    list = Element.objects.filter(owner=request.user)
+    list = Element.objects.filter(owner=request.user).order_by('-pk')
     return render(request, "back/element_list.html", locals())
 
 def element_edit(request, id):

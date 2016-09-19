@@ -51,7 +51,7 @@ def device_list(request):
     :param request:
     :return:
     """
-    list = Device.objects.filter(owner=request.user)
+    list = Device.objects.filter(owner=request.user).order_by('-pk')
     return render(request, "back/device_list.html", locals())
 
 def device_edit(request, id):
