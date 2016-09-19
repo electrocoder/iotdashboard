@@ -44,8 +44,8 @@
             <tbody>
             {% for i in list %}
             <tr>
-                <td>{{ i.id }}</td>
-                <td>{{ i.device.name }}</td>
+                <td>#{{ i.id }}</td>
+                <td>#{{ i.device.pk }} {{ i.device.name }}</td>
                 <td><a class="tooltip-viewport-bottom" title="{{ i.name }}">{{ i.name | truncatechars:20 }}</a></td>
                 <td><a class="tooltip-viewport-bottom" title="{{ i.api_key }}">{{ i.api_key }}</a></td>
                 <td>{{ i.pub_date }}</td>

@@ -39,5 +39,5 @@ class Channel(models.Model):
         """
         super(Channel, self).save(*args, **kwargs)
         if not self.api_key:
-            self.api_key = (hashlib.sha1(str(self.pub_date)).hexdigest())[:7] + "-" + (hashlib.sha1(str(random.random())).hexdigest())[:7]
+            self.api_key = hashlib.sha256((self.owner.username).encode('utf-8')).hexdigest()[:7] + '-' + hashlib.sha1(str(self.pub_date).encode('utf-8')).hexdigest()[:7]
             self.save()

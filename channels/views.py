@@ -47,7 +47,7 @@ def channel_list(request):
     :param request:
     :return:
     """
-    list = Channel.objects.filter(owner=request.user)
+    list = Channel.objects.filter(owner=request.user).order_by('-pk')
     return render(request, "back/channel_list.html", locals())
 
 def channel_edit(request, id):
