@@ -37,9 +37,9 @@
             <tbody>
             {% for i in list %}
             <tr>
-                <td>{{ i.id }}</td>
-                <td>{{ i.device.name }}</td>
-                <td><a class="tooltip-viewport-bottom" title="{{ i.name }}">{{ i.name | truncatechars:40 }}</a></td>
+                <td>#{{ i.id }}</td>
+                <td>#{{ i.device.pk }} {{ i.device.name }}</td>
+                <td><a class="tooltip-viewport-bottom" title="{{ i.name }}">#{{ i.pk }} {{ i.name | truncatechars:40 }}</a></td>
                 <td><a class="tooltip-viewport-bottom" title="{{ i.api_key }}">{{ i.api_key }}</a></td>
                 <td><a class="btn btn-danger" href="{% url 'generate_key' i.id %}" role="button" onclick="return confirm('{% trans "Are you sure you want to generate a new write API key?" %}');">{% trans 'Üret' %}</a></td>
             </tr>

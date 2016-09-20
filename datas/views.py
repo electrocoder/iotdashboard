@@ -293,7 +293,7 @@ def export(request, model):
 
     model = apps.get_model(app_label=model + 's', model_name=model)
 
-    data = serializers.serialize(request.GET['format'], model.objects.all().order_by('-pub_date')[:100])
+    data = serializers.serialize(request.GET['format'], model.objects.all().order_by('-pub_date')[:100], indent=2)
 
-    return JSONResponse({'response_data':data})
+    return HttpResponse(data, content_type=request.GET['format'])
 

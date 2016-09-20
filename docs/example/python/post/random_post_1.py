@@ -21,12 +21,12 @@ import urllib2
 import random
 import pprint
 
-API_KEY = "b3d7c6b-fe8beb1"
+API_KEY = "e6bcda8-cf94542"
 url = 'http://localhost:8000/api/v1/datas/' + API_KEY
 auth=('iottestuser', 'iot12345**')
 
 for i in range(2):
-	data = {"name_id":"a", "value":i}
+	data = {"name_id":"iii", "value":i}
 
 	data_json = json.dumps(data)
 	headers = {'Content-type': 'application/json'}

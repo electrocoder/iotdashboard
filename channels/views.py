@@ -89,7 +89,7 @@ def key_list(request):
     :param request:
     :return:
     """
-    list = Channel.objects.filter(enable=True)
+    list = Channel.objects.filter(owner=request.user, enable=True).order_by('-pk')
     return render(request, "back/key_list.html", locals())
 
 def generate_key(request, id=None):
@@ -99,9 +99,9 @@ def generate_key(request, id=None):
     :return:
     """
     val = get_object_or_404(Channel, id=id)
-    val.api_key = (hashlib.sha1(str(val.pub_date)).hexdigest())[:7] + "-" + (hashlib.sha1(str(random.random())).hexdigest())[:7]
+    val.api_key = hashlib.sha256((str(val.owner.username) + str(random.random())).encode('utf-8')).hexdigest()[:7] + '-' + hashlib.sha1(str(val.pub_date).encode('utf-8')).hexdigest()[:7]
     val.save()
-    list = Channel.objects.filter(enable=True)
+    list = Channel.objects.filter(owner=request.user, enable=True).order_by('-pk')
     msg_ok = _(u'Key üretildi')
 
     return render(request, "back/key_list.html", locals())
