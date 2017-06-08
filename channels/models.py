@@ -20,11 +20,10 @@ http://www.apache.org/licenses/
 """
 
 from __future__ import unicode_literals
+
 from django.db import models
 from django.template.defaultfilters import slugify as djslugify
-from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
-import hashlib, random
 
 
 FORM_ELEMENTS = (
@@ -66,14 +65,53 @@ class Channel(models.Model):
     pub_date       = models.DateTimeField(_('Yayin tarihi'), auto_now=True)
 
     def __str__(self):
-        return self.channel_name
+        return self.owner.username
 
     def save(self, *args, **kwargs):
         """
         """
-        super(Channel, self).save(*args, **kwargs)
-
         if not self.channel_name_id:
             name = self.channel_name.replace(u'\u0131', 'i')  # turkce karakter 'ı' icin
             self.channel_name_id = (djslugify(name)).replace('-', '_')
-            self.save()
+
+        if not self.element_id_1:
+            name = self.element_1.replace(u'\u0131', 'i')  # turkce karakter 'ı' icin
+            self.element_id_1 = (djslugify(name)).replace('-', '_')
+
+        if not self.element_id_2:
+            name = self.element_2.replace(u'\u0131', 'i')  # turkce karakter 'ı' icin
+            self.element_id_2 = (djslugify(name)).replace('-', '_')
+
+        if not self.element_id_3:
+            name = self.element_3.replace(u'\u0131', 'i')  # turkce karakter 'ı' icin
+            self.element_id_3 = (djslugify(name)).replace('-', '_')
+
+        if not self.element_id_4:
+            name = self.element_4.replace(u'\u0131', 'i')  # turkce karakter 'ı' icin
+            self.element_id_4 = (djslugify(name)).replace('-', '_')
+
+        if not self.element_id_5:
+            name = self.element_5.replace(u'\u0131', 'i')  # turkce karakter 'ı' icin
+            self.element_id_5 = (djslugify(name)).replace('-', '_')
+
+        if not self.element_id_6:
+            name = self.element_6.replace(u'\u0131', 'i')  # turkce karakter 'ı' icin
+            self.element_id_6 = (djslugify(name)).replace('-', '_')
+
+        if not self.element_id_7:
+            name = self.element_7.replace(u'\u0131', 'i')  # turkce karakter 'ı' icin
+            self.element_id_7 = (djslugify(name)).replace('-', '_')
+
+        if not self.element_id_8:
+            name = self.element_8.replace(u'\u0131', 'i')  # turkce karakter 'ı' icin
+            self.element_id_8 = (djslugify(name)).replace('-', '_')
+
+        if not self.element_id_9:
+            name = self.element_9.replace(u'\u0131', 'i')  # turkce karakter 'ı' icin
+            self.element_id_9 = (djslugify(name)).replace('-', '_')
+
+        if not self.element_id_10:
+            name = self.element_10.replace(u'\u0131', 'i')  # turkce karakter 'ı' icin
+            self.element_id_10 = (djslugify(name)).replace('-', '_')
+
+        super(Channel, self).save(*args, **kwargs)
