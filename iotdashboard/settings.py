@@ -83,7 +83,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'iotdashboard.wsgi.application'
 
-DEBUG = True
+DEBUG = False
 
 DATABASES = {
     'default': {
