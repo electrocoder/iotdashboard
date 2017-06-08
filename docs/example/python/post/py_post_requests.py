@@ -1,17 +1,22 @@
 # -*- coding: utf-8 -*-
 """
-Iot dashboard POST example
+Iotdashboard project
+Django 1.10.1
+Python 2.7.6
 
-iot-dashboard
-IoT: Platform for Internet of Things
+Author: Sahin MERSIN
 
-Iotdashboard source code is available under the MIT License
+Demo: http://iotdashboard.pythonanywhere.com
+Source: https://github.com/electrocoder/iotdashboard
 
-Online iot dashboard test and demo http://ihook.xyz
+https://iothook.com/
+http://mesebilisim.com
 
-Online iot dashboard https://iothook.com
+Licensed under the Apache License, Version 2.0 (the "License").
+You may not use this file except in compliance with the License.
+A copy of the License is located at
 
-You can find project details on our project page https://iothook.com and wiki https://iothook.com
+http://www.apache.org/licenses/
 """
 
 import requests

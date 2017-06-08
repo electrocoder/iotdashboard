@@ -1,10 +1,22 @@
 # -*- coding: utf-8 -*-
 """
-URLs for iotdashboard project.
-Django 1.9.7.
-Python 2.7.12
+Iotdashboard project
+Django 1.10.1
+Python 2.7.6
+
+Author: Sahin MERSIN
+
+Demo: http://iotdashboard.pythonanywhere.com
+Source: https://github.com/electrocoder/iotdashboard
 
 https://iothook.com/
+http://mesebilisim.com
+
+Licensed under the Apache License, Version 2.0 (the "License").
+You may not use this file except in compliance with the License.
+A copy of the License is located at
+
+http://www.apache.org/licenses/
 """
 
 from django.conf.urls import url, include
@@ -42,9 +54,6 @@ urlpatterns = i18n_patterns(
     url(r'^channel/list/$', views_channels.channel_list, name='channel_list'),
     url(r'^channel/edit/(?P<id>[^/]*)/$', views_channels.channel_edit, name='channel_edit'),
     url(r'^channel/delete/(?P<id>[^/]*)/$', views_channels.channel_delete, name='channel_delete'),
-
-    # REST framework login to the Browsable API
-    url(r'^docs/api/', include('rest_framework_docs.urls')),
 
     # data query
     url(r'^datas/$', views_datas.DataQueryList.as_view(), name='datas'),
