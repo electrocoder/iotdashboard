@@ -1,7 +1,7 @@
 {% extends "back/base.html" %}
 
 {% load staticfiles %}
-{% load panels_tags %}
+{% load custom_tags %}
 {% load i18n %}
 
 {% block title %}Key List{% endblock %}
@@ -28,8 +28,7 @@
             <thead>
             <tr>
                 <th>{% trans 'Id' %}</th>
-                <th>{% trans 'Aygıt' %}</th>
-                <th>{% trans 'İsim' %}</th>
+                <th>{% trans 'Kanal adı' %}</th>
                 <th>{% trans 'Api Key' %}</th>
                 <th>{% trans 'API Key Üret' %}</th>
             </tr>
@@ -38,8 +37,7 @@
             {% for i in list %}
             <tr>
                 <td>{{ i.id }}</td>
-                <td>{{ i.device.name }}</td>
-                <td><a class="tooltip-viewport-bottom" title="{{ i.name }}">{{ i.name | truncatechars:40 }}</a></td>
+                <td>{{ i.channel_name }}</td>
                 <td><a class="tooltip-viewport-bottom" title="{{ i.api_key }}">{{ i.api_key }}</a></td>
                 <td><a class="btn btn-danger" href="{% url 'generate_key' i.id %}" role="button" onclick="return confirm('{% trans "Are you sure you want to generate a new write API key?" %}');">{% trans 'Üret' %}</a></td>
             </tr>

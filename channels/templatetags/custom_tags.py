@@ -12,7 +12,9 @@ from iotdashboard.settings import WEBSITE_NAME
 import time
 import os
 
+
 register = template.Library()
+
 
 @register.simple_tag
 def version():
@@ -24,10 +26,10 @@ def version():
     except:
         return 0
 
+
 @register.simple_tag
 def website_name():
     """
         WEBSITE_NAME = "Iotdashboard"
     """
     return WEBSITE_NAME
-

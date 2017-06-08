@@ -2,19 +2,19 @@
 
 <div class="col-sm-3 col-md-2 sidebar">
     <ul class="nav nav-sidebar">
-        <li class="active"><a href="{% url 'panels_index' %}">Panel <span class="sr-only">(current)</span></a></li>
-        <li><a href="{% url 'device_add' %}">{% trans 'Aygıt Ekle' %}</a></li>
-        <li><a href="{% url 'channel_add' %}">{% trans 'Kanal Ekle' %}</a></li>
-        <li><a href="{% url 'element_add' %}">{% trans 'Element Ekle' %}</a></li>
+        <li class="{% if panel %}active{% endif %}"><a href="{% url 'index' %}">Panel <span class="sr-only">(current)</span></a></li>
+        <li class="{% if channel_add %}active{% endif %}"><a href="{% url 'channel_add' %}">Kanal ekle <span class="sr-only">(current)</span></a></li>
+        <li class="{% if channel_list %}active{% endif %}"><a href="{% url 'channel_list' %}">Kanal liste <span class="sr-only">(current)</span></a></li>
     </ul>
     <ul class="nav nav-sidebar">
-        <li><a href="{% url 'device_list' %}">{% trans 'Aygıtlar' %}</a></li>
-        <li><a href="{% url 'channel_list' %}">{% trans 'Kanallar' %}</a></li>
-        <li><a href="{% url 'element_list' %}">{% trans 'Elementler' %}</a></li>
+        <li class="{% if datas %}active{% endif %}"><a href="{% url 'datas' %}">Datalar <span class="sr-only">(current)</span></a></li>
+    </ul>
+    <ul class="nav nav-sidebar">
+        <li class="{% if key_list %}active{% endif %}"><a href="{% url 'key_list' %}">Key list <span class="sr-only">(current)</span></a></li>
     </ul>
     <ul class="nav nav-sidebar">
         <li><a href="/api/">{% trans 'API' %}</a></li>
         <li><a href="/docs/api/">{% trans 'API Döküman' %}</a></li>
-        <li><a href="{% url 'datas' %}">{% trans 'Datalar' %}</a></li>
+        <li><a href="{% url 'index' %}">{% trans 'Datalar' %}</a></li>
     </ul>
 </div>

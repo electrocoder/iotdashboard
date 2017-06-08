@@ -1,7 +1,7 @@
 {% extends "back/base.html" %}
 
 {% load staticfiles %}
-{% load panels_tags %}
+{% load custom_tags %}
 {% load i18n %}
 
 {% block title %}{% trans 'Iot Aygıtlar için Free Dashboard' %}{% endblock %}
@@ -11,7 +11,7 @@
 {% block content %}
 <div class="row placeholders">
     <div class="col-xs-6 col-sm-3 placeholder">
-        <a href="{% url 'device_add' %}">
+        <a href="{% url 'index' %}">
         <img src="{% static "back/dashboard/img/cloud-256.png" %}" width="200" height="200" class="img-responsive"
              alt="{% trans 'iot aygıt ekle' %}">
         <h4>{% trans 'Aygıt Ekle' %}</h4></a>
@@ -25,7 +25,7 @@
         <span class="text-muted">{% trans 'Iot Kanal Yöneticisi' %}</span>
     </div>
     <div class="col-xs-6 col-sm-3 placeholder">
-        <a href="{% url 'element_add' %}">
+        <a href="{% url 'index' %}">
         <img src="{% static "back/dashboard/img/element-256.png" %}" width="200" height="200" class="img-responsive"
              alt="{% trans 'iot element ekle' %}">
         <h4>{% trans 'Element Ekle' %}</h4></a>

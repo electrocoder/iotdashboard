@@ -1,4 +1,4 @@
-{% load panels_tags %}
+{% load custom_tags %}
 {% load i18n %}
 {% load rest_framework %}
 
@@ -11,24 +11,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{% url 'panels_index' %}">{% website_name %}</a>
+            <a class="navbar-brand" href="{% url 'index' %}">{% website_name %}</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans 'Yönet' %} <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                        <li><a href="{% url 'device_add' %}">{% trans 'Aygıt Ekle' %}</a></li>
-                        <li><a href="{% url 'channel_add' %}">{% trans 'Kanal Ekle' %}</a></li>
-                        <li><a href="{% url 'element_add' %}">{% trans 'Element Ekle' %}</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="{% url 'device_list' %}">{% trans 'Aygıtlar' %}</a></li>
-                        <li><a href="{% url 'channel_list' %}">{% trans 'Kanallar' %}</a></li>
-                        <li><a href="{% url 'element_list' %}">{% trans 'Elementler' %}</a></li>
+                        <li><a href="{% url 'index' %}">{% trans 'Elementler' %}</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="/api/">{% trans 'API' %}</a></li>
                         <li><a href="/docs/api/">{% trans 'API Döküman' %}</a></li>
-                        <li><a href="{% url 'datas' %}">{% trans 'Datalar' %}</a></li>
+                        <li><a href="{% url 'index' %}">{% trans 'Datalar' %}</a></li>
                   </ul>
                 </li>
                 <li><a href="/admin/">{% trans 'Ayarlar' %}</a></li>

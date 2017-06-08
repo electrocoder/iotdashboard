@@ -31,16 +31,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'rest_framework',
-    'rest_framework_docs',
-    'markup_deprecated',
-    # 'syntax_colorize',
-    'chartit',
-    'panels',
-    'devices',
+    'rest_framework_swagger',
+    # 'markup_deprecated',
+    # 'chartit',
     'channels',
-    'elements',
     'datas',
-    'drawcharts',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -76,32 +71,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'iotdashboard.wsgi.application'
 
-HEROKU = False # if heroku server HEROKU = True,  else HEROKU = False for local server
-IHOOK_WEB_SITE = True # if ihook.xyz domain IHOOK_WEB_SITE = True, else IHOOK_WEB_SITE = False for local server
+DEBUG = True
 
-DEBUG = False
-
-if HEROKU:
-    import dj_database_url
-
-    DATABASES = {}
-    DATABASES['default'] = dj_database_url.config()
-    DATABASES['default']['CONN_MAX_AGE'] = 500
-
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'iotdashboard_media')
-    STATIC_ROOT = os.path.join(BASE_DIR, "iotdashboard_static")
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'iotdashboard_db.sqlite3'),
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'iotdashboard_db.sqlite3'),
     }
+}
 
-    MEDIA_ROOT = os.path.join(BASE_DIR, '../iotdashboard_media/')
-    STATIC_ROOT = os.path.join(BASE_DIR, "../iotdashboard_static/")
+MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
+STATIC_ROOT = os.path.join(BASE_DIR, "../iotdashboard_static/")
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -165,13 +145,11 @@ CACHES = {
 }
 
 REST_FRAMEWORK = {
-    # 'DEFAULT_AUTHENTICATION_CLASSES': (
-    #     'rest_framework.authentication.BasicAuthentication',
-    #     'rest_framework.authentication.SessionAuthentication',
-    # ),
-    # 'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
-    'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.NamespaceVersioning',
-    'PAGINATE_BY': 10
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
 }
 
 REST_FRAMEWORK_DOCS = {
