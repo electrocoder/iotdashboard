@@ -138,7 +138,6 @@ ENV/
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 *.pyc
-*.sqlite3
 *.sock
 .DS_Store
 ._*
