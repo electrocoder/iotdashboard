@@ -21,16 +21,24 @@ import urllib2
 import random
 import pprint
 
-API_KEY = "b3d7c6b-fe8beb1"
-url = 'http://localhost:8000/api/v1/datas/' + API_KEY
-auth=('iottestuser', 'iot12345**')
+import time
 
-for i in range(2):
-	data = {"name_id":"a", "value":i}
+url = 'http://localhost:8000/api/v1/datas/'
+
+auth=('admin', 'Aa1234567890')
+
+for i in range(30):
+	data = {'api_key': '311b9c68f7e64bdfb77aab1e4d53aaf04378a463',
+			'element_id_1': 'a', 'value_1': 10,
+			'element_id_2': 'b', 'value_2': 20,
+			'element_id_3': 'c', 'value_3': 30,
+			'element_id_4': 'd', 'value_4': 40,
+			}
 
 	data_json = json.dumps(data)
 	headers = {'Content-type': 'application/json'}
 
 	response = requests.post(url, data=data_json, headers=headers, auth=auth)
 	pprint.pprint(response.json())
+	time.sleep(5)
 

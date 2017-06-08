@@ -15,18 +15,17 @@ You can find project details on our project page https://iothook.com and wiki ht
 """
 
 import httplib, urllib
+from base64 import b64encode
 
-headers = {'content-type': 'application/json'}
+userAndPass = b64encode(b"admin:Aa1234567890").decode("ascii")
+headers = {'Authorization':'Basic %s' % userAndPass}
 
-API_KEY = "c791e11-d9ab779"
-url = 'http://localhost:8000/api/v1/datas/' + API_KEY
+auth=('admin', 'Aa1234567890')
 
-auth=('iottestuser', 'iot12345**')
-
-datas = urllib.urlencode({"name_id":"test", "value":"45", })
+datas = urllib.urlencode({'element_id_1':'a', 'value_1':10, 'api_key':'311b9c68f7e64bdfb77aab1e4d53aaf04378a463'})
 
 conn = httplib.HTTPConnection("localhost", 8000)
-conn.request("POST", "/api/v1/datas/" + API_KEY, datas, headers)
+conn.request("POST", "/api/v1/datas/", datas, headers)
 
 response = conn.getresponse()
 

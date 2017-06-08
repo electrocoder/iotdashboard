@@ -15,15 +15,11 @@ You can find project details on our project page https://iothook.com and wiki ht
 """
 
 import requests
-import json
 
-url = 'http://localhost:8000/api/v1/datas/'
-
-datas = {'api_key':'311b9c68f7e64bdfb77aab1e4d53aaf04378a463',
-        'element_id_1':'a', 'value_1':10,
-        'element_id_2':'b', 'value_2':20}
+url = 'http://localhost:8000/api/v1/datas/?data=first'
 
 auth=('admin', 'Aa1234567890')
 
-response = requests.post(url, data=datas, auth=auth)
-print response
+response = requests.get(url, auth=auth)
+data = response.json()
+print(data)

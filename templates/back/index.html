@@ -11,25 +11,25 @@
 {% block content %}
 <div class="row placeholders">
     <div class="col-xs-6 col-sm-3 placeholder">
-        <a href="{% url 'index' %}">
-        <img src="{% static "back/dashboard/img/cloud-256.png" %}" width="200" height="200" class="img-responsive"
-             alt="{% trans 'iot aygıt ekle' %}">
-        <h4>{% trans 'Aygıt Ekle' %}</h4></a>
-        <span class="text-muted">{% trans 'Iot Aygıt Yöneticisi' %}</span>
-    </div>
-    <div class="col-xs-6 col-sm-3 placeholder">
         <a href="{% url 'channel_add' %}">
-        <img src="{% static "back/dashboard/img/channel-256.png" %}" width="200" height="200" class="img-responsive"
+        <img src="{% static "back/dashboard/img/cloud-256.png" %}" width="200" height="200" class="img-responsive"
              alt="{% trans 'iot kanal ekle' %}">
         <h4>{% trans 'Kanal Ekle' %}</h4></a>
         <span class="text-muted">{% trans 'Iot Kanal Yöneticisi' %}</span>
     </div>
     <div class="col-xs-6 col-sm-3 placeholder">
-        <a href="{% url 'index' %}">
+        <a href="{% url 'channel_list' %}">
         <img src="{% static "back/dashboard/img/element-256.png" %}" width="200" height="200" class="img-responsive"
-             alt="{% trans 'iot element ekle' %}">
-        <h4>{% trans 'Element Ekle' %}</h4></a>
-        <span class="text-muted">{% trans 'Iot Element Gözetleyici' %}</span>
+             alt="{% trans 'iot kanal liste' %}">
+        <h4>{% trans 'Kanal Liste' %}</h4></a>
+        <span class="text-muted">{% trans 'Iot Kanal Gözetleyici' %}</span>
+    </div>
+    <div class="col-xs-6 col-sm-3 placeholder">
+        <a href="{% url 'datas' %}">
+        <img src="{% static "back/dashboard/img/channel-256.png" %}" width="200" height="200" class="img-responsive"
+             alt="{% trans 'iot data listesi' %}">
+        <h4>{% trans 'Data Liste' %}</h4></a>
+        <span class="text-muted">{% trans 'Iot Data Yöneticisi' %}</span>
     </div>
     <div class="col-xs-6 col-sm-3 placeholder">
         <a href="{% url 'key_list' %}">

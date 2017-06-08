@@ -68,7 +68,14 @@ class Datas(views.APIView):
         :param format:
         :return:
         """
-        datas = Data.objects.all()
+        debug('get')
+        debug(request.GET['data'])
+        if request.GET['data'] == 'first':
+            datas = Data.objects.order_by('pub_date')[:1]
+        elif request.GET['data'] == 'last':
+            datas = Data.objects.order_by('-pub_date')[:1]
+        else:
+            datas = Data.objects.all()
         serializer = DataSerializer(datas, many=True)
         return Response(serializer.data)
 
@@ -172,48 +179,48 @@ class DataQueryList(TemplateView):
     def get(self, request, *args, **kwargs):
         datas = Data.objects.all().order_by('-pub_date')[:100]
 
-        element_id_1 = False
-        element_id_2 = False
-        element_id_3 = False
-        element_id_4 = False
-        element_id_5 = False
-        element_id_6 = False
-        element_id_7 = False
-        element_id_8 = False
-        element_id_9 = False
-        element_id_10 = False
+        value_1 = False
+        value_2 = False
+        value_3 = False
+        value_4 = False
+        value_5 = False
+        value_6 = False
+        value_7 = False
+        value_8 = False
+        value_9 = False
+        value_10 = False
 
         for i in datas:
-            if i.element_id_1:
-                element_id_1 = True
-            if i.element_id_2:
-                element_id_2 = True
-            if i.element_id_3:
-                element_id_3 = True
-            if i.element_id_4:
-                element_id_4 = True
-            if i.element_id_5:
-                element_id_5 = True
-            if i.element_id_6:
-                element_id_6 = True
-            if i.element_id_7:
-                element_id_7 = True
-            if i.element_id_8:
-                element_id_8 = True
-            if i.element_id_9:
-                element_id_9 = True
-            if i.element_id_10:
-                element_id_10 = True
+            if i.value_1:
+                value_1 = True
+            if i.value_2:
+                value_2 = True
+            if i.value_3:
+                value_3 = True
+            if i.value_4:
+                value_4 = True
+            if i.value_5:
+                value_5 = True
+            if i.value_6:
+                value_6 = True
+            if i.value_7:
+                value_7 = True
+            if i.value_8:
+                value_8 = True
+            if i.value_9:
+                value_9 = True
+            if i.value_10:
+                value_10 = True
 
         return render(request, self.template_name, {'datas': datas,
-                                                    'element_id_1':element_id_1,
-                                                    'element_id_2':element_id_2,
-                                                    'element_id_3':element_id_3,
-                                                    'element_id_4':element_id_4,
-                                                    'element_id_5':element_id_5,
-                                                    'element_id_6':element_id_6,
-                                                    'element_id_7':element_id_7,
-                                                    'element_id_8':element_id_8,
-                                                    'element_id_9':element_id_9,
-                                                    'element_id_10':element_id_10
+                                                    'value_1':value_1,
+                                                    'value_2':value_2,
+                                                    'value_3':value_3,
+                                                    'value_4':value_4,
+                                                    'value_5':value_5,
+                                                    'value_6':value_6,
+                                                    'value_7':value_7,
+                                                    'value_8':value_8,
+                                                    'value_9':value_9,
+                                                    'value_10':value_10
                                                     })

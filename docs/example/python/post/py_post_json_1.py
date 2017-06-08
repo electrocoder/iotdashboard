@@ -47,4 +47,4 @@ for i in range(100):
     response = requests.post(url, data=data_json, headers=headers, auth=auth)
     print(response)
     print(response.json())
-    time.sleep(1)
+    time.sleep(10)

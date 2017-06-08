@@ -24,6 +24,10 @@ from datas import views as views_datas
 
 router = routers.DefaultRouter()
 
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title='IoTdashboard API')
+
 
 urlpatterns = i18n_patterns(
     # backoffice panels index page
@@ -57,6 +61,9 @@ urlpatterns = i18n_patterns(
 
     # django admin page
     url(r'^admin/', admin.site.urls),
+
+    # rest api docs
+    url(r'^api-docs/$', schema_view),
 )
 
 urlpatterns += [

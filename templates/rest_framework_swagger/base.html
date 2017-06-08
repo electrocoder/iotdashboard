@@ -4,7 +4,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>{% trans 'Iothook Api Docs' %}</title>
+  <title>{% trans 'IoTdashboard Api Docs' %}</title>
   <link rel="icon" type="image/png" href="{% static 'rest_framework_swagger/images/favicon-32x32.png' %}" sizes="32x32" />
   <link rel="icon" type="image/png" href="{% static 'rest_framework_swagger/images/favicon-16x16.png' %}" sizes="16x16" />
   <link href='{% static "rest_framework_swagger/css/typography.css" %}' media='screen' rel='stylesheet' type='text/css'/>
@@ -44,7 +44,7 @@
 <div id='header'>
   <div class="swagger-ui-wrap">
     {% block logo %}
-      <a id="logo" href="/"><img class="logo__img" alt="iothook" height="30" width="30" src="{% static 'rest_framework_swagger/images/logo_small.png' %}" /><span class="logo__title">iothook</span></a>
+      <a id="logo" href="/"><img class="logo__img" alt="iothook" height="30" width="30" src="{% static 'rest_framework_swagger/images/logo_small.png' %}" /><span class="logo__title">IoTdashboard</span></a>
     {% endblock %}
     <form id='api_selector'>
       <input id="input_baseUrl" name="baseUrl" type="hidden"/>
@@ -65,9 +65,9 @@
 
       {% if USE_SESSION_AUTH %}
         {% if request.user.is_authenticated %}
-          <div class='input'><a id="auth" class="header__btn" href="{{ LOGOUT_URL }}?next={{ request.path }}" data-sw-translate>Iothook {% trans 'Çıkış' %}</a></div>
+          <div class='input'><a id="auth" class="header__btn" href="{{ LOGOUT_URL }}?next={{ request.path }}" data-sw-translate>IoTdashboard {% trans 'Çıkış' %}</a></div>
         {% else %}
-          <div class='input'><a id="auth" class="header__btn" href="{{ LOGIN_URL }}?next={{ request.path }}" data-sw-translate>Iothook {% trans 'Giriş' %}</a></div>
+          <div class='input'><a id="auth" class="header__btn" href="{{ LOGIN_URL }}?next={{ request.path }}" data-sw-translate>IoTdashboard {% trans 'Giriş' %}</a></div>
         {% endif %}
       {% endif %}
       <div id='auth_container'></div>

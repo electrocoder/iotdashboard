@@ -33,16 +33,16 @@
                 <th>{% trans 'Id' %}</th>
                 <th>{% trans 'Kanal' %}</th>
                 <th>{% trans 'Ip Adresi' %}</th>
-                {% if element_id_1 %}<th>{% trans 'Element 1' %}</th>{% endif %}
-                {% if element_id_2 %}<th>{% trans 'Element 2' %}</th>{% endif %}
-                {% if element_id_3 %}<th>{% trans 'Element 3' %}</th>{% endif %}
-                {% if element_id_4 %}<th>{% trans 'Element 4' %}</th>{% endif %}
-                {% if element_id_5 %}<th>{% trans 'Element 5' %}</th>{% endif %}
-                {% if element_id_6 %}<th>{% trans 'Element 6' %}</th>{% endif %}
-                {% if element_id_7 %}<th>{% trans 'Element 7' %}</th>{% endif %}
-                {% if element_id_8 %}<th>{% trans 'Element 8' %}</th>{% endif %}
-                {% if element_id_9 %}<th>{% trans 'Element 9' %}</th>{% endif %}
-                {% if element_id_10 %}<th>{% trans 'Element 10' %}</th>{% endif %}
+                {% if value_1 %}<th>{% trans 'Element 1' %}</th>{% endif %}
+                {% if value_2 %}<th>{% trans 'Element 2' %}</th>{% endif %}
+                {% if value_3 %}<th>{% trans 'Element 3' %}</th>{% endif %}
+                {% if value_4 %}<th>{% trans 'Element 4' %}</th>{% endif %}
+                {% if value_5 %}<th>{% trans 'Element 5' %}</th>{% endif %}
+                {% if value_6 %}<th>{% trans 'Element 6' %}</th>{% endif %}
+                {% if value_7 %}<th>{% trans 'Element 7' %}</th>{% endif %}
+                {% if value_8 %}<th>{% trans 'Element 8' %}</th>{% endif %}
+                {% if value_9 %}<th>{% trans 'Element 9' %}</th>{% endif %}
+                {% if value_10 %}<th>{% trans 'Element 10' %}</th>{% endif %}
                 <th>{% trans 'Kayıt T.' %}</th>
                 <th>{% trans 'Chart Göster' %}</th>
             </tr>
@@ -53,16 +53,16 @@
                 <td>#{{ i.id }}</td>
                 <td>{{ i.channel }}</td>
                 <td><a class="tooltip-viewport-bottom" title="{{ i.remote_address }}">{{ i.remote_address | truncatechars:15 }}</a></td>
-                {% if element_id_1 %}<td>{{ i.element_id_1 }}/{{ i.value_1 }}</td>{% endif %}
-                {% if element_id_2 %}<td>{{ i.element_id_2 }}/{{ i.value_2 }}</td>{% endif %}
-                {% if element_id_3 %}<td>{{ i.element_id_3 }}/{{ i.value_3 }}</td>{% endif %}
-                {% if element_id_4 %}<td>{{ i.element_id_4 }}/{{ i.value_4 }}</td>{% endif %}
-                {% if element_id_5 %}<td>{{ i.element_id_5 }}/{{ i.value_5 }}</td>{% endif %}
-                {% if element_id_6 %}<td>{{ i.element_id_6 }}/{{ i.value_6 }}</td>{% endif %}
-                {% if element_id_7 %}<td>{{ i.element_id_7 }}/{{ i.value_7 }}</td>{% endif %}
-                {% if element_id_8 %}<td>{{ i.element_id_8 }}/{{ i.value_8 }}</td>{% endif %}
-                {% if element_id_9 %}<td>{{ i.element_id_9 }}/{{ i.value_9 }}</td>{% endif %}
-                {% if element_id_10 %}<td>{{ i.element_id_10 }}/{{ i.value_10 }}</td>{% endif %}
+                {% if value_1 %}<td>{{ i.channel.element_1 }}/{{ i.value_1 }}</td>{% endif %}
+                {% if value_2 %}<td>{{ i.channel.element_2 }}/{{ i.value_2 }}</td>{% endif %}
+                {% if value_3 %}<td>{{ i.channel.element_3 }}/{{ i.value_3 }}</td>{% endif %}
+                {% if value_4 %}<td>{{ i.channel.element_4 }}/{{ i.value_4 }}</td>{% endif %}
+                {% if value_5 %}<td>{{ i.channel.element_5 }}/{{ i.value_5 }}</td>{% endif %}
+                {% if value_6 %}<td>{{ i.channel.element_6 }}/{{ i.value_6 }}</td>{% endif %}
+                {% if value_7 %}<td>{{ i.channel.element_7 }}/{{ i.value_7 }}</td>{% endif %}
+                {% if value_8 %}<td>{{ i.channel.element_8 }}/{{ i.value_8 }}</td>{% endif %}
+                {% if value_9 %}<td>{{ i.channel.element_9 }}/{{ i.value_9 }}</td>{% endif %}
+                {% if value_10 %}<td>{{ i.channel.element_10 }}/{{ i.value_10 }}</td>{% endif %}
                 <td>{{ i.pub_date }}</td>
                 <td><a class="btn btn-info" href="{% url 'index' %}" role="button">{% trans 'Göster' %}</a></td>
             </tr>
