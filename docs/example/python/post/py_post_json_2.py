@@ -19,7 +19,6 @@ A copy of the License is located at
 http://www.apache.org/licenses/
 """
 
-
 import requests
 import json
 import time
@@ -35,7 +34,7 @@ auth=('admin', 'Aa1234567890')
 
 for i in range(100):
     data={
-        'api_key':'befb1ce654864a0ebf6ca1d0e901c2374d308e99',
+        'api_key':'4a463be3b35f452882199810e720ee3a401bb754',
         'value_1':i*10,
         }
 
