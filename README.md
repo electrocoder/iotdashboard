@@ -81,6 +81,13 @@ or
 ./manage.py runserver 0.0.0.0:8000
 ```
 
+Test on IOTDASHBOARD
+-------------
+
+```
+http://iotdashboard.pythonanywhere.com
+```
+
 Test on IHOOK
 -------------
 
@@ -104,3 +111,10 @@ License
 -------
 Iotdashboard source code is available under the MIT [License](/LICENSE).
 
+Author
+------
+Şahin MERSİN [@electrocoder](http://twitter.com/electrocoder) (https://www.facebook.com/electrocoder)
+
+Meşe Bilişim [http://mesebilisim.com/]
+
+IoThook [http://iothook.com]
