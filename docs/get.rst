@@ -92,14 +92,17 @@ Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
 
    import requests
 
-   API_KEY = "0cd76eb-5f3b179"
-   url = 'http://localhost:8000/api/v1/datas/' + API_KEY
+   url = 'http://iotdashboard.pythonanywhere.com/api/v1/datas/?data=all'
 
-   response = requests.get(url, auth=('admin', 'Aa12345**'))
+   auth=('admin', 'Aa1234567890')
+
+
+
+   response = requests.get(url, auth=auth)
    data = response.json()
    print data
 
-Get Api Requests.Get detail
+Get Api Requests.Get last data
 ===========================
 
 Python ile GET örneği.
@@ -127,14 +130,15 @@ Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
 
    import requests
 
-   API_KEY = "0cd76eb-5f3b179"
-   url = 'http://localhost:8000/api/v1/datas/7/' + API_KEY
+   url = 'http://iotdashboard.pythonanywhere.com/api/v1/datas/?data=last'
 
-   response = requests.get(url, auth=('admin', 'password'))
+   auth=('admin', 'Aa1234567890')
+
+   response = requests.get(url, auth=auth)
    data = response.json()
    print data
 
-Get Api Requests.Get json graph
+Get Api Requests.Get first data
 ===============================
 
 Python ile json GET örneği.
@@ -162,12 +166,86 @@ Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
 
    import requests
 
-   API_KEY = "0cd76eb-5f3b179"
-   url = 'http://localhost:8000/api/v1/datas/' + API_KEY
+   url = 'http://iotdashboard.pythonanywhere.com/api/v1/datas/?data=first'
 
-   response = requests.get(url, auth=('admin', 'Aa12345**'))
+   auth=('admin', 'Aa1234567890')
+
+   response = requests.get(url, auth=auth)
    data = response.json()
    print data
+
+
+Get Api Requests.Get all/first/last data with C#
+================================================
+
+C# ile json GET örneği.
+Bu örneğe Github: https://github.com/AsocialCoder/CSharp_Webrequest.git adresinden ulaşabilirsiniz.
+
+.. code-block:: c#
+
+   """
+   Iot dashboard GET example
+
+   iot-dashboard
+   IoT: Platform for Internet of Things
+
+   Iotdashboard source code is available under the MIT License
+
+   Online iot dashboard test and demo http://ihook.xyz
+
+   Online iot dashboard https://iothook.com
+   
+   You can find project details on our project page https://iothook.com and wiki https://iothook.com
+   """
+
+  using System;
+  using System.Collections.Generic;
+  using System.ComponentModel;
+  using System.Data;
+  using System.Drawing;
+  using System.Linq;
+  using System.Text;
+  using System.Threading.Tasks;
+  using System.Windows.Forms;
+  using System.IO;
+  using System.Net;
+  using System.Collections.Specialized;
+  using System.Windows.Forms.DataVisualization.Charting;
+  using System.Web.Script.Serialization;
+  using Newtonsoft.Json.Linq;
+  using System.Threading;
+  using Newtonsoft.Json;
+
+  // url = "http://iotdashboard.pythonanywhere.com/api/v1/datas/?data=all" for all data
+  // url = "http://iotdashboard.pythonanywhere.com/api/v1/datas/?data=first" for first data
+
+  url ="http://iotdashboard.pythonanywhere.com/api/v1/datas/?data=last" // for last data
+
+  var webRequest = (HttpWebRequest)WebRequest.Create(url);
+  webRequest.Method = "GET";
+  webRequest.ContentType = "application/json";
+  webRequest.UserAgent = "Mozilla/5.0 (Windows NT 5.1; rv:28.0) Gecko/20100101 Firefox/28.0";
+  webRequest.ContentLength = 0;
+  string autorization = "admin" + ":" + "Aa1234567890";
+  byte[] binaryAuthorization = System.Text.Encoding.UTF8.GetBytes(autorization);
+  autorization = Convert.ToBase64String(binaryAuthorization);
+  autorization = "Basic " + autorization;
+  webRequest.Headers.Add("AUTHORIZATION", autorization);               
+  var webResponse = (HttpWebResponse)webRequest.GetResponse();
+  if (webResponse.StatusCode != HttpStatusCode.OK) MessageBox.Show(webResponse.Headers.ToString());
+  using (StreamReader reader = new StreamReader(webResponse.GetResponseStream()))
+  {
+
+    string s = reader.ReadToEnd();
+
+    s = s.Trim('[');
+    s = s.Trim(']');
+
+    dynamic stuff = JObject.Parse(s);
+    reader.Close();
+    webRequest.Abort();
+  }
+    
 
 Get Api Requests.Get py_get_json_to_py2neo
 ==========================================
@@ -197,12 +275,14 @@ Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
 
    import requests
 
-   API_KEY = "0cd76eb-5f3b179"
-   url = 'http://localhost:8000/api/v1/datas/' + API_KEY
+   url = 'http://iotdashboard.pythonanywhere.com/api/v1/datas/?data=last'
 
-   # response = requests.get(url, auth=('admin', 'Aa12345**'))
+   auth=('admin', 'Aa1234567890')
+
+   # response = requests.get(url, auth=auth)
    # data = response.json()
-   # print data
+   # print data  
+  
 
 
    # from py2neo import Graph, Path
@@ -248,11 +328,12 @@ Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
    import json
    import matplotlib.pyplot as plt
 
-   API_KEY = "c791e11-d9ab779"
+   url = 'http://iotdashboard.pythonanywhere.com/api/v1/datas/?data=last'
 
-   url = 'http://localhost:8000/api/v1/datas/' + API_KEY
+   auth=('admin', 'Aa1234567890')
 
-   myResponse = requests.get(url, auth=('iottestuser', 'iot12345**'), verify=True)
+
+   myResponse = requests.get(url, auth=auth, verify=True)
    print (myResponse.status_code)
 
    if(myResponse.ok):
@@ -293,11 +374,13 @@ Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
    import json
    import matplotlib.pyplot as plt
 
-   API_KEY = "c791e11-d9ab779"
+  
 
-   url = 'http://localhost:8000/api/v1/datas/' + API_KEY
+   url = 'http://iotdashboard.pythonanywhere.com/api/v1/datas/?data=last'
 
-   myResponse = requests.get(url, auth=('iottestuser', 'iot12345**'), verify=True)
+   auth=('admin', 'Aa1234567890')
+
+   myResponse = requests.get(url, auth=auth, verify=True)
    print (myResponse.status_code)
 
    d= []

@@ -119,21 +119,24 @@ Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
     import random
     import pprint
 
-    API_KEY = "c791e11-d9ab779"
-    url = 'http://localhost:8000/api/v1/datas/' + API_KEY
+    headers = {'Content-type': 'application/json'}
+    url = 'http://localhost:8000/api/v1/datas/'
     auth=('iottestuser', 'iot12345**')
 
+    
+
     for i in range(30):
-        data = {"name_id":"test", "value":i}
+        data = {'api_key':'c791e11-d9ab779','name_id':'test', 'value':'45'}
 
         data_json = json.dumps(data)
-        headers = {'Content-type': 'application/json'}
+        
 
         response = requests.post(url, data=data_json, headers=headers, auth=auth)
         pprint.pprint(response.json())
+        
 
-Post Api Requests.Post ihook
-============================
+Post Api Requests.Post iotdashboard
+===================================
 
 Python ile POST örneği.
 Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
@@ -164,19 +167,101 @@ Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
     import urllib2
     import random
     import pprint
+    headers = {'Content-type': 'application/json'}
+    url = 'http://iotdashboard.pythonanywhere.com/api/v1/datas/'
+    
+    auth=('admin', 'Aa1234567890')
 
-    API_KEY = "b64bc5c-7ec12c7"
-    url = 'http://ihook.xyz/api/v1/datas/' + API_KEY
-    auth=('iottestuser', 'iot12345**')
+    for i in range(10):
+        data={
+            'api_key':'8030e69da8b049d98807c443407f94594b558d3e',
+            'element_1':'1', 'value_1':i*10,
+            }
 
-    for i in range(20):
-        data = {"name_id":"test_element", "value":i}
+    data_json = json.dumps(data)
+    response = requests.post(url, data=data_json, headers=headers, auth=auth)
+    print(response)
+    print(response.json())
+    time.sleep(5)
 
-        data_json = json.dumps(data)
-        headers = {'Content-type': 'application/json'}
+Post Api Requests.Post with C# iotdashboard
+===========================================
 
-        response = requests.post(url, data=data_json, headers=headers, auth=auth)
-        pprint.pprint(response.json())
+C# ile POST örneği.
+Bu örneğe Github: https://github.com/AsocialCoder/CSharp_Webrequest adresinden ulaşabilirsiniz.
+
+.. code-block:: c#
+
+   """
+   Iot dashboard POST example
+
+   iot-dashboard
+   IoT: Platform for Internet of Things
+
+   Iotdashboard source code is available under the MIT License
+
+   Online iot dashboard test and demo http://ihook.xyz
+
+   Online iot dashboard https://iothook.com
+   
+   You can find project details on our project page https://iothook.com and wiki https://iothook.com
+   """
+   
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Forms;
+    using System.IO;
+    using System.Net;
+    using System.Collections.Specialized;
+    using System.Windows.Forms.DataVisualization.Charting;
+    using System.Web.Script.Serialization;
+    using Newtonsoft.Json.Linq;
+    using System.Threading;
+    using Newtonsoft.Json;
+
+    String url = "http://iotdashboard.pythonanywhere.com/api/v1/datas";
+
+    CookieContainer cookies = new CookieContainer();
+    var webRequest = (HttpWebRequest)WebRequest.Create(url);
+    webRequest.Method = "POST";
+    webRequest.CookieContainer = cookies;
+    webRequest.ContentType = "application/json";
+    webRequest.UserAgent = "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.1) Gecko/2008070208 Firefox/3.0.1";
+    webRequest.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
+    string autorization = "admin" + ":" + "Aa1234567890";
+    byte[] binaryAuthorization = System.Text.Encoding.UTF8.GetBytes(autorization);
+    autorization = Convert.ToBase64String(binaryAuthorization);
+    autorization = "Basic " + autorization;
+    webRequest.Headers.Add("AUTHORIZATION", autorization);
+    webRequest.SendChunked = true;
+
+    using (var streamWriter = new StreamWriter(webRequest.GetRequestStream()))
+    {
+    MessageBox.Show("burada");
+    var json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(new
+    {
+    api_key = 8030e69da8b049d98807c443407f94594b558d3e,
+    value_1 = "15",
+    value_2 = "12",
+    value_3 = "25",
+    value_4 = "85",
+    value_5 = "10",
+
+    });
+
+    streamWriter.Write(json);
+
+    MessageBox.Show("Değerler başarılı bir şekilde yüklendi.");
+    streamWriter.Flush();
+    streamWriter.Close();
+    webRequest.Abort();
+    }
 
 Post Api Requests.Post localhost
 ================================
@@ -207,12 +292,11 @@ Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
     import requests
     import json
 
-    API_KEY = "c791e11-d9ab779"
-    url = 'http://localhost:8000/api/v1/datas/' + API_KEY
-
-    datas = {'name_id':'test','value':'66'}
-
+    headers = {'Content-type': 'application/json'}
+    url = 'http://localhost:8000/api/v1/datas/'
     auth=('iottestuser', 'iot12345**')
+
+    data = {'api_key':'c791e11-d9ab779','name_id':'test', 'value':'45'}
 
     response = requests.post(url, data=datas, auth=auth)
     print response
@@ -250,14 +334,13 @@ Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
     import random
     import pprint
 
-    API_KEY = "c791e11-d9ab779"
-    url = 'http://localhost:8000/api/v1/datas/' + API_KEY
+    headers = {'Content-type': 'application/json'}
+    url = 'http://localhost:8000/api/v1/datas/'
     auth=('iottestuser', 'iot12345**')
 
-    data = {"name_id":"test", "value":"45"}
+    data = {'api_key':'c791e11-d9ab779','name_id':'test', 'value':'45'}
 
     data_json = json.dumps(data)
-    headers = {'Content-type': 'application/json'}
 
     response = requests.post(url, data=data_json, headers=headers, auth=auth)
     pprint.pprint(response.json())
@@ -295,11 +378,11 @@ Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
     import urllib2
     import random
 
-    API_KEY = "c791e11-d9ab779"
-    url = 'http://localhost:8000/api/v1/datas/' + API_KEY
+    headers = {'Content-type': 'application/json'}
+    url = 'http://localhost:8000/api/v1/datas/'
     auth=('iottestuser', 'iot12345**')
 
-    data = {"name_id":"test", "value":"45"}
+    data = {'api_key':'c791e11-d9ab779','name_id':'test', 'value':'45'}
 
     data = urllib.urlencode(data)
 
@@ -338,14 +421,11 @@ Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
 
     import httplib, urllib
 
-    headers = {'content-type': 'application/json'}
-
-    API_KEY = "c791e11-d9ab779"
-    url = 'http://localhost:8000/api/v1/datas/' + API_KEY
-
+    headers = {'Content-type': 'application/json'}
+    url = 'http://localhost:8000/api/v1/datas/'
     auth=('iottestuser', 'iot12345**')
 
-    datas = urllib.urlencode({"name_id":"test", "value":"45", })
+    data = {'api_key':'c791e11-d9ab779','name_id':'test', 'value':'45'}
 
     conn = httplib.HTTPConnection("localhost", 8000)
     conn.request("POST", "/api/v1/datas/" + API_KEY, datas, headers)

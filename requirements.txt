@@ -12,5 +12,4 @@ dj-static
 sphinx
 xlwt
 drfdocs
-Pillow
 django-rest-swagger
