@@ -82,13 +82,12 @@ class Datas(views.APIView):
         :param format:
         :return:
         """
-        debug('get')
-        debug(request.GET['data'])
-        if request.GET['data'] == 'first':
-            datas = Data.objects.order_by('pub_date')[:1]
-        elif request.GET['data'] == 'last':
-            datas = Data.objects.order_by('-pub_date')[:1]
-        else:
+        try:
+            if request.GET['data'] == 'first':
+                datas = Data.objects.order_by('pub_date')[:1]
+            elif request.GET['data'] == 'last':
+                datas = Data.objects.order_by('-pub_date')[:1]
+        except:
             datas = Data.objects.all()
         serializer = DataSerializer(datas, many=True)
         return Response(serializer.data)
