@@ -103,7 +103,7 @@ Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
    print data
 
 Get Api Requests.Get last data
-===========================
+==============================
 
 Python ile GET örneği.
 Bu örneğe `Github`_ adresinden ulaşabilirsiniz.
@@ -191,60 +191,52 @@ Bu örneğe Github: https://github.com/AsocialCoder/CSharp_Webrequest.git adresi
 
    Iotdashboard source code is available under the MIT License
 
-   Online iot dashboard test and demo http://ihook.xyz
+   Online iot dashboard test and demo http://iotdashboard.pythonanywhere.com
 
    Online iot dashboard https://iothook.com
    
    You can find project details on our project page https://iothook.com and wiki https://iothook.com
    """
 
-  using System;
-  using System.Collections.Generic;
-  using System.ComponentModel;
-  using System.Data;
-  using System.Drawing;
-  using System.Linq;
-  using System.Text;
-  using System.Threading.Tasks;
-  using System.Windows.Forms;
-  using System.IO;
-  using System.Net;
-  using System.Collections.Specialized;
-  using System.Windows.Forms.DataVisualization.Charting;
-  using System.Web.Script.Serialization;
-  using Newtonsoft.Json.Linq;
-  using System.Threading;
-  using Newtonsoft.Json;
+   using System;
+   using System.IO;
+   using System.Net;
 
-  // url = "http://iotdashboard.pythonanywhere.com/api/v1/datas/?data=all" for all data
-  // url = "http://iotdashboard.pythonanywhere.com/api/v1/datas/?data=first" for first data
+   namespace ConsoleApp1
+   {
+       class Program
+       {
+           static void Main(string[] args)
+           {
+               string url = "";
+               url = "http://iotdashboard.pythonanywhere.com/api/v1/datas/?data=last"; // for all data
 
-  url ="http://iotdashboard.pythonanywhere.com/api/v1/datas/?data=last" // for last data
+               var webRequest = (HttpWebRequest)WebRequest.Create(url);
+               webRequest.Method = "GET";
+               webRequest.ContentType = "application/json";
+               webRequest.UserAgent = "Mozilla/5.0 (Windows NT 5.1; rv:28.0) Gecko/20100101 Firefox/28.0";
+               webRequest.ContentLength = 0;
+               string autorization = "admin" + ":" + "Aa1234567890";
+               byte[] binaryAuthorization = System.Text.Encoding.UTF8.GetBytes(autorization);
+               autorization = Convert.ToBase64String(binaryAuthorization);
+               autorization = "Basic " + autorization;
+               webRequest.Headers.Add("AUTHORIZATION", autorization);
+               var webResponse = (HttpWebResponse)webRequest.GetResponse();
+               if (webResponse.StatusCode != HttpStatusCode.OK)
+                   Console.WriteLine(webResponse.Headers.ToString());
+               using (StreamReader reader = new StreamReader(webResponse.GetResponseStream()))
+               {
 
-  var webRequest = (HttpWebRequest)WebRequest.Create(url);
-  webRequest.Method = "GET";
-  webRequest.ContentType = "application/json";
-  webRequest.UserAgent = "Mozilla/5.0 (Windows NT 5.1; rv:28.0) Gecko/20100101 Firefox/28.0";
-  webRequest.ContentLength = 0;
-  string autorization = "admin" + ":" + "Aa1234567890";
-  byte[] binaryAuthorization = System.Text.Encoding.UTF8.GetBytes(autorization);
-  autorization = Convert.ToBase64String(binaryAuthorization);
-  autorization = "Basic " + autorization;
-  webRequest.Headers.Add("AUTHORIZATION", autorization);               
-  var webResponse = (HttpWebResponse)webRequest.GetResponse();
-  if (webResponse.StatusCode != HttpStatusCode.OK) MessageBox.Show(webResponse.Headers.ToString());
-  using (StreamReader reader = new StreamReader(webResponse.GetResponseStream()))
-  {
+                   Console.WriteLine(reader.ReadToEnd());
+                   reader.Close();
+                   webRequest.Abort();
+               }
 
-    string s = reader.ReadToEnd();
+               Console.ReadLine();
+           }
+       }
+   }
 
-    s = s.Trim('[');
-    s = s.Trim(']');
-
-    dynamic stuff = JObject.Parse(s);
-    reader.Close();
-    webRequest.Abort();
-  }
     
 
 Get Api Requests.Get py_get_json_to_py2neo
