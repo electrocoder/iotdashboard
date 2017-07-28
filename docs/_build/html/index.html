@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>IOT Dashboard &#8212; iotdashboard 1 belgelendirme çalışması</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Dizin" href="genindex.html" />
+    <link rel="search" title="Ara" href="search.html" />
+    <link rel="next" title="IOT API DOCS" href="api_docs.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="iot-dashboard">
+<h1>IOT Dashboard<a class="headerlink" href="#iot-dashboard" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
+</div>
+<div class="section" id="icindekiler">
+<h1>İçindekiler<a class="headerlink" href="#icindekiler" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_docs.html">IOT API DOCS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_post.html">IOT Django REST framework Web API POST</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="post.html">POST Web API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="post.html#post-yapisi">Post Yapısı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="post.html#post-api">Post Api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="post.html#post-api-requests-post-localhost">Post Api Requests.Post localhost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="post.html#post-api-requests-post-iotdashboard">Post Api Requests.Post iotdashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="post.html#post-api-requests-post-with-c-iotdashboard">Post Api Requests.Post with C# iotdashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="post.html#id2">Post Api Requests.Post localhost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="post.html#post-api-requests-post-headers">Post Api Requests.Post headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="post.html#post-api-requests-post-urllib">Post Api Requests.Post urllib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="post.html#post-api-requests-post-httplib">Post Api Requests.Post httplib</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_get.html">IOT Django REST framework Web API GET</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get.html">GET Web API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get.html#get-yapisi">GET Yapısı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get.html#get-api">GET Api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get.html#get-api-requests-get-all-data">Get Api Requests.Get all data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get.html#get-api-requests-get-last-data">Get Api Requests.Get last data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get.html#get-api-requests-get-first-data">Get Api Requests.Get first data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get.html#get-api-requests-get-all-first-last-data-with-c">Get Api Requests.Get all/first/last data with C#</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get.html#get-api-requests-get-py-get-json-to-py2neo">Get Api Requests.Get py_get_json_to_py2neo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get.html#get-api-requests-get-py-get-requests">Get Api Requests.Get py_get_requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get.html#get-api-requests-get-py-get-requests-matplotlib">Get Api Requests.Get py_get_requests_matplotlib</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Dizin</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Modül Dizini</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Arama Sayfası</span></a></li>
+</ul>
+</div>
+<div class="section" id="nasil-test-ederim">
+<h1>Nasıl Test ederim?<a class="headerlink" href="#nasil-test-ederim" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
+<p>Bu döküman içeriğindeki tüm bilgiler <a class="reference external" href="http://ihook.xyz/">http://ihook.xyz/</a> adresinden online olarak test edilebilmektedir.</p>
+<p>Online iot dashboard için <a class="reference external" href="http://iothook.com">http://iothook.com</a> adresini ziyaret ediniz.</p>
+</div>
+<div class="section" id="iot-dashboard-nedir">
+<h1>Iot Dashboard Nedir?<a class="headerlink" href="#iot-dashboard-nedir" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
+<p>Banana Pi, NanoPC, Intel Edison, Parallella, Raspberry Pi gibi tek kart bilgisayarlarda çalışan Python/Django REST framework ile
+geliştirilmiş Web Api servisidir. IOT cihazlar ile iletişime geçerek Web Api sayesinde GET, POST, PUT ve DELETE
+işlemlerini kolayca yapabilmek için tasarlanmıştır. IoT: Platform for Internet of Things iothook.com</p>
+<p>Nedir?</p>
+<p><strong>Iotdashboard</strong> internete bağlı nesneler (iot) arasında veri transferi yapan web servis ağı projesidir. <strong>Iotdashboard</strong> ile <em>Arduino, Raspberry Pi,
+Android, iOS, Windows Phone, Web Site, Banana Pi, Orange Pi, Beaglebone,
+ARM, Pic, Windows, Mac OS X, ve Linux</em> tabanlı sistemleri birbirine bağlar.</p>
+</div>
+<div class="section" id="neden-iotdashboard">
+<h1>Neden Iotdashboard?<a class="headerlink" href="#neden-iotdashboard" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
+<ul class="simple">
+<li>Sınırsız kanal oluşturabilirsin,</li>
+<li>Sınırsız element ekleyebilirsin,</li>
+<li>Tüm cihazların ile kolayca veri gönderebilirsin (post),</li>
+<li>Tüm iot cihazlarından kolayca veri alabilirsin (get),</li>
+<li>Datalarını gerçek zamanlı takip edebilirsin,</li>
+<li>Dataların için gerçek zamanlı grafik oluşturabilirsin,</li>
+</ul>
+<p>Iotdashboard tüm cihazlarınız arasında kesintisiz veri aktarımı yapan, internete bağlı nesnelerin kolayca ulaşabileceği
+iletişim protokollerini destekler.</p>
+<p>Google developer chart apileri ile entegre olarak verileri gerçek zamanlı izleme olanağı sağlar.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">İçindekiler Tablosu</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">IOT Dashboard</a></li>
+<li><a class="reference internal" href="#icindekiler">İçindekiler</a></li>
+<li><a class="reference internal" href="#nasil-test-ederim">Nasıl Test ederim?</a></li>
+<li><a class="reference internal" href="#iot-dashboard-nedir">Iot Dashboard Nedir?</a></li>
+<li><a class="reference internal" href="#neden-iotdashboard">Neden Iotdashboard?</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="api_docs.html" title="sonraki bölüm">IOT API DOCS</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>Bu Sayfa</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Kaynağı Göster</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Hızlı Arama</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Git" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, electrocoder.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
