@@ -32,7 +32,10 @@ from django.views.generic import TemplateView
 from rest_framework import routers
 
 from channels import views as views_channels
+
 from datas import views as views_datas
+from datas import views_api_v1 as views_api_v1
+from datas import views_api_v1_1 as views_api_v1_1
 
 router = routers.DefaultRouter()
 
@@ -82,8 +85,12 @@ urlpatterns += [
     # REST framework
     url(r'^api/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^api/v1/datas/$', views_datas.Datas.as_view()),
-    url(r'^api/v1/datas/(?P<pk>[0-9]+)/$',  views_datas.DataDetail.as_view()),
+
+    url(r'^api/v1/datas/$', views_api_v1.Datas.as_view()),
+    url(r'^api/v1/datas/(?P<pk>[0-9]+)/$',  views_api_v1.DataDetail.as_view()),
+
+    url(r'^api/v1.1/datas/$', views_api_v1_1.Datas.as_view()),
+
 ]
 
 urlpatterns += [
