@@ -1,20 +1,20 @@
 # iot-dashboard
 # IoT: Platform for Internet of Things
 [![Gitter](https://badges.gitter.im/electrocoder/iot-dashboard.svg)](https://gitter.im/electrocoder/iot-dashboard?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-[![License](https://img.shields.io/badge/licence-Apache%202.0-brightgreen.svg?style=flat)](LICENSE)
-[![Build Status](https://travis-ci.org/Samsung/iotjs.svg?branch=master)](https://iothook.com/tr/)
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
+[![Build Status](https://travis-ci.org/Samsung/iotjs.svg?branch=master)](https://iothook.com/)
+[![Django](https://img.shields.io/pypi/pyversions/Django.svg)](https://iothook.com/)
 
 You can find project details on our [project page](https://iothook.com/) and [wiki](https://iothook.com/).
 
 <p align="center">
-<img 
-    src="iotdashboard.png" 
+<img
+    src="iotdashboard.png"
     border="0" alt="IOT HOOK">
     </p>
 <br>
 
-
-<p align="center">Fast Django server for IOT Devices</a></p>
+<p align="center"><h1>Fast Django server for IOT Devices</h1></p>
 
 Features
 --------
@@ -22,7 +22,7 @@ Features
 - Create a Device for iot devices
 - Create a Channel for iot devices
 - Create a Element for iot devices
-- Simple interface. 
+- Simple interface.
 - Support for channel api key
 - Django REST Framework
 
@@ -56,6 +56,13 @@ GitHub Pages
 http://electrocoder.github.io/iotdashboard/
 ```
 
+Readthedocs
+-----------
+
+```
+http://iotdashboard.readthedocs.io/tr/latest/
+```
+
 Installing Pip
 --------------
 
@@ -81,6 +88,13 @@ Test on IOTDASHBOARD
 http://iotdashboard.pythonanywhere.com
 ```
 
+Test on IHOOK
+-------------
+
+```
+https://ihook.pythonanywhere.com
+```
+
 Test on HEROKU
 --------------
 
@@ -91,11 +105,11 @@ https://iotdashboard.herokuapp.com/
 Contact
 -------
 Şahin MERSİN [@electrocoder](http://twitter.com/electrocoder)
+iothook [@iothook](https://twitter.com/iothook)
 
 License
 -------
 Iotdashboard source code is available under the MIT [License](/LICENSE).
-
 
 Author
 ------
