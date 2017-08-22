@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="tr">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>POST Web API &#8212; iotdashboard 1 belgelendirme çalışması</title>
-    
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -36,7 +33,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -130,6 +127,26 @@ Bu örneğe <a class="reference external" href="https://goo.gl/5WZ91D">Github</a
 <span class="sd">Online iot dashboard https://iothook.com</span>
 
 <span class="sd">You can find project details on our project page https://iothook.com and wiki https://iothook.com</span>
+
+<span class="sd">The MIT License (MIT)</span>
+
+<span class="sd">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="sd">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="sd">in the Software without restriction, including without limitation the rights</span>
+<span class="sd">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="sd">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="sd">furnished to do so, subject to the following conditions:</span>
+
+<span class="sd">The above copyright notice and this permission notice shall be included in all</span>
+<span class="sd">copies or substantial portions of the Software.</span>
+
+<span class="sd">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="sd">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="sd">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="sd">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="sd">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="sd">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="sd">SOFTWARE.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">requests</span>
@@ -174,6 +191,26 @@ Bu örneğe <a class="reference external" href="https://goo.gl/5WZ91D">Github</a
 <span class="sd">Online iot dashboard https://iothook.com</span>
 
 <span class="sd">You can find project details on our project page https://iothook.com and wiki https://iothook.com</span>
+
+<span class="sd">The MIT License (MIT)</span>
+
+<span class="sd">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="sd">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="sd">in the Software without restriction, including without limitation the rights</span>
+<span class="sd">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="sd">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="sd">furnished to do so, subject to the following conditions:</span>
+
+<span class="sd">The above copyright notice and this permission notice shall be included in all</span>
+<span class="sd">copies or substantial portions of the Software.</span>
+
+<span class="sd">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="sd">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="sd">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="sd">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="sd">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="sd">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="sd">SOFTWARE.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">requests</span>
@@ -205,20 +242,40 @@ Bu örneğe <a class="reference external" href="https://goo.gl/5WZ91D">Github</a
 <h1>Post Api Requests.Post with C# iotdashboard<a class="headerlink" href="#post-api-requests-post-with-c-iotdashboard" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>C# ile POST örneği.
 Bu örneğe Github: <a class="reference external" href="https://github.com/AsocialCoder/CSharp_Webrequest">https://github.com/AsocialCoder/CSharp_Webrequest</a> adresinden ulaşabilirsiniz.</p>
-<div class="highlight-c#"><div class="highlight"><pre><span></span><span class="s">&quot;&quot;&quot;</span>
-<span class="n">Iot</span> <span class="n">dashboard</span> <span class="n">POST</span> <span class="n">example</span>
+<div class="highlight-c#"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">Iot dashboard POST example</span>
 
-<span class="n">iot</span><span class="p">-</span><span class="n">dashboard</span>
-<span class="n">IoT</span><span class="p">:</span> <span class="n">Platform</span> <span class="k">for</span> <span class="n">Internet</span> <span class="n">of</span> <span class="n">Things</span>
+<span class="cm">iot-dashboard</span>
+<span class="cm">IoT: Platform for Internet of Things</span>
 
-<span class="n">Iotdashboard</span> <span class="n">source</span> <span class="n">code</span> <span class="k">is</span> <span class="n">available</span> <span class="n">under</span> <span class="n">the</span> <span class="n">MIT</span> <span class="n">License</span>
+<span class="cm">Iotdashboard source code is available under the MIT License</span>
 
-<span class="n">Online</span> <span class="n">iot</span> <span class="n">dashboard</span> <span class="n">test</span> <span class="n">and</span> <span class="n">demo</span> <span class="n">http</span><span class="p">:</span><span class="c1">//ihook.xyz</span>
+<span class="cm">Online iot dashboard test and demo http://ihook.xyz</span>
 
-<span class="n">Online</span> <span class="n">iot</span> <span class="n">dashboard</span> <span class="n">https</span><span class="p">:</span><span class="c1">//iothook.com</span>
+<span class="cm">Online iot dashboard https://iothook.com</span>
 
-<span class="n">You</span> <span class="n">can</span> <span class="n">find</span> <span class="n">project</span> <span class="n">details</span> <span class="k">on</span> <span class="n">our</span> <span class="n">project</span> <span class="n">page</span> <span class="n">https</span><span class="p">:</span><span class="c1">//iothook.com and wiki https://iothook.com</span>
-<span class="s">&quot;&quot;&quot;</span>
+<span class="cm">You can find project details on our project page https://iothook.com and wiki https://iothook.com</span>
+
+<span class="cm"> The MIT License (MIT)</span>
+
+<span class="cm"> Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="cm"> of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="cm"> in the Software without restriction, including without limitation the rights</span>
+<span class="cm"> to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="cm"> copies of the Software, and to permit persons to whom the Software is</span>
+<span class="cm"> furnished to do so, subject to the following conditions:</span>
+
+<span class="cm"> The above copyright notice and this permission notice shall be included in all</span>
+<span class="cm"> copies or substantial portions of the Software.</span>
+
+<span class="cm"> THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="cm"> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="cm"> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="cm"> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="cm"> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="cm"> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="cm"> SOFTWARE.</span>
+<span class="cm">*/</span>
 
  <span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
  <span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
@@ -296,6 +353,26 @@ Bu örneğe <a class="reference external" href="https://goo.gl/5WZ91D">Github</a
 <span class="sd">Online iot dashboard https://iothook.com</span>
 
 <span class="sd">You can find project details on our project page https://iothook.com and wiki https://iothook.com</span>
+
+<span class="sd">The MIT License (MIT)</span>
+
+<span class="sd">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="sd">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="sd">in the Software without restriction, including without limitation the rights</span>
+<span class="sd">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="sd">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="sd">furnished to do so, subject to the following conditions:</span>
+
+<span class="sd">The above copyright notice and this permission notice shall be included in all</span>
+<span class="sd">copies or substantial portions of the Software.</span>
+
+<span class="sd">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="sd">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="sd">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="sd">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="sd">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="sd">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="sd">SOFTWARE.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">requests</span>
@@ -330,6 +407,26 @@ Bu örneğe <a class="reference external" href="https://goo.gl/5WZ91D">Github</a
 <span class="sd">Online iot dashboard https://iothook.com</span>
 
 <span class="sd">You can find project details on our project page https://iothook.com and wiki https://iothook.com</span>
+
+<span class="sd">The MIT License (MIT)</span>
+
+<span class="sd">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="sd">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="sd">in the Software without restriction, including without limitation the rights</span>
+<span class="sd">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="sd">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="sd">furnished to do so, subject to the following conditions:</span>
+
+<span class="sd">The above copyright notice and this permission notice shall be included in all</span>
+<span class="sd">copies or substantial portions of the Software.</span>
+
+<span class="sd">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="sd">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="sd">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="sd">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="sd">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="sd">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="sd">SOFTWARE.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">requests</span>
@@ -370,6 +467,26 @@ Bu örneğe <a class="reference external" href="https://goo.gl/5WZ91D">Github</a
 <span class="sd">Online iot dashboard https://iothook.com</span>
 
 <span class="sd">You can find project details on our project page https://iothook.com and wiki https://iothook.com</span>
+
+<span class="sd">The MIT License (MIT)</span>
+
+<span class="sd">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="sd">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="sd">in the Software without restriction, including without limitation the rights</span>
+<span class="sd">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="sd">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="sd">furnished to do so, subject to the following conditions:</span>
+
+<span class="sd">The above copyright notice and this permission notice shall be included in all</span>
+<span class="sd">copies or substantial portions of the Software.</span>
+
+<span class="sd">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="sd">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="sd">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="sd">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="sd">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="sd">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="sd">SOFTWARE.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">requests</span>
@@ -413,6 +530,26 @@ Bu örneğe <a class="reference external" href="https://goo.gl/5WZ91D">Github</a
 <span class="sd">Online iot dashboard https://iothook.com</span>
 
 <span class="sd">You can find project details on our project page https://iothook.com and wiki https://iothook.com</span>
+
+<span class="sd">The MIT License (MIT)</span>
+
+<span class="sd">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="sd">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="sd">in the Software without restriction, including without limitation the rights</span>
+<span class="sd">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="sd">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="sd">furnished to do so, subject to the following conditions:</span>
+
+<span class="sd">The above copyright notice and this permission notice shall be included in all</span>
+<span class="sd">copies or substantial portions of the Software.</span>
+
+<span class="sd">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="sd">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="sd">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="sd">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="sd">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="sd">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="sd">SOFTWARE.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">httplib</span><span class="o">,</span> <span class="nn">urllib</span>
@@ -490,7 +627,7 @@ Bu örneğe <a class="reference external" href="https://goo.gl/5WZ91D">Github</a
       &copy;2016, electrocoder.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
