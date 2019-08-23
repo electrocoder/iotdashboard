@@ -40,6 +40,6 @@ from .models import Data
 class DataAdmin(admin.ModelAdmin):
     """
     """
-    list_display = ('id', 'owner', 'channel', 'enable', 'remote_address', 'pub_date')
+    list_display = ('id', 'device', 'remote_address', 'pub_date')
 
 admin.site.register(Data, DataAdmin)

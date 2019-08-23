@@ -32,27 +32,29 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 import hashlib, random
 
-from channels.models import Channel
+from devices.models import Device
 
 
 class Data(models.Model):
     """
     """
-    owner           = models.ForeignKey('auth.User', related_name='ownerdata', on_delete=models.CASCADE)
-    channel         = models.ForeignKey(Channel, related_name='channeldata', on_delete=models.CASCADE)
-    value_1         = models.CharField(_('Deger 1'), max_length=10, null=True, blank=False)
-    value_2         = models.CharField(_('Deger 2'), max_length=10, null=True, blank=False)
-    value_3         = models.CharField(_('Deger 3'), max_length=10, null=True, blank=False)
-    value_4         = models.CharField(_('Deger 4'), max_length=10, null=True, blank=False)
-    value_5         = models.CharField(_('Deger 5'), max_length=10, null=True, blank=False)
-    value_6         = models.CharField(_('Deger 6'), max_length=10, null=True, blank=False)
-    value_7         = models.CharField(_('Deger 7'), max_length=10, null=True, blank=False)
-    value_8         = models.CharField(_('Deger 8'), max_length=10, null=True, blank=False)
-    value_9         = models.CharField(_('Deger 9'), max_length=10, null=True, blank=False)
-    value_10        = models.CharField(_('Deger 10'), max_length=10, null=True, blank=False)
-    enable          = models.BooleanField(_('Aktif et'), default=True)
+    device         = models.ForeignKey(Device, related_name='device_data', on_delete=models.CASCADE)
+    field_1         = models.CharField(_('Deger 1'), max_length=10, null=True, blank=False)
+    field_2         = models.CharField(_('Deger 2'), max_length=10, null=True, blank=False)
+    field_3         = models.CharField(_('Deger 3'), max_length=10, null=True, blank=False)
+    field_4         = models.CharField(_('Deger 4'), max_length=10, null=True, blank=False)
+    field_5         = models.CharField(_('Deger 5'), max_length=10, null=True, blank=False)
+    field_6         = models.CharField(_('Deger 6'), max_length=10, null=True, blank=False)
+    field_7         = models.CharField(_('Deger 7'), max_length=10, null=True, blank=False)
+    field_8         = models.CharField(_('Deger 8'), max_length=10, null=True, blank=False)
+    field_9         = models.CharField(_('Deger 9'), max_length=10, null=True, blank=False)
+    field_10        = models.CharField(_('Deger 10'), max_length=10, null=True, blank=False)
+    api_key         = models.CharField(_('Api key'), max_length=200, null=True, blank=True) # api key
     remote_address  = models.CharField(_('Ip adres'), max_length=255)
     pub_date        = models.DateTimeField(_('Yayin tarihi'), auto_now=True)
 
     def __str__(self):
-        return self.channel.channel_name
+        return self.device.name
+
+    class Meta:
+        ordering = ['-pub_date']

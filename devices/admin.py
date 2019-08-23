@@ -35,12 +35,13 @@ SOFTWARE.
 
 from django.contrib import admin
 
-from .models import Channel
+from devices.models import Device
 
 
-class ChannelAdmin(admin.ModelAdmin):
+class DeviceAdmin(admin.ModelAdmin):
     """
     """
-    list_display = ('id', 'owner', 'channel_name', 'channel_name_id', 'api_key', 'enable', 'remote_address')
+    list_display = ('id', 'name', 'api_key', 'enable', 'remote_address')
 
-admin.site.register(Channel, ChannelAdmin)
+
+admin.site.register(Device, DeviceAdmin)

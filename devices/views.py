@@ -52,9 +52,8 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.http import JsonResponse
 
-from channels.forms import ChannelForm
-from channels.models import Channel
-from datas.views import JSONResponse
+
+# from datas.views import JSONResponse
 from iotdashboard.debug import debug
 from iotdashboard.settings import LOGIN_URL
 

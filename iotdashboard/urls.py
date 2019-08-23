@@ -45,35 +45,29 @@ from django.views.generic import TemplateView
 
 from rest_framework import routers
 
-from channels import views as views_channels
+from devices import views as views_channels
 
-from datas import views as views_datas
-from datas import views_api_v1 as views_api_v1
-from datas import views_api_v1_1 as views_api_v1_1
+from datas import views as datas
 
 router = routers.DefaultRouter()
-
-from rest_framework_swagger.views import get_swagger_view
-
-schema_view = get_swagger_view(title='IoTdashboard API')
-
+# router.register(r'datas', datas.DataViewSet)
 
 urlpatterns = i18n_patterns(
     # backoffice panels index page
     path('', views_channels.index, name='index'),
 
     # channel api key
-    path('key/list/', views_channels.key_list, name='key_list'),
-    path('key/generate/(?P<id>[^/]*)/', views_channels.generate_key, name='generate_key'),
+    # path('key/list/', views_channels.key_list, name='key_list'),
+    # path('key/generate/<str:id>/', views_channels.generate_key, name='generate_key'),
 
     # add channel
-    path('channel/add/', views_channels.channel_add, name='channel_add'),
-    path('channel/list/', views_channels.channel_list, name='channel_list'),
-    path('channel/edit/(?P<id>[^/]*)/', views_channels.channel_edit, name='channel_edit'),
-    path('channel/delete/(?P<id>[^/]*)/', views_channels.channel_delete, name='channel_delete'),
+    # path('channel/add/', views_channels.channel_add, name='channel_add'),
+    # path('channel/list/', views_channels.channel_list, name='channel_list'),
+    # path('channel/edit/<str:id>/', views_channels.channel_edit, name='channel_edit'),
+    # path('channel/delete/<str:id>/', views_channels.channel_delete, name='channel_delete'),
 
     # data query
-    path('datas/', views_datas.DataQueryList.as_view(), name='datas'),
+    # path('datas/', views_datas.DataQueryList.as_view(), name='datas'),
 
     # chart
     # path('chart-view/(?P<id>[^/]*)/', views_datas.chart_view, name='chart_view'),
@@ -83,33 +77,24 @@ urlpatterns = i18n_patterns(
     # path('chart-view/now/realtime/now/', views_datas.chart_view_realtime_now, name='chart_view_realtime_now'),
 
     # export xls
-    path('export/(?P<model>[\w-]+)/', views_channels.export, name='export'),
+    path('export/<str:model>/', views_channels.export, name='export'),
 
     # django admin page
     path('admin/', admin.site.urls),
-
-    # rest api docs
-    path('api-docs/', schema_view),
 )
 
 urlpatterns += [
-    # favicon
-    path('favicon\.ico', RedirectView.as_view(url='/static/favicon.ico', permanent=True)),
-
     # REST framework
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
-    path('api/v1/datas/', views_api_v1.Datas.as_view()),
-    path('api/v1/datas/<str:pk>/',  views_api_v1.DataDetail.as_view()),
-
-    path('api/v1.1/datas/', views_api_v1_1.Datas.as_view()),
-
+    path('api/datas/', datas.DataList.as_view()),
+    path('api/datas/<int:pk>/',  datas.DataDetail.as_view()),
 ]
 
 urlpatterns += [
-    path('media/<path>/', serve, {'document_root': settings.MEDIA_ROOT,}),
-    path('static/<path>/', serve, {'document_root': settings.STATIC_ROOT,}),
+    path('media/<str:path>/', serve, {'document_root': settings.MEDIA_ROOT,}),
+    path('static/<str:path>/', serve, {'document_root': settings.STATIC_ROOT,}),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

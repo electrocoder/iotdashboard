@@ -52,7 +52,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.http import JsonResponse
 
-from rest_framework import routers, serializers, viewsets
+from rest_framework import routers, serializers, viewsets, mixins, generics
 from rest_framework import views
 from rest_framework.response import Response
 from rest_framework import status
@@ -62,77 +62,129 @@ from rest_framework.decorators import api_view
 from rest_framework import permissions
 
 from chartit import DataPool, Chart
+from rest_framework.views import APIView
 
-from channels.forms import ChannelForm
-from channels.models import Channel
 from datas.models import Data
-from datas.permissions import IsOwnerOrReadOnly
+
 from datas.serializers import DataSerializer
+from devices.models import Device
 from iotdashboard.debug import debug
 
 
-class JSONResponse(HttpResponse):
+def ip_address(request):
     """
-    An HttpResponse that renders its content into JSON.
     """
-    def __init__(self, data, **kwargs):
-        content = JSONRenderer().render(data)
-        kwargs['content_type'] = 'application/json'
-        super(JSONResponse, self).__init__(content, **kwargs)
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[-1].strip()
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+
+    return ip
 
 
-class DataQueryList(TemplateView):
+# class DataViewSet(viewsets.ModelViewSet):
+#     """
+#     API endpoint that datas to be viewed or edited.
+#     """
+#     queryset = Data.objects.all().order_by('-pub_date')
+#     serializer_class = DataSerializer
+
+
+class DataList(APIView):
     """
-    All data list for template.
+    List all datas, or create a new data.
     """
-    template_name = "back/data_list.html"
+    def get(self, request, format=None):
+        datas = Data.objects.all()
+        serializer = DataSerializer(datas, many=True)
+        return Response(serializer.data)
 
-    @method_decorator(login_required)
-    def get(self, request, *args, **kwargs):
-        datas = Data.objects.all().order_by('-pub_date')[:100]
+    def post(self, request, format=None):
+        debug(request.data)
+        api_key= request.data['api_key']
+        device = get_object_or_404(Device, api_key=api_key)
+        request.data['device'] = device.pk
+        request.data['remote_address'] = ip_address(request)
+        serializer = DataSerializer(data=request.data)
+        debug(serializer)
 
-        value_1 = False
-        value_2 = False
-        value_3 = False
-        value_4 = False
-        value_5 = False
-        value_6 = False
-        value_7 = False
-        value_8 = False
-        value_9 = False
-        value_10 = False
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        for i in datas:
-            if i.value_1:
-                value_1 = True
-            if i.value_2:
-                value_2 = True
-            if i.value_3:
-                value_3 = True
-            if i.value_4:
-                value_4 = True
-            if i.value_5:
-                value_5 = True
-            if i.value_6:
-                value_6 = True
-            if i.value_7:
-                value_7 = True
-            if i.value_8:
-                value_8 = True
-            if i.value_9:
-                value_9 = True
-            if i.value_10:
-                value_10 = True
 
-        return render(request, self.template_name, {'datas': datas,
-                                                    'value_1':value_1,
-                                                    'value_2':value_2,
-                                                    'value_3':value_3,
-                                                    'value_4':value_4,
-                                                    'value_5':value_5,
-                                                    'value_6':value_6,
-                                                    'value_7':value_7,
-                                                    'value_8':value_8,
-                                                    'value_9':value_9,
-                                                    'value_10':value_10
-                                                    })
+class DataDetail(APIView):
+    """
+    Retrieve, update or delete a datas instance.
+    """
+    def get_object(self, pk):
+        try:
+            return Data.objects.get(pk=pk)
+        except Data.DoesNotExist:
+            raise Http404
+
+    def get(self, request, pk, format=None):
+        datas = self.get_object(pk)
+        serializer = DataSerializer(datas)
+        return Response(serializer.data)
+
+    def put(self, request, pk, format=None):
+        datas = self.get_object(pk)
+        serializer = DataSerializer(datas, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, pk, format=None):
+        datas = self.get_object(pk)
+        datas.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+# @csrf_exempt
+# def data_list(request):
+#     """
+#     List all datas, or create a new data.
+#     """
+#     if request.method == 'GET':
+#         datas = Data.objects.all()
+#         serializer = DataSerializer(datas, many=True)
+#         return JsonResponse(serializer.data, safe=False)
+#
+#     elif request.method == 'POST':
+#         data = JSONParser().parse(request)
+#         serializer = DataSerializer(data=data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return JsonResponse(serializer.data, status=201)
+#         return JsonResponse(serializer.errors, status=400)
+#
+# @csrf_exempt
+# def data_detail(request, pk):
+#     """
+#     Retrieve, update or delete a code datas.
+#     """
+#     try:
+#         datas = Data.objects.get(pk=pk)
+#     except Data.DoesNotExist:
+#         return HttpResponse(status=404)
+#
+#     if request.method == 'GET':
+#         serializer = DataSerializer(datas)
+#         return JsonResponse(serializer.data)
+#
+#     elif request.method == 'PUT':
+#         data = JSONParser().parse(request)
+#         serializer = DataSerializer(datas, data=data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return JsonResponse(serializer.data)
+#         return JsonResponse(serializer.errors, status=400)
+#
+#     elif request.method == 'DELETE':
+#         datas.delete()
+#         return HttpResponse(status=204)
+#
+
