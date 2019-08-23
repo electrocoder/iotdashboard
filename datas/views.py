@@ -96,12 +96,18 @@ class DataList(APIView):
     List all datas, or create a new data.
     """
     def get(self, request, format=None):
-        datas = Data.objects.all()
+        api_key= request.GET['api_key']
+        device = get_object_or_404(Device, api_key=api_key)
+        try:
+            if request.GET['last']:
+                datas = Data.objects.filter(device=device)[:1]
+        except:
+            datas = Data.objects.filter(device=device)
+
         serializer = DataSerializer(datas, many=True)
         return Response(serializer.data)
 
     def post(self, request, format=None):
-        debug(request.data)
         api_key= request.data['api_key']
         device = get_object_or_404(Device, api_key=api_key)
         request.data['device'] = device.pk

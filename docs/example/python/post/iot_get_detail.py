@@ -43,17 +43,9 @@ import requests
 
 headers = {'Content-type': 'application/json'}
 
-url = 'http://localhost:8000/api/datas/'
+url = 'http://localhost:8000/api/datas/2324/?api_key=333'
 
-for i in range(1):
-    data = {
-        'api_key': '111',
-        'field_1': random.randint(1, 10),
-        'field_2': round(random.uniform(0.0,10.0), 2),
-    }
-
-    data_json = json.dumps(data)
-
-    response = requests.post(url, data=data_json, headers=headers)
+for i in range(100):
+    response = requests.get(url, headers=headers)
     pprint.pprint(response.json())
     time.sleep(5)
