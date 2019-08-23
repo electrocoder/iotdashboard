@@ -54,6 +54,8 @@ from django.http import JsonResponse
 
 
 # from datas.views import JSONResponse
+from devices.forms import DeviceForm
+from devices.models import Device
 from iotdashboard.debug import debug
 from iotdashboard.settings import LOGIN_URL
 
@@ -65,6 +67,7 @@ def index(request):
     """
     panel = True
     # auto login for test users
+    # admin:Aa1234567890
     user = authenticate(username='admin', password='Aa1234567890')
     login(request, user)
     return render(request, "back/index.html", locals())
@@ -78,22 +81,22 @@ class DataQueryList(TemplateView):
 
     @method_decorator(login_required)
     def get(self, request, *args, **kwargs):
-        return render(request, self.template_name, {'datas': Channel.objects.filter(owner=request.user).order_by('-pub_date')[:100]})
+        return render(request, self.template_name, {'datas': Device.objects.filter(owner=request.user).order_by('-pub_date')[:100]})
 
 
 @login_required(login_url=LOGIN_URL)
 @csrf_exempt
-def channel_add(request):
+def device_add(request):
     """
     :param request:
     :return:
     """
-    channel_add = True
+    device_add = True
     msg_ok = ""
     msg_err = ""
 
     if request.method == 'POST':
-        form = ChannelForm(request.POST)
+        form = DeviceForm(request.POST)
         if form.is_valid():
             f = form.save(commit=False)
             f.owner = request.user
@@ -111,37 +114,37 @@ def channel_add(request):
         else:
             msg_err = _(u'Dikkat! Lütfen hataları düzeltiniz!')
 
-    form = ChannelForm()
+    form = DeviceForm()
 
     return render(request, "back/add.html", locals())
 
 
 @login_required(login_url=LOGIN_URL)
-def channel_list(request):
+def device_list(request):
     """
     :param request:
     :return:
     """
-    channel_list = True
-    list = Channel.objects.filter(owner=request.user).order_by('-pk')
-    return render(request, "back/channel_list.html", locals())
+    device_list = True
+    list = Device.objects.all()
+    return render(request, "back/device_list.html", locals())
 
 
 @login_required(login_url=LOGIN_URL)
-def channel_edit(request, id):
+def device_edit(request, id):
     """
     :param request:
     :param id:
     :return:
     """
-    val = get_object_or_404(Channel, id=id)
+    val = get_object_or_404(Device, id=id)
 
-    form = ChannelForm(request.POST or None, request.FILES or None, instance=val)
+    form = DeviceForm(request.POST or None, request.FILES or None, instance=val)
     if request.method == 'POST':
         if form.is_valid():
             form.save()
             msg_ok = _(u'Kanal güncelleme başarılı')
-            return HttpResponseRedirect(reverse('channel_list'))
+            return HttpResponseRedirect(reverse('device_list'))
         else:
             msg_err = _(u'Dikkat! Lütfen hataları düzeltiniz!')
 
@@ -149,17 +152,17 @@ def channel_edit(request, id):
 
 
 @login_required(login_url=LOGIN_URL)
-def channel_delete(request, id=None):
+def device_delete(request, id=None):
     """
     :param request:
     :param id:
     :return:
     """
-    channel = get_object_or_404(Channel, id=id).delete()
+    device = get_object_or_404(Device, id=id).delete()
 
     msg_ok = _(u'Kanal silindi')
 
-    return HttpResponseRedirect(reverse('channel_list'), locals())
+    return HttpResponseRedirect(reverse('device_list'), locals())
 
 
 @login_required(login_url=LOGIN_URL)
@@ -169,7 +172,7 @@ def key_list(request):
     :return:
     """
     key_list = True
-    list = Channel.objects.filter(owner=request.user, enable=True).order_by('-id')
+    list = Device.objects.filter(enable=True)
     return render(request, "back/key_list.html", locals())
 
 
@@ -180,10 +183,10 @@ def generate_key(request, id=None):
     :param id:
     :return:
     """
-    val = get_object_or_404(Channel, id=id)
+    val = get_object_or_404(Device, id=id)
     val.api_key = (uuid.uuid4().hex)[:20] + (uuid.uuid4().hex)[:20]
     val.save()
-    list = Channel.objects.filter(owner=request.user, enable=True)
+    list = Device.objects.filter(enable=True)
     msg_ok = _(u'Key üretildi')
 
     return HttpResponseRedirect(reverse('key_list'), locals())

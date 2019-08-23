@@ -43,7 +43,7 @@ import requests
 
 headers = {'Content-type': 'application/json'}
 
-url = 'http://localhost:8000/api/datas/2324/?api_key=333'
+url = 'http://localhost:8000/api/datas/2324/'
 
 for i in range(100):
     response = requests.get(url, headers=headers)

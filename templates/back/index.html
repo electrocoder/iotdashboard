@@ -11,18 +11,18 @@
 {% block content %}
 <div class="row placeholders">
     <div class="col-xs-6 col-sm-3 placeholder">
-        <a href="{% url 'channel_add' %}">
+        <a href="{% url 'device_add' %}">
         <img src="{% static "back/dashboard/img/cloud-256.png" %}" width="200" height="200" class="img-responsive"
-             alt="{% trans 'iot kanal ekle' %}">
-        <h4>{% trans 'Kanal Ekle' %}</h4></a>
-        <span class="text-muted">{% trans 'Iot Kanal Yöneticisi' %}</span>
+             alt="{% trans 'iot cihaz ekle' %}">
+        <h4>{% trans 'Cihaz Ekle' %}</h4></a>
+        <span class="text-muted">{% trans 'Iot Cihaz Yöneticisi' %}</span>
     </div>
     <div class="col-xs-6 col-sm-3 placeholder">
-        <a href="{% url 'channel_list' %}">
+        <a href="{% url 'device_list' %}">
         <img src="{% static "back/dashboard/img/element-256.png" %}" width="200" height="200" class="img-responsive"
-             alt="{% trans 'iot kanal liste' %}">
-        <h4>{% trans 'Kanal Liste' %}</h4></a>
-        <span class="text-muted">{% trans 'Iot Kanal Gözetleyici' %}</span>
+             alt="{% trans 'iot cihaz liste' %}">
+        <h4>{% trans 'Cihaz Liste' %}</h4></a>
+        <span class="text-muted">{% trans 'Iot Cihaz Gözetleyici' %}</span>
     </div>
     <div class="col-xs-6 col-sm-3 placeholder">
         <a href="{% url 'datas' %}">

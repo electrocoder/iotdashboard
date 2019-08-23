@@ -45,7 +45,7 @@ from django.views.generic import TemplateView
 
 from rest_framework import routers
 
-from devices import views as views_channels
+from devices import views as devices
 
 from datas import views as datas
 
@@ -54,20 +54,20 @@ router = routers.DefaultRouter()
 
 urlpatterns = i18n_patterns(
     # backoffice panels index page
-    path('', views_channels.index, name='index'),
+    path('', devices.index, name='index'),
 
-    # channel api key
-    # path('key/list/', views_channels.key_list, name='key_list'),
-    # path('key/generate/<str:id>/', views_channels.generate_key, name='generate_key'),
+    # device api key
+    path('key/list/', devices.key_list, name='key_list'),
+    path('key/generate/<str:id>/', devices.generate_key, name='generate_key'),
 
-    # add channel
-    # path('channel/add/', views_channels.channel_add, name='channel_add'),
-    # path('channel/list/', views_channels.channel_list, name='channel_list'),
-    # path('channel/edit/<str:id>/', views_channels.channel_edit, name='channel_edit'),
-    # path('channel/delete/<str:id>/', views_channels.channel_delete, name='channel_delete'),
+    # add device
+    path('device/add/', devices.device_add, name='device_add'),
+    path('device/list/', devices.device_list, name='device_list'),
+    path('device/edit/<str:id>/', devices.device_edit, name='device_edit'),
+    path('device/delete/<str:id>/', devices.device_delete, name='device_delete'),
 
     # data query
-    # path('datas/', views_datas.DataQueryList.as_view(), name='datas'),
+    path('datas/', datas.datalist, name='datas'),
 
     # chart
     # path('chart-view/(?P<id>[^/]*)/', views_datas.chart_view, name='chart_view'),
@@ -77,7 +77,7 @@ urlpatterns = i18n_patterns(
     # path('chart-view/now/realtime/now/', views_datas.chart_view_realtime_now, name='chart_view_realtime_now'),
 
     # export xls
-    path('export/<str:model>/', views_channels.export, name='export'),
+    path('export/<str:model>/', devices.export, name='export'),
 
     # django admin page
     path('admin/', admin.site.urls),
@@ -88,8 +88,8 @@ urlpatterns += [
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
-    path('api/datas/', datas.DataList.as_view()),
-    path('api/datas/<int:pk>/',  datas.DataDetail.as_view()),
+    path('api/datas/', datas.DataList.as_view(), name='api_data'),
+    path('api/datas/<int:pk>/', datas.DataDetail.as_view(), name='api_data_detail'),
 ]
 
 urlpatterns += [

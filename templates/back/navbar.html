@@ -19,13 +19,13 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans 'Yönet' %} <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                         <li><a href="{% url 'index' %}">{% trans 'Panel' %}</a></li>
-                        <li><a href="{% url 'channel_add' %}">{% trans 'Kanal ekle' %}</a></li>
-                        <li><a href="{% url 'channel_list' %}">{% trans 'Kanal liste' %}</a></li>
+                        <li><a href="{% url 'device_add' %}">{% trans 'Cihaz ekle' %}</a></li>
+                        <li><a href="{% url 'device_list' %}">{% trans 'Cihaz liste' %}</a></li>
                         <li><a href="{% url 'datas' %}">{% trans 'Datalar' %}</a></li>
                         <li><a href="{% url 'key_list' %}">{% trans 'Key list' %}</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="/api/">{% trans 'API' %}</a></li>
-                        <li><a href="/api-docs/">{% trans 'API Döküman' %}</a></li>
+                        <li><a href="/api">{% trans 'API' %}</a></li>
+                        <li><a href="{% url 'api_data' %}">{% trans 'API Data' %}</a></li>
                   </ul>
                 </li>
                 <li><a href="/admin/">{% trans 'Ayarlar' %}</a></li>

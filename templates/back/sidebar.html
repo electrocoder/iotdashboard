@@ -3,8 +3,8 @@
 <div class="col-sm-3 col-md-2 sidebar">
     <ul class="nav nav-sidebar">
         <li class="{% if panel %}active{% endif %}"><a href="{% url 'index' %}">Panel <span class="sr-only">(current)</span></a></li>
-        <li class="{% if channel_add %}active{% endif %}"><a href="{% url 'channel_add' %}">Kanal ekle <span class="sr-only">(current)</span></a></li>
-        <li class="{% if channel_list %}active{% endif %}"><a href="{% url 'channel_list' %}">Kanal liste <span class="sr-only">(current)</span></a></li>
+        <li class="{% if device_add %}active{% endif %}"><a href="{% url 'device_add' %}">Cihaz ekle <span class="sr-only">(current)</span></a></li>
+        <li class="{% if device_list %}active{% endif %}"><a href="{% url 'device_list' %}">Cihaz liste <span class="sr-only">(current)</span></a></li>
     </ul>
     <ul class="nav nav-sidebar">
         <li class="{% if datas %}active{% endif %}"><a href="{% url 'datas' %}">Datalar <span class="sr-only">(current)</span></a></li>
@@ -14,6 +14,6 @@
     </ul>
     <ul class="nav nav-sidebar">
         <li><a href="/api/">{% trans 'API' %}</a></li>
-        <li><a href="/api-docs/">{% trans 'API Döküman' %}</a></li>
+        <li><a href="{% url 'api_data' %}">{% trans 'API Data' %}</a></li>
     </ul>
 </div>
