@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 Iotdashboard project
-Django 1.10.1
-Python 2.7.6
+Django 2.2.4
+Python 3.6.1
 
 Author: Sahin MERSIN
 
@@ -34,7 +34,7 @@ SOFTWARE.
 """
 
 import os
-from django.utils.translation import ugettext_lazy as _
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -57,20 +57,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'rest_framework',
-    'rest_framework_swagger',
-    # 'markup_deprecated',
-    # 'chartit',
     'channels',
     'datas',
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',

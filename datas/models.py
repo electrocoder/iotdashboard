@@ -38,8 +38,8 @@ from channels.models import Channel
 class Data(models.Model):
     """
     """
-    owner           = models.ForeignKey('auth.User', related_name='ownerdata')
-    channel         = models.ForeignKey(Channel, related_name='channeldata')
+    owner           = models.ForeignKey('auth.User', related_name='ownerdata', on_delete=models.CASCADE)
+    channel         = models.ForeignKey(Channel, related_name='channeldata', on_delete=models.CASCADE)
     value_1         = models.CharField(_('Deger 1'), max_length=10, null=True, blank=False)
     value_2         = models.CharField(_('Deger 2'), max_length=10, null=True, blank=False)
     value_3         = models.CharField(_('Deger 3'), max_length=10, null=True, blank=False)

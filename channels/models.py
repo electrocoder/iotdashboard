@@ -49,7 +49,7 @@ class Channel(models.Model):
     """
     Requests for iot device
     """
-    owner          = models.ForeignKey('auth.User', related_name='ownerchannel')
+    owner          = models.ForeignKey('auth.User', related_name='ownerchannel', on_delete=models.CASCADE)
     channel_name   = models.CharField(_('Kanal adı'), max_length=60, help_text=_('Kanal adını giriniz'))
     channel_name_id= models.CharField(_('Kanal ID'), max_length=90, null=True, blank=True)
     element_1       = models.CharField(_('Element 1'), max_length=20, null=True, blank=True)
