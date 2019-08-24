@@ -3,3 +3,4 @@ djangorestframework
 markdown
 django-filter
 sphinx
+whitenoise
