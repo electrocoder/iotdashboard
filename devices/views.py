@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 """
 Iotdashboard project
-Django 1.10.1
-Python 2.7.6
+Django 2.2.4
+Python 3.6.1
 
 Author: Sahin MERSIN
 
@@ -33,30 +32,26 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
-
 import uuid
 
+from django.apps import apps
+from django.core import serializers
+
 from django.contrib.auth import authenticate, login
-from django.http import Http404, HttpResponseRedirect
-from django.contrib.auth.models import User
+from django.http import HttpResponseRedirect
+
 from django.urls import reverse
 from django.views.generic.base import TemplateView
-from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import get_object_or_404
-from django.shortcuts import render_to_response
 from django.shortcuts import render
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.http import JsonResponse
 
-
-# from datas.views import JSONResponse
 from devices.forms import DeviceForm
 from devices.models import Device
-from iotdashboard.debug import debug
 from iotdashboard.settings import LOGIN_URL
 
 
@@ -71,17 +66,6 @@ def index(request):
     user = authenticate(username='admin', password='Aa1234567890')
     login(request, user)
     return render(request, "back/index.html", locals())
-
-
-class DataQueryList(TemplateView):
-    """
-    All data list for template.
-    """
-    template_name = "back/data_list.html"
-
-    @method_decorator(login_required)
-    def get(self, request, *args, **kwargs):
-        return render(request, self.template_name, {'datas': Device.objects.filter(owner=request.user).order_by('-pub_date')[:100]})
 
 
 @login_required(login_url=LOGIN_URL)
@@ -184,7 +168,7 @@ def generate_key(request, id=None):
     :return:
     """
     val = get_object_or_404(Device, id=id)
-    val.api_key = (uuid.uuid4().hex)[:20] + (uuid.uuid4().hex)[:20]
+    val.api_key = val.generate_key()
     val.save()
     list = Device.objects.filter(enable=True)
     msg_ok = _(u'Key üretildi')
@@ -197,11 +181,8 @@ def export(request, model):
     :param request:
     :return:
     """
-    from django.apps import apps
-    from django.core import serializers
-
     model = apps.get_model(app_label=model + 's', model_name=model)
 
-    data = serializers.serialize(request.GET['format'], model.objects.filter(owner=request.user).order_by('-pub_date')[:100])
+    data = serializers.serialize(request.GET['format'], model.objects.all()[:100])
 
-    return JSONResponse({'response_data':data})
+    return JsonResponse({'response_data': data})

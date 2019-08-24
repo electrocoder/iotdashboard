@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 """
 Iotdashboard project
-Django 1.10.1
-Python 2.7.6
+Django 2.2.4
+Python 3.6.1
 
 Author: Sahin MERSIN
 
@@ -35,11 +34,13 @@ SOFTWARE.
 
 from django.contrib import admin
 
-from .models import Data
+from datas.models import Data
+
 
 class DataAdmin(admin.ModelAdmin):
     """
     """
     list_display = ('id', 'device', 'remote_address', 'pub_date')
+
 
 admin.site.register(Data, DataAdmin)

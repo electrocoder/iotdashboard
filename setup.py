@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 """
 Iotdashboard project
-Django 1.10.1
-Python 2.7.6
+Django 2.2.4
+Python 3.6.1
 
 Author: Sahin MERSIN
 
@@ -50,9 +49,9 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='1.0.0',
+    version='2.0.0',
 
-    description='Fast Django server for IOT Devices',
+    description='Fast Django server for IOT Gateway Devices',
     long_description=long_description,
 
     # The project's main homepage.
@@ -82,11 +81,11 @@ setup(
 
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.6.1',
     ],
 
     # What does your project relate to?
-    keywords='iot, iotdasboard, dasboard, server, django, iot development,',
+    keywords='iot, gateway, iotdasboard, dasboard, server, django, iot development,',
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().

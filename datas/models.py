@@ -1,8 +1,15 @@
-# -*- coding: utf-8 -*-
 """
-Datas
+Iotdashboard project
+Django 2.2.4
+Python 3.6.1
+
+Author: Sahin MERSIN
+
+Demo: http://iotdashboard.pythonanywhere.com
+Source: https://github.com/electrocoder/iotdashboard
 
 https://iothook.com/
+http://mesebilisim.com
 
 The MIT License (MIT)
 
@@ -27,10 +34,7 @@ SOFTWARE.
 
 from __future__ import unicode_literals
 from django.db import models
-from django.template.defaultfilters import slugify as djslugify
-from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
-import hashlib, random
 
 from devices.models import Device
 

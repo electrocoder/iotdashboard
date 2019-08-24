@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Iotdashboard project
 Django 2.2.4

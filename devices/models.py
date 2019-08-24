@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 """
 Iotdashboard project
-Django 1.10.1
-Python 2.7.6
+Django 2.2.4
+Python 3.6.1
 
 Author: Sahin MERSIN
 
@@ -33,8 +32,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import unicode_literals
-
 import binascii
 import os
 
@@ -44,7 +41,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class Device(models.Model):
     """
-    Requests for iot device
+    Requests for iot device Gateway
     """
     name = models.CharField(_('Cihaz adı'), max_length=60, help_text=_('Cihaz adını giriniz'))
     field_1 = models.CharField(_('Alan 1'), max_length=20, null=True, blank=True)

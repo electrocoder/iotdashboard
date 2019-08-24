@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 """
 Iotdashboard project
-Django 1.10.1
-Python 2.7.6
+Django 2.2.4
+Python 3.6.1
 
 Author: Sahin MERSIN
 
@@ -33,8 +32,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from django.contrib.auth.models import User
-from rest_framework import routers, serializers, viewsets
+from rest_framework import serializers
 from .models import Data
 
 
@@ -42,6 +40,7 @@ class DataSerializer(serializers.ModelSerializer):
     """
     """
     api_key = serializers.HiddenField(default=None)
+
     class Meta:
         model = Data
         fields = ['id',

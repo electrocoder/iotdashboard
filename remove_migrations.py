@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 """
 Iotdashboard project
-Django 1.10.1
-Python 2.7.6
+Django 2.2.4
+Python 3.6.1
 
 Author: Sahin MERSIN
 
@@ -33,11 +32,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-# remove_migrations.py
-"""
-Run this file from a Django =1.7 project root. 
-Removes all migration files from all apps in a project.
-"""
 from unipath import Path
 
 this_file = Path(__file__).absolute()

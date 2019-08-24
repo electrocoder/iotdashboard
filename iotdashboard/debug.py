@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 """
 Iotdashboard project
-Django 1.10.1
-Python 2.7.6
+Django 2.2.4
+Python 3.6.1
 
 Author: Sahin MERSIN
 
@@ -34,7 +33,8 @@ SOFTWARE.
 """
 
 from __future__ import unicode_literals
-from .settings import DEBUG
+
+from iotdashboard.settings import DEBUG
 
 
 def debug(*val):

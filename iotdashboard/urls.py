@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Iotdashboard project
 Django 2.2.4
@@ -39,9 +38,6 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.static import serve
-from django.views.generic import RedirectView
-from django.contrib.auth.models import User
-from django.views.generic import TemplateView
 
 from rest_framework import routers
 
@@ -50,7 +46,6 @@ from devices import views as devices
 from datas import views as datas
 
 router = routers.DefaultRouter()
-# router.register(r'datas', datas.DataViewSet)
 
 urlpatterns = i18n_patterns(
     # backoffice panels index page
@@ -69,13 +64,6 @@ urlpatterns = i18n_patterns(
     # data query
     path('datas/', datas.datalist, name='datas'),
 
-    # chart
-    # path('chart-view/(?P<id>[^/]*)/', views_datas.chart_view, name='chart_view'),
-
-    # realtime chart
-    # path('chart-view/now/realtime/', views_datas.chart_view_realtime, name='chart_view_realtime'),
-    # path('chart-view/now/realtime/now/', views_datas.chart_view_realtime_now, name='chart_view_realtime_now'),
-
     # export xls
     path('export/<str:model>/', devices.export, name='export'),
 
@@ -93,8 +81,8 @@ urlpatterns += [
 ]
 
 urlpatterns += [
-    path('media/<str:path>/', serve, {'document_root': settings.MEDIA_ROOT,}),
-    path('static/<str:path>/', serve, {'document_root': settings.STATIC_ROOT,}),
+    path('media/<str:path>/', serve, {'document_root': settings.MEDIA_ROOT, }),
+    path('static/<str:path>/', serve, {'document_root': settings.STATIC_ROOT, }),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

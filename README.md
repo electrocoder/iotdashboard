@@ -19,9 +19,8 @@ You can find project details on our [project page](https://iothook.com/) and [wi
 Features
 --------
 - Create a Django compatible server for iot devices
-- Create a Device for iot devices
-- Create a Channel for iot devices
-- Create a Element for iot devices
+- Create a Device for IOT Gateway Devices
+- Create a Sensors for IOT devices
 - Simple interface. 
 - Support for channel api key
 - Django REST Framework
@@ -29,11 +28,17 @@ Features
 Requirements
 ------------
 - Django
+- Django Rest Framework
 
 How to get Django
-----------
+-----------------
 
-[Django](https://www.djangoproject.com/download/)
+[Django](https://www.djangoproject.com/)
+
+How to get Django Rest Framework
+--------------------------------
+
+[Django Rest Framework](https://www.django-rest-framework.org/)
 
 Installing
 ----------

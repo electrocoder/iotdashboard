@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 """
 Iotdashboard project
-Django 1.10.1
-Python 2.7.6
+Django 2.2.4
+Python 3.6.1
 
 Author: Sahin MERSIN
 
@@ -38,14 +37,13 @@ from iotdashboard.settings import WEBSITE_NAME
 import time
 import os
 
-
 register = template.Library()
 
 
 @register.simple_tag
 def version():
     """
-        GIT version
+    GIT version
     """
     try:
         return time.strftime('%m%d%Y/%u', time.gmtime(os.path.getmtime('.git/')))
@@ -56,6 +54,6 @@ def version():
 @register.simple_tag
 def website_name():
     """
-        WEBSITE_NAME = "Iotdashboard"
+    WEBSITE_NAME = "Iotdashboard"
     """
     return WEBSITE_NAME
