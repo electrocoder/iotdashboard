@@ -31,7 +31,7 @@
             <thead>
             <tr>
                 <th>{% trans 'Id' %}</th>
-                <th>{% trans 'Kanal' %}</th>
+                <th>{% trans 'Cihaz' %}</th>
                 <th>{% trans 'Ip Adresi' %}</th>
                 {% if value_1 %}<th>{% trans 'Element 1' %}</th>{% endif %}
                 {% if value_2 %}<th>{% trans 'Element 2' %}</th>{% endif %}
@@ -51,7 +51,7 @@
             {% for i in datas %}
             <tr>
                 <td>#{{ i.id }}</td>
-                <td>{{ i.channel.channel_name }}</td>
+                <td>{{ i.device.name }}</td>
                 <td><a class="tooltip-viewport-bottom" title="{{ i.remote_address }}">{{ i.remote_address | truncatechars:15 }}</a></td>
                 {% if value_1 %}<td>{{ i.channel.element_1 }}/{{ i.value_1 }}</td>{% endif %}
                 {% if value_2 %}<td>{{ i.channel.element_2 }}/{{ i.value_2 }}</td>{% endif %}

@@ -59,6 +59,7 @@ def ip_address(request):
 
 
 def datalist(request):
+    datas = Data.objects.all()
     return render(request, 'back/data_list.html', locals())
 
 
