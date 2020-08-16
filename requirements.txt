@@ -1,4 +1,4 @@
-Django==2.2.4
+Django==3.1
 djangorestframework
 markdown
 django-filter
