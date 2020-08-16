@@ -63,6 +63,8 @@ urlpatterns = i18n_patterns(
 
     # data query
     path('datas/', datas.datalist, name='datas'),
+    path('datas/chart/<str:id>/', datas.data_chart, name='data_chart'),
+    path('datas/chart/ajax/<str:id>/', datas.data_chart_ajax, name='data_chart_ajax'),
 
     # export xls
     path('export/<str:model>/', devices.export, name='export'),

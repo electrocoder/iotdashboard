@@ -32,7 +32,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from django.http import Http404
+from django.http import Http404, JsonResponse
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
 from rest_framework.response import Response
@@ -126,3 +126,26 @@ class DataDetail(APIView):
         datas = self.get_object(pk)
         datas.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+def data_chart(request, id):
+    device = Device.objects.get(pk=id)
+    datas = Data.objects.filter(device=device)
+    return render(request, 'back/data_chart.html', locals())
+
+
+def data_chart_ajax(request, id):
+    device = Device.objects.get(pk=id)
+    datas = Data.objects.filter(device=device)[:10]
+
+    labels = []
+    data = []
+
+    for entry in datas:
+        labels.append(entry.pub_date)
+        data.append(entry.field_1)
+
+    return JsonResponse(data={
+        'labels': labels,
+        'data': data,
+    })

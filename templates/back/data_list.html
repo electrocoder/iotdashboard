@@ -68,7 +68,7 @@
                 <td>{{ i.pub_date }}</td>
                 <td><a class="btn btn-dark" href="/api/datas/{{ i.pk }}/" role="button">{% trans 'GET ID' %}</a></td>
                 <td><a class="btn btn-success" href="/api/datas/?last=True" role="button">{% trans 'GET Last' %}</a></td>
-                <td><a class="btn btn-info" href="{% url 'index' %}" role="button">{% trans 'Göster' %}</a></td>
+                <td><a class="btn btn-info" href="{% url 'data_chart' i.device.pk %}" role="button">{% trans 'Göster' %}</a></td>
             </tr>
             {% endfor %}
             </tbody>

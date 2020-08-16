@@ -1,0 +1,51 @@
+{% extends 'back/base.html' %}
+
+{% block content %}
+
+  <div id="container" style="width: 95%;">
+    <canvas id="chart" data-url="{% url 'data_chart_ajax' device.pk %}"></canvas>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+
+    $(function () {
+
+      var $dataChart = $("#chart");
+      $.ajax({
+        url: $dataChart.data("url"),
+        success: function (data) {
+
+          var ctx = $dataChart[0].getContext("2d");
+
+          new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: data.labels,
+              datasets: [{
+                label: 'Data',
+                backgroundColor: '#17a2b8',
+                data: data.data
+              }]
+            },
+            options: {
+              responsive: true,
+              legend: {
+                position: 'top',
+              },
+              title: {
+                display: true,
+                text: 'Data Bar Chart'
+              }
+            }
+          });
+
+        }
+      });
+
+    });
+
+  </script>
+
+{% endblock %}
