@@ -44,6 +44,8 @@
                 {% if value_9 %}<th>{% trans 'Element 9' %}</th>{% endif %}
                 {% if value_10 %}<th>{% trans 'Element 10' %}</th>{% endif %}
                 <th>{% trans 'Kayıt T.' %}</th>
+                <th>{% trans 'GET ID' %}</th>
+                <th>{% trans 'GET Last' %}</th>
                 <th>{% trans 'Chart Göster' %}</th>
             </tr>
             </thead>
@@ -64,6 +66,8 @@
                 {% if value_9 %}<td>{{ i.channel.element_9 }}/{{ i.value_9 }}</td>{% endif %}
                 {% if value_10 %}<td>{{ i.channel.element_10 }}/{{ i.value_10 }}</td>{% endif %}
                 <td>{{ i.pub_date }}</td>
+                <td><a class="btn btn-dark" href="/api/datas/{{ i.pk }}/" role="button">{% trans 'GET ID' %}</a></td>
+                <td><a class="btn btn-success" href="/api/datas/?last=True" role="button">{% trans 'GET Last' %}</a></td>
                 <td><a class="btn btn-info" href="{% url 'index' %}" role="button">{% trans 'Göster' %}</a></td>
             </tr>
             {% endfor %}
