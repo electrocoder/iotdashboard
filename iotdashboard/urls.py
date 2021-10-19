@@ -48,7 +48,7 @@ from datas import views as datas
 router = routers.DefaultRouter()
 
 urlpatterns = i18n_patterns(
-    # backoffice panels index page
+    # dashboard panels index page
     path('', devices.index, name='index'),
 
     # device api key

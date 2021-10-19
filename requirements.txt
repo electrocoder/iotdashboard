@@ -1,5 +1,5 @@
-Django==3.1
-djangorestframework
+Django==3.2.8
+djangorestframework==3.12.3
 markdown
 django-filter
 sphinx

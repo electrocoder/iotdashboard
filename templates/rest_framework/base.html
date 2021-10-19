@@ -12,7 +12,7 @@
         <meta name="robots" content="NONE,NOARCHIVE" />
       {% endblock %}
 
-      <title>{% block title %}{% if name %}{{ name }} – {% endif %}IOTDASHBOARD REST API{% endblock %}</title>
+      <title>{% block title %}{% if name %}{{ name }} – {% endif %}Django REST framework{% endblock %}</title>
 
       {% block style %}
         {% block bootstrap_theme %}
@@ -39,7 +39,7 @@
             <span>
               {% block branding %}
                 <a class='navbar-brand' rel="nofollow" href='/'>
-                    IOTDASHBOARD REST API
+                    IOT Dashboard
                 </a>
               {% endblock %}
             </span>
@@ -176,9 +176,9 @@
 
               <div class="response-info" aria-label="{% trans "response info" %}">
                 <pre class="prettyprint"><span class="meta nocode"><b>HTTP {{ response.status_code }} {{ response.status_text }}</b>{% for key, val in response_headers|items %}
-<b>{{ key }}:</b> <span class="lit">{{ val|break_long_headers|urlize_quoted_links }}</span>{% endfor %}
+<b>{{ key }}:</b> <span class="lit">{{ val|break_long_headers|urlize }}</span>{% endfor %}
 
-</span>{{ content|urlize_quoted_links }}</pre>
+</span>{{ content|urlize }}</pre>
               </div>
             </div>
 
@@ -293,7 +293,7 @@
           csrfToken: "{% if request %}{{ csrf_token }}{% endif %}"
         };
       </script>
-      <script src="{% static "rest_framework/js/jquery-3.3.1.min.js" %}"></script>
+      <script src="{% static "rest_framework/js/jquery-3.5.1.min.js" %}"></script>
       <script src="{% static "rest_framework/js/ajax-form.js" %}"></script>
       <script src="{% static "rest_framework/js/csrf.js" %}"></script>
       <script src="{% static "rest_framework/js/bootstrap.min.js" %}"></script>
