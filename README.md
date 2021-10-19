@@ -27,9 +27,9 @@ Features
 
 Requirements
 ------------
-- Django
-- Django Rest Framework
-
+- Django 3.2.8
+- Django Rest Framework 3.12.3
+- Python 3.9.1
 How to get Django
 -----------------
 

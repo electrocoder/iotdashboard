@@ -1,7 +1,7 @@
 """
 Iotdashboard project
 Django 3.2.8
-Python 3.8
+Python 3.9.1
 
 Author: Sahin MERSIN
 

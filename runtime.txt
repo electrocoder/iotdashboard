@@ -1,2 +1,2 @@
-python-3.6.1
+python-3.9.1
 iotdashboard/settings.py
