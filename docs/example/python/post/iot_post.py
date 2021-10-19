@@ -47,7 +47,7 @@ url = 'http://localhost:8000/api/datas/'
 
 for i in range(10):
     data = {
-        'api_key': '48e7b9391768dfa979299372',
+        'api_key': '7bf59e593a524c16bbdca0465c4b19194ad797c5',
         'field_1': random.randint(1, 10),
         'field_2': round(random.uniform(0.0,10.0), 2),
     }
