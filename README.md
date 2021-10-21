@@ -90,21 +90,11 @@ Test on IOTDASHBOARD
 -------------
 
 ```
-http://iotdashboard.pythonanywhere.com
-```
-
-Test on IHOOK
--------------
-
-```
-https://ihook.pythonanywhere.com
-```
-
-Test on HEROKU
---------------
-
-```
-https://iotdashboard.herokuapp.com/
+server: https://www.pythonanywhere.com/
+username: iotdashboardapp
+email: iotdashboard@yandex.com
+password: admin12345!!
+app url: http://iotdashboardapp.pythonanywhere.com/tr/
 ```
 
 Contact
