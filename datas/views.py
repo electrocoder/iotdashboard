@@ -69,12 +69,11 @@ class DataList(APIView):
     """
 
     def get(self, request, format=None):
-        # api_key= request.GET['api_key']
-        # device = get_object_or_404(Device, api_key=api_key, enable=True)
-        try:
-            if request.GET['last']:
-                datas = Data.objects.all()[:1]
-        except:
+        if 'last' in request.GET:
+            datas = Data.objects.all()[:1]
+        elif 'result' in request.GET:
+            datas = Data.objects.all()[:int(request.GET['result'])]
+        else:
             datas = Data.objects.all()
 
         serializer = DataSerializer(datas, many=True)
