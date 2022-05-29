@@ -43,7 +43,7 @@ ADMINS = (
 
 SECRET_KEY = '9#rxdk3_%-sufmh$#!b+iqpm0!ztfv+)08g-%g@#)flx*p$o(('
 
-WEBSITE_NAME = "Iotdashboard"
+WEBSITE_NAME = "IoTDashboard"
 
 ALLOWED_HOSTS = ['*']
 

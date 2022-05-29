@@ -1,6 +1,6 @@
-Django==3.2.8
-djangorestframework==3.12.3
-markdown
-django-filter
-sphinx
-whitenoise
+django==3.2.9
+djangorestframework==3.13.1
+markdown==3.3.7
+django-filter==21.1
+sphinx==5.0.0
+whitenoise==6.1.0

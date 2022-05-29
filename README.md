@@ -27,6 +27,7 @@ Features
 
 Requirements
 ------------
+- Python 3.8
 - Django 3.2.8
 - Django Rest Framework 3.12.3
 - Python 3.9.1
