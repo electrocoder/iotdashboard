@@ -48,6 +48,13 @@ Installing
 git clone https://github.com/electrocoder/iotdashboard.git
 ```
 
+Docker
+------
+
+```
+docker-compose up -d
+```
+
 Djangopackages
 --------------
 
