@@ -4,7 +4,7 @@
 {% load custom_tags %}
 {% load i18n %}
 
-{% block title %}{% trans 'Iot Aygıtlar için Free Dashboard' %}{% endblock %}
+{% block title %}{% trans 'IoT Devices Free Dashboard' %}{% endblock %}
 
 {% block website_name %}{% website_name %}{% endblock %}
 
@@ -13,30 +13,30 @@
     <div class="col-xs-6 col-sm-3 placeholder">
         <a href="{% url 'device_add' %}">
         <img src="{% static "back/dashboard/img/cloud-256.png" %}" width="200" height="200" class="img-responsive"
-             alt="{% trans 'iot cihaz ekle' %}">
-        <h4>{% trans 'Cihaz Ekle' %}</h4></a>
-        <span class="text-muted">{% trans 'Iot Cihaz Yöneticisi' %}</span>
+             alt="{% trans 'IoT Device Add' %}">
+        <h4>{% trans 'Device Add' %}</h4></a>
+        <span class="text-muted">{% trans 'IoT Device Management' %}</span>
     </div>
     <div class="col-xs-6 col-sm-3 placeholder">
         <a href="{% url 'device_list' %}">
         <img src="{% static "back/dashboard/img/element-256.png" %}" width="200" height="200" class="img-responsive"
-             alt="{% trans 'iot cihaz liste' %}">
-        <h4>{% trans 'Cihaz Liste' %}</h4></a>
-        <span class="text-muted">{% trans 'Iot Cihaz Gözetleyici' %}</span>
+             alt="{% trans 'IoT Device List' %}">
+        <h4>{% trans 'Device List' %}</h4></a>
+        <span class="text-muted">{% trans 'IoT Device View' %}</span>
     </div>
     <div class="col-xs-6 col-sm-3 placeholder">
         <a href="{% url 'datas' %}">
         <img src="{% static "back/dashboard/img/channel-256.png" %}" width="200" height="200" class="img-responsive"
-             alt="{% trans 'iot data listesi' %}">
-        <h4>{% trans 'Data Liste' %}</h4></a>
-        <span class="text-muted">{% trans 'Iot Data Yöneticisi' %}</span>
+             alt="{% trans 'IoT Data List' %}">
+        <h4>{% trans 'Data List' %}</h4></a>
+        <span class="text-muted">{% trans 'IoT Data Management' %}</span>
     </div>
     <div class="col-xs-6 col-sm-3 placeholder">
         <a href="{% url 'key_list' %}">
         <img src="{% static "back/dashboard/img/key-256.png" %}" width="200" height="200" class="img-responsive"
-             alt="{% trans 'api key' %}">
-        <h4>{% trans 'Key Yönetici' %}</h4></a>
-        <span class="text-muted">{% trans 'Yeni Key Üret' %}</span>
+             alt="{% trans 'API Key' %}">
+        <h4>{% trans 'Key Management' %}</h4></a>
+        <span class="text-muted">{% trans 'New Key Management' %}</span>
     </div>
 </div>
 {% endblock %}

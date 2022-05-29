@@ -4,11 +4,11 @@
 {% load custom_tags %}
 {% load i18n %}
 
-{% block title %}{% trans 'Datalar' %}{% endblock %}
+{% block title %}{% trans 'Datas' %}{% endblock %}
 
-{% block website_name %}{% trans 'Datalar' %}
-    <a class="btn btn-primary" href='{% url "export" "data" %}?format=json' role="button">{% trans 'Json aktar' %}</a>
-    <a class="btn btn-success" href='{% url "export" "data" %}?format=xml' role="button">{% trans 'Xml aktar' %}</a>
+{% block website_name %}{% trans 'Datas' %}
+    <a class="btn btn-primary" href='{% url "export" "data" %}?format=json' role="button">{% trans 'Export Json' %}</a>
+    <a class="btn btn-success" href='{% url "export" "data" %}?format=xml' role="button">{% trans 'Export Xml' %}</a>
 {% endblock %}
 
 {% block content %}
@@ -31,22 +31,22 @@
             <thead>
             <tr>
                 <th>{% trans 'Id' %}</th>
-                <th>{% trans 'Cihaz' %}</th>
-                <th>{% trans 'Ip Adresi' %}</th>
-                <th>{% trans 'Element 1' %}</th>
-                <th>{% trans 'Element 2' %}</th>
-                <th>{% trans 'Element 3' %}</th>
-                <th>{% trans 'Element 4' %}</th>
-                <th>{% trans 'Element 5' %}</th>
-                <th>{% trans 'Element 6' %}</th>
-                <th>{% trans 'Element 7' %}</th>
-                <th>{% trans 'Element 8' %}</th>
-                <th>{% trans 'Element 9' %}</th>
-                <th>{% trans 'Element 10' %}</th>
-                <th>{% trans 'Kayıt T.' %}</th>
+                <th>{% trans 'Device' %}</th>
+                <th>{% trans 'Ip Address' %}</th>
+                <th>{% trans 'Field 1' %}</th>
+                <th>{% trans 'Field 2' %}</th>
+                <th>{% trans 'Field 3' %}</th>
+                <th>{% trans 'Field 4' %}</th>
+                <th>{% trans 'Field 5' %}</th>
+                <th>{% trans 'Field 6' %}</th>
+                <th>{% trans 'Field 7' %}</th>
+                <th>{% trans 'Field 8' %}</th>
+                <th>{% trans 'Field 9' %}</th>
+                <th>{% trans 'Field 10' %}</th>
+                <th>{% trans 'Pub. D.' %}</th>
                 <th>{% trans 'GET ID' %}</th>
                 <th>{% trans 'GET Last' %}</th>
-                <th>{% trans 'Chart Göster' %}</th>
+                <th>{% trans 'Chart View' %}</th>
             </tr>
             </thead>
             <tbody>
@@ -68,7 +68,7 @@
                 <td>{{ i.pub_date }}</td>
                 <td><a class="btn btn-dark" href="/api/datas/{{ i.pk }}/" role="button">{% trans 'GET ID' %}</a></td>
                 <td><a class="btn btn-success" href="/api/datas/?last=True" role="button">{% trans 'GET Last' %}</a></td>
-                <td><a class="btn btn-info" href="{% url 'data_chart' i.device.pk %}" role="button">{% trans 'Göster' %}</a></td>
+                <td><a class="btn btn-info" href="{% url 'data_chart' i.device.pk %}" role="button">{% trans 'View' %}</a></td>
             </tr>
             {% endfor %}
             </tbody>

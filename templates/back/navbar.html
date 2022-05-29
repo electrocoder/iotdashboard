@@ -19,29 +19,29 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans 'Yönet' %} <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                         <li><a href="{% url 'index' %}">{% trans 'Panel' %}</a></li>
-                        <li><a href="{% url 'device_add' %}">{% trans 'Cihaz ekle' %}</a></li>
-                        <li><a href="{% url 'device_list' %}">{% trans 'Cihaz liste' %}</a></li>
-                        <li><a href="{% url 'datas' %}">{% trans 'Datalar' %}</a></li>
-                        <li><a href="{% url 'key_list' %}">{% trans 'Key list' %}</a></li>
+                        <li><a href="{% url 'device_add' %}">{% trans 'Device  Add' %}</a></li>
+                        <li><a href="{% url 'device_list' %}">{% trans 'Device List' %}</a></li>
+                        <li><a href="{% url 'datas' %}">{% trans 'Datas' %}</a></li>
+                        <li><a href="{% url 'key_list' %}">{% trans 'Key List' %}</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="/api">{% trans 'API' %}</a></li>
                         <li><a href="{% url 'api_data' %}">{% trans 'API Data' %}</a></li>
                   </ul>
                 </li>
-                <li><a href="/admin/">{% trans 'Ayarlar' %}</a></li>
-                <li><a href="http://iotdashboard.readthedocs.io/tr/latest/">{% trans 'Yardım' %}</a></li>
+                <li><a href="/admin/">{% trans 'Help' %}</a></li>
+                <li><a href="http://iotdashboard.readthedocs.io/tr/latest/">{% trans 'Help' %}</a></li>
                 {% if user.is_authenticated %}
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ user }} <span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                            <li><a href="/api-auth/logout/">{% trans 'Çıkış' %}</a></li>
+                            <li><a href="/api-auth/logout/">{% trans 'Logout' %}</a></li>
                       </ul>
                     </li>
                 {% else %}
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ user }} <span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                            <li><a href="/api/">{% trans 'Giriş' %}</a></li>
+                            <li><a href="/api/">{% trans 'Login' %}</a></li>
                       </ul>
                     </li>
                 {% endif %}
