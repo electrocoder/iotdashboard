@@ -6,6 +6,7 @@
 [![Django](https://img.shields.io/pypi/pyversions/Django.svg)](https://iothook.com/)
 
 You can find project details on our [project page](https://iothook.com/) and [wiki](https://iothook.com/).
+Demo Page (http://iotdashboardapp.pythonanywhere.com/en/)
 
 <p align="center">
 <img 
